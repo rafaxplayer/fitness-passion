@@ -14,15 +14,15 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 	</div><!-- #content -->
 	
 	<footer id="colophon" class="site-footer row">
-
-		<div class="col-xs-12 col-md-6 col-lg-6">
-			<?php do_action('fitnes_passion_social_icons'); ?>
-		</div>
-		
+		<?php if(get_theme_mod('fitness_passion_footer_show_social',true)):?>
+			<div class="col-xs-12 col-md-6 col-lg-6">
+				<?php do_action('fitness_passion_social_icons'); ?>
+			</div>
+		<?php endif;?>
 
 		<div class="site-info col-xs-12 col-md-6 col-lg-6">
 			<?php
-				$info_footer = get_theme_mod('fitnes_passion_footer_info');
+				$info_footer = get_theme_mod('fitness_passion_footer_info');
 
 				if(empty($info_footer)){
 					 echo 'JRS &copy; '. date('Y');?>

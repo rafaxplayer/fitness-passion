@@ -82,7 +82,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 			
 			endif;
 			
-			if(get_theme_mod('fitness_passion_show_slider', false) && is_front_page() ):
+			if( get_theme_mod('fitness_passion_show_slider', false) && is_front_page() ):
 
 				get_template_part('template-parts/header-slider');
 

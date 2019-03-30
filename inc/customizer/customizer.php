@@ -149,7 +149,7 @@ function fitness_passion_sanitize_select( $input, $setting ){
  */
 function fitness_passion_sanitize_checkbox($value){
 	
-	return ( isset( $value ) ? true : false );
+	return ( 1 === absint( $value ) ) ? true : false;
 
 }
 

@@ -53,6 +53,7 @@
         // on change values....
         wp.customize.control('fitness_passion_show_slider_control', function (control) {
             control.setting.bind(function (value) {
+                
                 // check state
                 slider_header_check();
             });

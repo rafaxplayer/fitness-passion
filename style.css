@@ -1927,9 +1927,7 @@ section.fit-landing-testimonials .testimonials-wrap{
 	padding: 8rem 3rem;
 }
 
-.fit-landing-last-posts,
-.fit-landing-coaches,
-.fit-landing-testimonials{
+.page-template-template-landingpage section{
 	text-align: center;
 	background-attachment: fixed;
 	background-position: center;
@@ -1939,9 +1937,7 @@ section.fit-landing-testimonials .testimonials-wrap{
 	
 }
 
-.fit-landing-coaches h2,
-.fit-landing-testimonials h2,
-.fit-landing-last-posts h2{
+.section-title{
 	display: inline-block;
 	margin-bottom: 8rem;
 	font-size: 6rem;
@@ -1949,12 +1945,8 @@ section.fit-landing-testimonials .testimonials-wrap{
 	position: relative;
 }
 
-.fit-landing-coaches h2:after,
-.fit-landing-coaches h2:before,
-.fit-landing-testimonials h2:after,
-.fit-landing-testimonials h2:before,
-.fit-landing-last-posts h2:after,
-.fit-landing-last-posts h2:before{
+.section-title:after,
+.section-title:before{
 	content: "";
     width: 40px;
     height: 2px;
@@ -1962,18 +1954,12 @@ section.fit-landing-testimonials .testimonials-wrap{
     display: block;	
 	position: relative;
 }
-.fit-landing-last-posts h2:after,
-.fit-landing-testimonials h2:after,
-.fit-landing-coaches h2:after,
-.fit-landing-last-posts h2:after{
+.section-title:after{
 	top: -35px;
     left: -30px
 }
 
-.fit-landing-last-posts h2:before,
-.fit-landing-testimonials h2:before,
-.fit-landing-coaches h2:before,
-.fit-landing-last-posts h2:before{
+.section-title:before{
 	top: 25px;
     left: -30px;
 }
@@ -2065,7 +2051,7 @@ section.fit-landing-testimonials .testimonials-wrap{
 
 /*coaches*/
 .fit-landing-coaches{
-	text-align: center;
+	
 	position: relative;
 	background-color: white;
 }

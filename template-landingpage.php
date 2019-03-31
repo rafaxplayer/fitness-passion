@@ -40,7 +40,10 @@ get_header();
 					?>
 					<section class="fit-landing-last-posts" style="background-image:url(<?php echo get_theme_mod('fitnes_passion_landing_latest_posts_back_image');?>">
 						<div class="lastes-posts-wrap">
-							<h2><?php echo esc_html($title); ?></h2>
+						<?php
+						if(!empty($title)){
+        					printf('<h2 class="section-title">%s</h2>',$title);
+    					}?>
 							<?php do_action('fitness_passion_show_related_post','latest');?>
 							<div class="more-wrap">
 								<a class="button" href="<?php echo get_permalink( get_option( 'page_for_posts' ) );?>"><?php esc_html_e('More Posts','fitness-passion'); ?></a>

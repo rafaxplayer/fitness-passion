@@ -4,6 +4,7 @@
  *
  * @package fitness-passion
  */
+
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 /* Blog section*/
 	$wp_customize->add_section( 'fitness_passion_blog_page_section' , array(

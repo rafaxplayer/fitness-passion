@@ -6,9 +6,9 @@
  */
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
-if(! function_exists('fitness_passion_header_text_title')):
+if(! function_exists('fitness_passion_header_content')):
 
-    function fitness_passion_header_text_title(){
+    function fitness_passion_header_content(){
 
         $text = "";
         $subtext ="";
@@ -16,50 +16,37 @@ if(! function_exists('fitness_passion_header_text_title')):
 
             $text = addspanlastword(get_theme_mod('fitness_passion_front_page_header_title', 'Fitness Passion'));
             $subtext = get_theme_mod('fitness_passion_front_page_header_subtitle', 'Subtitle text');
-
+            $buttonText = get_theme_mod('fitness_passion_front_page_header_button');
+            $buttonLink = get_theme_mod('fitness_passion_front_page_header_button_link','#');
+        
         }
         else if(is_home() && ! is_front_page()){
 
             $text = get_theme_mod('fitness_passion_blog_page_header_title', 'Blog');
 
         }else{
-            
 
             the_title('<h1 class="fp_header_title" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">','</h1>');
             return;
 
-          }
-        ?>
+        }?>
         <h2 class="fp_header_title" data-aos="fade-up" data-aos-duration="600" data-aos-once="true"><?php echo $text; ?></h2>
         <p class="fp_header_subtitle" data-aos="fade-up" data-aos-duration="600" data-aos-once="true"><?php echo esc_html($subtext); ?></p>
-        
-    <?php }
+        <?php  
 
-endif;
-
-if(! function_exists('fitness_passion_header_button')):
-
-    function fitness_passion_header_button(){
-
-        if(is_front_page() || (is_front_page() && is_home())){
-
-            $buttonText = get_theme_mod('fitness_passion_front_page_header_button');
-            $buttonLink = get_theme_mod('fitness_passion_front_page_header_button_link','#');
-
-            if($buttonText || !empty($buttonText)){?>
+            if($buttonText || !empty($buttonText)){ ?>
 
                 <a href="<?php echo esc_url($buttonLink); ?>" class="fp_header_button" data-aos="fade-up" data-aos-duration="800" data-aos-once="true"><?php echo esc_html($buttonText); ?></a>
-                
-        <?php
-            }
-        }
+        
+        <?php }
 
     }
 
 endif;
 
-add_action('fitness_passion_header', 'fitness_passion_header_text_title', 10);
-add_action('fitness_passion_header', 'fitness_passion_header_button', 20);
+
+add_action('fitness_passion_header', 'fitness_passion_header_content');
+
 
 if( !function_exists('fitness_passion_breadcrumbs')):
 
@@ -135,39 +122,6 @@ if(!function_exists('fitness_passion_social_links')):
 endif;
 
 add_action('fitness_passion_social_icons','fitness_passion_social_links');
-
-if(!function_exists('fitness_passion_header_site_info')):
-
-    function fitness_passion_header_site_info(){
-
-        $phone = get_theme_mod('fitness_passion_phone', '');
-        $whatsapp = get_theme_mod('fitness_passion_whatsapp', '');
-        $address = get_theme_mod('fitness_passion_address', '');?>
-        <div class="top-info">
-            <?php if(!empty($address)):?>
-                <a href="http://maps.google.com/maps?q=<?php echo esc_html(urlencode($address)); ?>" target="_blank" ><span class="fa fa-map-marker"> <?php echo esc_html($address); ?></span></a>
-            <?php endif;?>
-            <?php if(!empty($phone)):?>
-                <a href="tel:<?php echo esc_html($phone); ?>" target="_blank"><span class="fa fa-phone"> <?php echo esc_html($phone); ?></span></a>
-            <?php endif;?>
-            <?php if(!empty($whatsapp)):?>
-                <a href="tel:<?php echo esc_html($whatsapp); ?>" target="_blank"><span class="fa fa-whatsapp"> <?php echo esc_html($whatsapp); ?></span></a>
-            <?php endif;?>
-            
-        </div>
-        
-        <?php if(get_theme_mod('fitness_passion_header_top_show_social', true)):
-            do_action('fitness_passion_social_icons');
-        endif;?>
-
-            
-        <?php
-
-    }
-
- endif;
- 
- add_action('fitness_passion_top_site_info','fitness_passion_header_site_info');
 
 
  if(!function_exists('fitness_passion_related_post')):

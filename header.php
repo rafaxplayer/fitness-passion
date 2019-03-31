@@ -27,7 +27,34 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 	<header id="masthead" class="site-header">
 		
 		<div class="header-top">
-			<?php do_action('fitness_passion_top_site_info'); ?>
+			<?php
+			 if(get_theme_mod('fitness_passion_header_top_show_info', true)):
+				$phone = get_theme_mod('fitness_passion_phone', '');
+				$whatsapp = get_theme_mod('fitness_passion_whatsapp', '');
+				$address = get_theme_mod('fitness_passion_address', '');
+				$email = get_theme_mod('fitness_passion_email', '');?>
+
+				<div class="top-info">
+					<?php if(!empty($address)):?>
+						<a href="http://maps.google.com/maps?q=<?php echo esc_html(urlencode($address)); ?>" target="_blank" ><span class="fa fa-map-marker"> <?php echo esc_html($address); ?></span></a>
+					<?php endif;?>
+					<?php if(!empty($phone)):?>
+						<a href="tel:<?php echo esc_html($phone); ?>" target="_blank"><span class="fa fa-phone"> <?php echo esc_html($phone); ?></span></a>
+					<?php endif;?>
+					<?php if(!empty($whatsapp)):?>
+						<a href="tel:<?php echo esc_html($whatsapp); ?>" target="_blank"><span class="fa fa-whatsapp"> <?php echo esc_html($whatsapp); ?></span></a>
+					<?php endif;?>
+					<?php if(!empty($email)):?>
+						<a href="mailto:<?php echo esc_html($email); ?>" target="_blank"><span class="fa fa-envelope-o"> <?php echo esc_html($whatsapp); ?></span></a>
+					<?php endif;?>
+					
+				</div>
+				<?php endif;
+        
+				if(get_theme_mod('fitness_passion_header_top_show_social', true)):
+					do_action('fitness_passion_social_icons');
+				endif;?>
+        
 		</div>
 		<div class="header-wrap">
 		<div class="site-branding">

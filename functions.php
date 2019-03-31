@@ -160,11 +160,7 @@ function fitness_passion_scripts() {
 	
 	wp_enqueue_style('fitness-passion-google-fonts-Teko', '//fonts.googleapis.com/css?family=Teko:400,500,700,900');
 	
-	wp_enqueue_style('lightbox-css', get_template_directory_uri() . '/assets/css/lightbox.min.css'); 
-	
 	wp_enqueue_style( 'fitness-passion-style', get_stylesheet_uri() );
-
-	wp_enqueue_script( 'lightbox-js', get_template_directory_uri() . '/assets/js/lightbox.min.js', array('jquery'), '2.10.0', true );
 	
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), '3.3.7', true );
 		

@@ -91,11 +91,7 @@ function fitness_passion_customize_register( $wp_customize ) {
 	 */
 	require get_parent_theme_file_path( 'inc/customizer/customizer-layout.php' );
 
-	/**
-	 * Include social network options
-	 */
-	require get_parent_theme_file_path( 'inc/customizer/customizer-social-network.php' );
-
+	
 	/**
 	 * Include Landing page template options
 	 */
@@ -105,7 +101,11 @@ function fitness_passion_customize_register( $wp_customize ) {
 	 * Include footer options
 	 */
 	require get_parent_theme_file_path( 'inc/customizer/customizer-footer.php' );
-	
+
+	/**
+	 * Include site info options
+	 */
+	require get_parent_theme_file_path( 'inc/customizer/customizer-site-info.php' );
 	
 
 }

@@ -14,7 +14,7 @@ if( get_theme_mod('fitness_passion_landing_coaches_show', false) ): ?>
     <?php $title = get_theme_mod('fitness_passion_landing_coaches_title',__('Our Coaches','fitness-passion'));
 
         if(!empty($title)){
-            printf('<h2>%s</h2>',$title);
+            printf('<h2 class="section-title">%s</h2>',$title);
         }?>
         <div class="coaches-content">
         <?php

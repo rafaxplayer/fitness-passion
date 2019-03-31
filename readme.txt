@@ -37,7 +37,6 @@ fitness-passion includes support for Infinite Scroll in Jetpack.
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
 * AOS.js https://github.com/michalsnik/aos (C) 2015 Michał Sajnóg, [MIT](https://github.com/michalsnik/aos/blob/master/LICENSE)
-* lightbox https://github.com/lokesh/lightbox2/ (c) 2015 Lokesh Dhakar, https://github.com/lokesh/lightbox2/
 * JQuery Easing http://gsgd.co.uk/sandbox/jquery/easing/ Open source under the BSD License. 
 * Font Awesome icons  https://fontawesome.com (c) Dave GandySIL OFL 1.1, http://scripts.sil.org/OFL
 * jQuery Cycle 2, Copyright (c) 2014 M. Alsup License: MIT/GPL http://jquery.malsup.com/cycle2/

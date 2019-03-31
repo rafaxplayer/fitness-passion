@@ -422,6 +422,29 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'fitne
     'settings'   => 'fitness_passion_landing_latest_posts_back_image'
 )));
 
+$wp_customize->add_control( new Separator_Custom_control( $wp_customize, 'fitness_passion_separator_'.$sep++, array(
+    'section'    => 'fitness_passion_landing_template_section',
+        'settings'   => 'fitness_passion_landing_testimonial'.$testimonials_number.'_text',
+) ) );
+
 /* End Latests posts*/
+
+
+/* Contact section*/
+$wp_customize->add_setting( 'fitnes_passion_landing_contact_show' , array(
+    'default'   => false,
+    'sanitize_callback' => 'fitness_passion_sanitize_checkbox',
+    'transport' => 'refresh',
+));
+
+$wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'fitnes_passion_landing_contact_show_control', array(
+    'label'      => __( 'Show/Hide latest posts section', 'fitness-passion' ),
+    'section'    => 'fitness_passion_landing_template_section',
+    'settings'   => 'fitnes_passion_landing_contact_show',
+    
+)));
+
+
+/* End Contact section */
 
 /* END Landing page template */

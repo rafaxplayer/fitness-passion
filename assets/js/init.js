@@ -26,14 +26,7 @@
         $buttonUp.on('click', function() {
             jQuery('html,body').animate({ scrollTop: 0 }, 500);
         });
-
-        jQuery('.gallery a').each(function() {
-            jQuery(this).attr({ 'data-lightbox': jQuery(this).parent().parent().parent().attr('id') });
-        });
-
-        jQuery('.wp-block-gallery a').each(function(index) {
-            jQuery(this).attr({ 'data-lightbox': 'image-' + index });
-        });
+        
 
         if(!jQuery('#secondary').length){
             if(!jQuery('.content-area').hasClass('full')){
@@ -44,7 +37,6 @@
 
             jQuery( '#slider' ).on( 'cycle-before', function(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag) {
                 jQuery(incomingSlideEl).find('.slide-content').hide();
-                
                 
             });
             

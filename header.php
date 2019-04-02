@@ -45,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 						<a href="tel:<?php echo esc_html($whatsapp); ?>" target="_blank"><span class="fa fa-whatsapp"> <?php echo esc_html($whatsapp); ?></span></a>
 					<?php endif;?>
 					<?php if(!empty($email)):?>
-						<a href="mailto:<?php echo esc_html($email); ?>" target="_blank"><span class="fa fa-envelope-o"> <?php echo esc_html($whatsapp); ?></span></a>
+						<a href="mailto:<?php echo esc_html($email); ?>" target="_blank"><span class="fa fa-envelope-o"> <?php echo esc_html($email); ?></span></a>
 					<?php endif;?>
 					
 				</div>

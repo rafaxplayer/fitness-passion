@@ -1536,7 +1536,8 @@ object {
 	        justify-content: center;
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
-	        align-items: center;
+			align-items: center;
+	background-image: url('assets/images/noisy_net.png');
 }
 
 .header-top .social_icons{
@@ -1921,9 +1922,10 @@ object {
 
 /* General styles */
 
-section.fit-landing-action,
-section.fit-landing-coaches .coaches-wrap,
-section.fit-landing-testimonials .testimonials-wrap{
+.fit-landing-action,
+.fit-landing-coaches .coaches-wrap,
+.fit-landing-testimonials .testimonials-wrap,
+.fit-landing-contact .contact-wrap{
 	padding: 8rem 3rem;
 }
 
@@ -1949,7 +1951,7 @@ section.fit-landing-testimonials .testimonials-wrap{
 .section-title:before{
 	content: "";
     width: 40px;
-    height: 2px;
+    height: 4px;
     background: #e85109;
     display: block;	
 	position: relative;
@@ -2027,6 +2029,11 @@ section.fit-landing-testimonials .testimonials-wrap{
 	overflow: hidden;
 }
 
+.fit-landing-action h2,
+.fit-landing-action p{
+	text-align: left;
+}
+
 .landing-action{
 	display: flex;
 	justify-content: center;
@@ -2060,8 +2067,6 @@ section.fit-landing-testimonials .testimonials-wrap{
 	display: block;
 	background-color: #f7f7f799;
 }
-
-
 
 .fit-landing-coaches h2{
 	color:black;
@@ -2155,7 +2160,6 @@ section.fit-landing-testimonials .testimonials-wrap{
 	
 }
 
-
 /* Latest posts*/
 
 .fit-landing-last-posts .lastes-posts-wrap{
@@ -2170,6 +2174,64 @@ section.fit-landing-testimonials .testimonials-wrap{
 .fit-landing-last-posts .lastes-posts-wrap .more-wrap .button{
 	display: inline-block;
 }
+
+
+/*contact*/
+.fit-landing-contact .contact-wrap {
+	background-color: #65625f96;
+}
+
+.fit-landing-contact .section-title{
+	color: black;
+}
+
+.fit-landing-contact .site-info {
+	
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	padding: 2rem;
+	
+}
+
+.fit-landing-contact .site-info a{
+	color: white;
+	line-height:36px; 
+	font-size: 1.5em;
+	
+}
+.fit-landing-contact .site-info span:before{
+	color: #d8590e;
+	margin-right: .5rem;
+}
+
+.fit-landing-contact div.wpcf7 { 
+	background-color: rgba(0, 0, 0, 0.6);
+	border: 1px solid #f28f27;
+	padding:5rem 2rem;
+	}
+.fit-landing-contact div.wpcf7 label{
+	text-align: justify
+}
+.fit-landing-contact .wpcf7 input[type="text"],
+.fit-landing-contact .wpcf7 input[type="email"],
+.fit-landing-contact .wpcf7 textarea {
+	background: #ffffff38;
+    color: #f5f4f4;
+    font-family: lora, sans-serif;
+    font-style: italic;    
+	}
+.fit-landing-contact .wpcf7 input[type="submit"],
+.fit-landing-contact .wpcf7 input[type="button"] { 
+	background-color:#f28f27;
+	display: inline-block;
+	text-align:center;
+	border-radius: 20px;
+	padding: 10px 35px;
+	text-transform:uppercase;
+	}
+
 
 /* Responsive*/
 @media screen and (min-width:48rem) {

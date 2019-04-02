@@ -21,7 +21,7 @@ if( ! get_theme_mod('fitness_passion_landing_testimonials_show', false) ){ retur
     <div id="slider-test" class="cycle-slideshow"
         data-cycle-fx="scrollHorz"
         data-cycle-swipe=true
-        data-cycle-timeout="4500"
+        data-cycle-timeout="6000"
         data-cycle-pause-on-hover="true"
         data-cycle-auto-height="calc"
         data-cycle-slides=">.slide-test">
@@ -39,10 +39,16 @@ if( ! get_theme_mod('fitness_passion_landing_testimonials_show', false) ){ retur
             ?>
             <div class="slide-test">
                 <div class="testimonial-content">
-                    <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_html($name); ?>">
-                    <h3><?php echo esc_html($name); ?></h3>
-                    <span><?php echo esc_html( $desc); ?></span>
-                    <p><?php echo wp_trim_words($text,40); ?></p>
+                    <div class="author">
+                        
+                        <div class="author-info">
+                            <h3><?php echo esc_html($name); ?></h3>
+                            <span><?php echo esc_html( $desc); ?></span>
+                        </div>
+                        <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_html($name); ?>">
+                    </div>
+                    
+                    <p><?php echo esc_html($text); ?></p>
                
                 </div>
             </div>  

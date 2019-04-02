@@ -51,7 +51,7 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_pa
     'settings'   => 'fitness_passion_address',
 )));
 
-// address
+// email
 $wp_customize->add_setting( 'fitness_passion_email' , array(
     'default'   => '',
     'transport' => 'refresh',

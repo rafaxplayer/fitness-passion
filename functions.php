@@ -133,7 +133,7 @@ function fitness_passion_excerpt_length ($length) {
 add_filter ('excerpt_length', 'fitness_passion_excerpt_length', 999);
 
  
-function my_nav_buttons_text() {
+/* function my_nav_buttons_text() {
   switch ( current_filter() ) {
     case 'tc_singular_nav_previous_text':
       return 'previous post &larr;'; // <= your custom text here
@@ -143,7 +143,7 @@ function my_nav_buttons_text() {
 }
 
 add_filter( 'tc_singular_nav_next_text' , 'my_nav_buttons_text' );
-add_filter( 'tc_singular_nav_previous_text' , 'my_nav_buttons_text' );
+add_filter( 'tc_singular_nav_previous_text' , 'my_nav_buttons_text' ); */
 
 /**
  * Enqueue scripts and styles.
@@ -222,6 +222,7 @@ add_action( 'enqueue_block_editor_assets', 'fitness_passion_block_editor_styles'
  * Add customizer link on admin panel
  */
 function fitness_passion_customizer_menu() {
+
 	add_theme_page( 'Fitness Passion Theme', 'Fitness Passion Theme', 'edit_theme_options', 'customize.php' );
 }
 
@@ -257,6 +258,11 @@ require get_template_directory() . '/inc/customizer/customizer.php';
  * Customizer css.
  */
 require get_template_directory() . '/inc/customizer/customizer-css.php';
+
+/**
+ * TGM.
+ */
+//require get_template_directory() . '/inc/tgm/plugins-recomended.php';
 
 /**
  * Load Jetpack compatibility file.

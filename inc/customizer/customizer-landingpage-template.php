@@ -438,12 +438,51 @@ $wp_customize->add_setting( 'fitnes_passion_landing_contact_show' , array(
 ));
 
 $wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'fitnes_passion_landing_contact_show_control', array(
-    'label'      => __( 'Show/Hide latest posts section', 'fitness-passion' ),
+    'label'      => __( 'Show/Hide contact section', 'fitness-passion' ),
     'section'    => 'fitness_passion_landing_template_section',
     'settings'   => 'fitnes_passion_landing_contact_show',
     
 )));
 
+$wp_customize->add_setting( 'fitness_passion_landing_contact_title' , array(
+    'default'   => esc_html__('Contact Us','fitness-passion'),
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'refresh',
+));
+
+$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_landing_contact_title_control', array(
+    'label'      => __( 'Contact section title', 'fitness-passion' ),
+    'section'    => 'fitness_passion_landing_template_section',
+    'settings'   => 'fitness_passion_landing_contact_title',
+)));
+
+// Image background contact section
+$wp_customize->add_setting( 'fitness_passion_landing_contact_back_image' , array(
+    'default'   => '',
+    'sanitize_callback' => 'fitness_passion_sanitize_image',
+    'transport' => 'refresh',
+));
+
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'fitness_passion_landing_contact_back_image_control',array(
+    'label'      => sprintf(__( 'Upload image for contact background section', 'fitness-passion' ),$i),
+    'section'    => 'fitness_passion_landing_template_section',
+    'settings'   => 'fitness_passion_landing_contact_back_image'
+)));
+
+
+// Short code contact form
+$wp_customize->add_setting( 'fitness_passion_landing_contact_form_shortcode' , array(
+    'default'   => '',
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'refresh',
+));
+
+$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_landing_contact_form_shortcode_control', array(
+    'label'      => __( 'Contact Form 7 shortcode', 'fitness-passion' ),
+    'description'=> __('Use contact form plugin 7 for your form, you can use the short code of another plugin but you will have to adjust your own style.','fitness-passion'),
+    'section'    => 'fitness_passion_landing_template_section',
+    'settings'   => 'fitness_passion_landing_contact_form_shortcode',
+)));
 
 /* End Contact section */
 

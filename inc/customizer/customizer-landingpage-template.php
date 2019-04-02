@@ -469,7 +469,6 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'fitne
     'settings'   => 'fitness_passion_landing_contact_back_image'
 )));
 
-
 // Short code contact form
 $wp_customize->add_setting( 'fitness_passion_landing_contact_form_shortcode' , array(
     'default'   => '',

@@ -53,14 +53,14 @@ if ( ! function_exists( 'fitness_passion_header_style' ) ) :
 		<style type="text/css">
 
 		<?php if ( ! display_header_text() ) : ?>
-			.site-title,
-			.site-description {
+		.site-branding .site-title,
+		.site-branding .site-description {
 				position: absolute;
 				clip: rect(1px, 1px, 1px, 1px);
 			}
 		<?php else: ?>
-			.site-title a,
-			.site-description {
+		.site-branding .site-title a,
+		.site-branding .site-description {
 				color: #<?php echo esc_attr( $header_text_color ); ?>;
 			}
 		<?php endif; ?>

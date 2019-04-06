@@ -22,7 +22,7 @@ $services_arr=array();
 
     <?php 
      if(empty($services_arr)){
-        echo _e('Select Pages for services Section','fitness-passion'); 
+         
         return;
     }
     $d=5;
@@ -34,7 +34,7 @@ $services_arr=array();
             $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true); 
                        
             ?>
-            <div class="landing-service" data-aos="zoom-in" data-aos-duration="1000" data-aos-once="true" data-aos-delay="<?php echo $d ?>00">
+            <div class="landing-service" data-aos="zoom-in" data-aos-duration="1000" data-aos-once="true" data-aos-delay="<?php echo absint($d) ?>00">
                 
                 <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($alt); ?>">
                 

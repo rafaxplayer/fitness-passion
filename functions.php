@@ -44,6 +44,8 @@ if ( ! function_exists( 'fitness_passion_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		add_image_size( 'custom-size', 500, 370, true );
+		add_image_size( 'widget-posts', 80, 80 );
+
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -83,6 +85,12 @@ if ( ! function_exists( 'fitness_passion_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+		// Add styles for editor
+		add_editor_style( 'editor-style.css' );
+
+		// Add support for woocommerce
+		add_theme_support( 'woocommerce' );
+
 	}
 endif;
 add_action( 'after_setup_theme', 'fitness_passion_setup' );
@@ -121,11 +129,13 @@ function fitness_passion_widgets_init() {
 }
 add_action( 'widgets_init', 'fitness_passion_widgets_init' );
 
+
 function fitness_passion_excerpt_more($more) {
 	global $post;
  return '<a class="moretag" href="'. get_permalink($post->ID) . '">'.__(' Read More','fitness-passion').'</a>';
 }
 add_filter('excerpt_more', 'fitness_passion_excerpt_more');
+
 
 function fitness_passion_excerpt_length ($length) {
 	return get_theme_mod('fitness_passion_blog_excerpt', 55);
@@ -133,18 +143,6 @@ function fitness_passion_excerpt_length ($length) {
 add_filter ('excerpt_length', 'fitness_passion_excerpt_length', 999);
 
  
-/* function my_nav_buttons_text() {
-  switch ( current_filter() ) {
-    case 'tc_singular_nav_previous_text':
-      return 'previous post &larr;'; // <= your custom text here
-    case 'tc_singular_nav_next_text':
-      return '&rarr; next post'; // <= your custom text here
-  }
-}
-
-add_filter( 'tc_singular_nav_next_text' , 'my_nav_buttons_text' );
-add_filter( 'tc_singular_nav_previous_text' , 'my_nav_buttons_text' ); */
-
 /**
  * Enqueue scripts and styles.
  */
@@ -262,7 +260,12 @@ require get_template_directory() . '/inc/customizer/customizer-css.php';
 /**
  * TGM.
  */
-//require get_template_directory() . '/inc/tgm/plugins-recomended.php';
+require get_template_directory() . '/inc/tgm/plugins-recomended.php';
+
+/**
+ * widgets.
+ */
+require get_template_directory() . '/inc/widgets/recent-posts.php';
 
 /**
  * Load Jetpack compatibility file.

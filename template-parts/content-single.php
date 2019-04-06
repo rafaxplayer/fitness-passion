@@ -22,8 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 				?>
 				<div class="entry-meta">
 					<?php
-					fitnes_passion_posted_on();
-					fitnes_passion_posted_by();
+					fitness_passion_posted_on();
+					fitness_passion_posted_by();
 					?>
 				</div><!-- .entry-meta -->
 			<?php endif; ?>
@@ -41,7 +41,8 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 		</div><!-- .entry-content -->
 
 		<footer class="entry-footer">
-			<?php fitnes_passion_entry_footer(); ?>
+			<?php fitness_passion_entry_footer(); ?>
+			
 		</footer><!-- .entry-footer -->
 	
 </article><!-- #post-<?php the_ID(); ?> -->

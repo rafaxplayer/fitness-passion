@@ -33,7 +33,7 @@ if ( post_password_required() ) {
 				printf(
 					/* translators: 1: title. */
 					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'fitness-passion' ),
-					'<span>' . get_the_title() . '</span>'
+					'<span>' . esc_html(get_the_title()) . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.

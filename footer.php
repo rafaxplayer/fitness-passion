@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 				$info_footer = get_theme_mod('fitness_passion_footer_info');
 
 				if(empty($info_footer)){
-					 echo 'JRS &copy; '. date('Y');?>
+					 echo 'JRS &copy; '. esc_html(date('Y'));?>
 					 <span> | </span>
 					 <?php
 					/* translators: 1: Theme name, 2: Theme author. */

@@ -18,7 +18,7 @@ get_header();
 
 	<div id="primary" class="content-area row">
 		<main id="main" class="site-main col-md-8">
-		<?php do_action('fitnes_passion_show_breadcrumbs',get_theme_mod('fitness_passion_breadcrumbs_content',true)); ?>
+		<?php do_action('fitness_passion_show_breadcrumbs',get_theme_mod('fitness_passion_breadcrumbs_content',true)); ?>
 		<?php
 		if ( have_posts() ) :
 

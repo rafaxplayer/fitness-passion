@@ -18,24 +18,14 @@ get_header();
 ?>
 	<div id="primary" class="content-area row">
 	
-		<main id="main" class="site-main col-md-8">
-		<?php do_action('fitness_passion_show_breadcrumbs',get_theme_mod('fitness_passion_breadcrumbs_content',true)); 
-		
-		while ( have_posts() ) :
-			the_post();
-
-			get_template_part( 'template-parts/content', 'page' );
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
+		<main id="main" class="site-main">
+				
+			<?php 
+			
+			woocommerce_content();?>
 
 		</main><!-- #main -->
-		<?php get_sidebar(); ?>
+		
 	</div><!-- #primary -->
 
 <?php

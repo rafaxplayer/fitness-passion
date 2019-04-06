@@ -1,11 +1,11 @@
 === fitness-passion ===
 
 Contributors: automattic
-Tags: custom-header, custom-background, custom-logo, full-width-template, custom-menu, featured-images, threaded-comments, translation-ready, two-columns, right-sidebar, theme-options, sticky-post
+Tags: custom-header, custom-background, featured-image-header, custom-logo, full-width-template, custom-menu, featured-images, threaded-comments, translation-ready, two-columns, right-sidebar, theme-options, editor-style, sticky-post
 
 Requires at least: 4.5
-Tested up to: 4.8
-Stable tag: 1.0.0
+Tested up to: 5.1.1
+Stable tag: 1.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -29,7 +29,11 @@ fitness-passion includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
+= 1.1 - Apr 06 2019 =
+* Code fixes
+* Woocommerce implemntation
+
+= 1.0 - Mar 12 2019 =
 * Initial release
 
 == Credits ==
@@ -42,7 +46,7 @@ fitness-passion includes support for Infinite Scroll in Jetpack.
 * jQuery Cycle 2, Copyright (c) 2014 M. Alsup License: MIT/GPL http://jquery.malsup.com/cycle2/
 * Images: All Images are licensed under Creative Commons Zero (CC0) license
   - Header Image: https://www.pexels.com/photo/person-holding-black-and-silver-steel-barbell-photography-949126/
-  - Serices : https://www.pexels.com/photo/woman-in-gray-tank-top-inside-gym-1921977/,https://www.pexels.com/photo/woman-doing-push-ups-on-sit-up-benches-1638336/
+  - Services : https://www.pexels.com/photo/woman-in-gray-tank-top-inside-gym-1921977/,https://www.pexels.com/photo/woman-doing-push-ups-on-sit-up-benches-1638336/
   - Coach default : https://www.pexels.com/photo/person-lifting-dumbbell-1483217/
     
 

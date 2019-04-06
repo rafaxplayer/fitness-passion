@@ -13,7 +13,7 @@ get_header();
 
 	<div id="primary" class="content-area row">
 		<main id="main" class="site-main col-md-8">
-		<?php do_action('fitnes_passion_show_breadcrumbs',get_theme_mod('fitnes_passion_breadcrumbs_content',true)); 
+		<?php do_action('fitness_passion_show_breadcrumbs',get_theme_mod('fitness_passion_breadcrumbs_content',true)); 
 		
 		while ( have_posts() ) :
 			the_post();
@@ -28,7 +28,7 @@ get_header();
 			
 			if(get_theme_mod('fitnes_passion_related_post',true)){?>
 				<h2><?php echo esc_html('Related Posts','fitness-passion');?></h2>
-				<?php do_action('fitnes_passion_show_related_post');
+				<?php do_action('fitness_passion_show_related_post');
 			}
 
 			// If comments are open or we have at least one comment, load up the comment template.

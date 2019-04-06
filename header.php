@@ -72,7 +72,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 			$fitness_passion_description = get_bloginfo( 'description', 'display' );
 			if ( $fitness_passion_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $fitness_passion_description; /* WPCS: xss ok. */ ?></p>
+				<p class="site-description"><?php echo esc_html($fitness_passion_description); /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 		
@@ -121,7 +121,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 				<?php 
 					do_action('fitness_passion_header'); 
-					do_action('fitness_passion_show_breadcrumbs',get_theme_mod('fitness_passion_breadcrumbs',true)) ;
+					do_action('fitness_passion_show_breadcrumbs',get_theme_mod('fitness_passion_breadcrumbs',true));
 					
 				?>
 		

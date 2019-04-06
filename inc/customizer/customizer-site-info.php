@@ -8,7 +8,7 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 $wp_customize->add_section( 'fitness_passion_site_info_section' , array(
-    'title'      => __('Site Info Options','fitness-passion'),
+    'title'      => esc_html__('Site Options','fitness-passion'),
     'panel' 	=>'fitness_passion_panel',
 ));
 
@@ -20,7 +20,7 @@ $wp_customize->add_setting( 'fitness_passion_phone' , array(
 ));
 
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_phone_control', array(
-    'label'      => __( 'Phone info', 'fitness-passion' ),
+    'label'      => esc_html__('Phone info', 'fitness-passion' ),
     'section'    => 'fitness_passion_site_info_section',
     'settings'   => 'fitness_passion_phone',
 )));
@@ -33,7 +33,7 @@ $wp_customize->add_setting( 'fitness_passion_whatsapp' , array(
 ));
 
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_whatsapp_control', array(
-    'label'      => __( 'Whatsapp info', 'fitness-passion' ),
+    'label'      => esc_html__( 'Whatsapp info', 'fitness-passion' ),
     'section'    => 'fitness_passion_site_info_section',
     'settings'   => 'fitness_passion_whatsapp',
 )));
@@ -46,7 +46,7 @@ $wp_customize->add_setting( 'fitness_passion_address' , array(
 ));
 
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_address_control', array(
-    'label'      => __( 'Address info', 'fitness-passion' ),
+    'label'      => esc_html__( 'Address info', 'fitness-passion' ),
     'section'    => 'fitness_passion_site_info_section',
     'settings'   => 'fitness_passion_address',
 )));
@@ -59,7 +59,7 @@ $wp_customize->add_setting( 'fitness_passion_email' , array(
 ));
 
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_email_control', array(
-    'label'      => __( 'Email info', 'fitness-passion' ),
+    'label'      => esc_html__( 'Email info', 'fitness-passion' ),
     'section'    => 'fitness_passion_site_info_section',
     'settings'   => 'fitness_passion_email',
 )));
@@ -72,7 +72,7 @@ $wp_customize->add_setting( 'fitness_passion_facebook' , array(
 ));
 
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_facebook_control', array(
-    'label'      => __( 'Url for facebook icon ', 'fitness-passion' ),
+    'label'      => esc_html__( 'Url for facebook icon ', 'fitness-passion' ),
     'section'    => 'fitness_passion_site_info_section',
     'settings'   => 'fitness_passion_facebook',
 )));
@@ -85,7 +85,7 @@ $wp_customize->add_setting( 'fitness_passion_twitter' , array(
 ));
 
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_twitter_control', array(
-    'label'      => __( 'Url for twitter icon ', 'fitness-passion' ),
+    'label'      => esc_html__( 'Url for twitter icon ', 'fitness-passion' ),
     'section'    => 'fitness_passion_site_info_section',
     'settings'   => 'fitness_passion_twitter',
 )));
@@ -98,7 +98,7 @@ $wp_customize->add_setting( 'fitness_passion_instagram' , array(
 ));
 
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_instagram_control', array(
-    'label'      => __( 'Url for instagram icon', 'fitness-passion' ),
+    'label'      => esc_html__( 'Url for instagram icon', 'fitness-passion' ),
     'section'    => 'fitness_passion_site_info_section',
     'settings'   => 'fitness_passion_instagram',
 )));
@@ -111,7 +111,7 @@ $wp_customize->add_setting( 'fitness_passion_youtube' , array(
 ));
 
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_youtube_control', array(
-    'label'      => __( 'Url for youtube icon', 'fitness-passion' ),
+    'label'      => esc_html__( 'Url for youtube icon', 'fitness-passion' ),
     'section'    => 'fitness_passion_site_info_section',
     'settings'   => 'fitness_passion_youtube',
 )));

@@ -1,14 +1,14 @@
 /*!
 Theme Name: Fitness Passion
 Theme URI: 
-Author: juan raafel simarro
-Author URI: https://juanarafelsimarro.com
+Author: J Rafael Simarro
+Author URI: https://juanarafaelsimarro.com
 Description: Fit Passion is a theme for wordpress designed for gyms or personal trainers although it can be used in any other context, it is free and free to use, enjoy it!.
-Version: 1.0.0
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: fitness-passion
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: custom-header, custom-background, featured-image-header, custom-logo, full-width-template, custom-menu, featured-images, threaded-comments, translation-ready, two-columns, right-sidebar, theme-options, editor-style, sticky-post
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -44,7 +44,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Galleries
 # Header
 # Footer
-# Landing Template
+# Landing Page Template
+# Woocommerce
+
+
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -1082,6 +1085,60 @@ a:hover, a:active {
 	text-decoration: none;
 }
 
+.widget_recent_entries ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+	align-items: flex-start;
+	
+    
+}
+.widget_recent_entries ul li img{
+	max-height: 70px;
+	
+}
+.widget_recent_entries li:hover{
+	padding: 1rem;
+}
+.widget_recent_entries li:before{
+	content: '';
+	padding-right: 0;
+}
+
+.widget_recent_entries ul li .noa-widget-info {
+	padding: 1rem;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: center;
+    align-content: flex-start;
+}
+.widget_recent_entries ul li .noa-widget-info a{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-weight: 600;
+}
+
+.widget_recent_entries ul li .noa-widget-info .post-date{
+	font-size: .8em;
+	font-family: serif;
+	margin-top: 1rem;
+}
+
+.widget_recent_entries ul li .noa-widget-info .post-date:before{
+	content:'\f073';
+	font-family: 'FontAwesome';
+	margin-right: .5rem;
+	
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -1646,6 +1703,7 @@ object {
 	    align-content: center;
 	position: relative;
 	text-align: center;
+	
 }
 
 
@@ -1658,10 +1716,13 @@ object {
 }
 .site-branding .site-title a{
 	text-decoration: none;
+	color: white;
+
 }
 
 .site-branding .site-description{
 	margin:0;
+	color: white;
 }
 
 .search-btn{
@@ -2182,32 +2243,44 @@ object {
 .fit-landing-contact .section-title{
 	color: black;
 }
-
-.fit-landing-contact .site-info {
-	
+.fit-landing-contact .contact-info{
 	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-	flex-direction: column;
-	padding: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+	flex-wrap:wrap;
+}
+.fit-landing-contact .site-info-contact {
+	display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 4rem;
+	background-color: #1212139e;
+    text-align: center;
+    border: 1px solid #d8590e;
 	
 }
 
-.fit-landing-contact .site-info a{
+.fit-landing-contact .site-info-contact a{
 	color: white;
 	line-height:36px; 
 	font-size: 1.5em;
 	
 }
-.fit-landing-contact .site-info span:before{
+.fit-landing-contact .site-info-contact span:before{
 	color: #d8590e;
 	margin-right: .5rem;
+}
+
+.fit-landing-contact .contact-form{
+	margin-bottom:2rem;
+	flex-basis:600px;
 }
 
 .fit-landing-contact div.wpcf7 { 
 	background-color: rgba(0, 0, 0, 0.6);
 	border: 1px solid #f28f27;
-	padding:5rem 2rem;
+	padding:5rem 4rem;
 	}
 .fit-landing-contact div.wpcf7 label{
 	text-align: justify
@@ -2412,4 +2485,34 @@ object {
 		opacity: 1;
 		transform: scale(1);
 	}
+	.fit-landing-contact .contact-form{
+		margin-right:2rem;
+	}
+	.fit-landing-contact .site-info-contact {
+		
+	
+	}
+}
+
+/*--------------------------------------------------------------
+# Woocommerce
+--------------------------------------------------------------*/
+.woocommerce .panel{
+	background-color: inherit
+}
+
+.woocommerce table.shop_table th, .woocommerce-page table.shop_table th{ 
+	color:#ff8a00;
+}
+
+.woocommerce .quantity .qty{ 
+	padding:7px; border: 1px solid #d8590e;
+}
+
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+    background-color: #d8590e;
+    color: #fff;
+}
+.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
+    background-color: #f5a74f;
 }

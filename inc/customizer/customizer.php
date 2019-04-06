@@ -56,21 +56,27 @@ function fitness_passion_customize_register( $wp_customize ) {
 		require_once( get_template_directory() . '/inc/customizer/custom-controls/custom-controls.php' );
 	}
 
+	
 	/**
 	 * 
 	 * Theme panel
 	 * 
 	 * */
 
-	 $sep=0;
+	 $sep = 0;
 
 	$wp_customize->add_panel( 'fitness_passion_panel', array(
         'priority'       => 10,
         'title'          => __('Fitness Passion Theme', 'fitness-passion'),
         'description'    => __('Several settings pertaining my theme', 'fitness-passion'),
-    ));
+	));
 
+	/**
+	 * Include site info options
+	 */
+	require get_parent_theme_file_path( 'inc/customizer/customizer-site-info.php' );
 	
+		
 	/**
 	 * Include Front page options
 	 */
@@ -102,10 +108,7 @@ function fitness_passion_customize_register( $wp_customize ) {
 	 */
 	require get_parent_theme_file_path( 'inc/customizer/customizer-footer.php' );
 
-	/**
-	 * Include site info options
-	 */
-	require get_parent_theme_file_path( 'inc/customizer/customizer-site-info.php' );
+	
 	
 
 }

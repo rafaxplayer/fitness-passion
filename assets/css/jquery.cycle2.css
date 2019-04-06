@@ -10,6 +10,14 @@
 #slider h3{
     font-size:4em;
 }
+#slider h3:after{
+    content: "";
+    display: block;
+    width: 5rem;
+    height: 4px;
+    background-color: #d8590e;
+    margin-top: .8rem;
+}
 
 #slider .slide {
         
@@ -71,7 +79,7 @@
     display: flex;
     justify-content: center;
     text-align: right;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 #slider-test .testimonial-content .author .author-info{
     padding: 1rem 2rem;

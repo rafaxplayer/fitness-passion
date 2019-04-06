@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 if( get_theme_mod('fitness_passion_landing_coaches_show', false) ): ?>
 
-    <section class="fit-landing-coaches" style="background-image:url(<?php echo get_theme_mod('fitness_passion_landing_coaches_back_image');?>">
+    <section class="fit-landing-coaches" style="background-image:url(<?php echo esc_url(get_theme_mod('fitness_passion_landing_coaches_back_image'));?>);">
     <div class="coaches-wrap">
     <?php $title = get_theme_mod('fitness_passion_landing_coaches_title',__('Our Coaches','fitness-passion'));
 

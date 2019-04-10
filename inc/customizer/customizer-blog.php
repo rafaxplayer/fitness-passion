@@ -8,8 +8,8 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 /* Blog section*/
 	$wp_customize->add_section( 'fitness_passion_blog_page_section' , array(
-		'title'      => esc_html__('Blog Page Options','fitness-passion'),
-		'panel' 	=>'fitness_passion_panel',
+		'title'      	  => esc_html__('Blog Page Options','fitness-passion'),
+		'panel' 		  =>'fitness_passion_panel',
 		'active_callback' => 'fitness_passion_is_blogpage'
 	));
 	// Title
@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 	
 	// Related post
 	$wp_customize->add_setting( 'fitness_passion_related_post' , array(
-		'default'   => true,
+		'default'           => true,
 		'sanitize_callback' => 'fitness_passion_sanitize_checkbox',
 		'transport' => 'refresh',
 	));

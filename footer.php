@@ -25,11 +25,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 				$info_footer = get_theme_mod('fitness_passion_footer_info');
 
 				if(empty($info_footer)){
-					 echo 'JRS &copy; '. esc_html(date('Y'));?>
-					 <span> | </span>
-					 <?php
+					 
 					/* translators: 1: Theme name, 2: Theme author. */
-					printf( esc_html__( 'Theme: %1$s by %2$s.', 'fitness-passion' ), 'Fit Passion', '<a href="http://juanrafaelsimarro.com/">JRS</a>' );
+					printf( esc_html__( '&copy; %1$s Theme: %2$s by %3$s.', 'fitness-passion' ),date('Y'), 'Fitness Passion', '<a href="https://juanrafaelsimarro.com/">J.Rafael Simarro</a>' );
 				}else{
 					echo wp_kses_post($info_footer);
 				}

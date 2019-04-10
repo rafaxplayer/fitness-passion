@@ -16,18 +16,18 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 get_header();
 ?>
 
-	<div id="primary" class="content-area row">
-		<main id="main" class="site-main col-md-8">
-		<?php do_action('fitness_passion_show_breadcrumbs',get_theme_mod('fitness_passion_breadcrumbs_content',true)); ?>
-		<?php
+<div id="primary" class="content-area row">
+    <main id="main" class="site-main col-md-8">
+        <?php do_action('fitness_passion_show_breadcrumbs',get_theme_mod('fitness_passion_breadcrumbs_content',true)); ?>
+        <?php
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) :
 				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
+        <header>
+            <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+        </header>
+        <?php
 			endif;
 
 			/* Start the Loop */
@@ -54,10 +54,10 @@ get_header();
 		endif;
 		?>
 
-		</main><!-- #main -->
-		<?php get_sidebar(); ?>
-	</div><!-- #primary -->
-	
+    </main><!-- #main -->
+    <?php get_sidebar(); ?>
+</div><!-- #primary -->
+
 <?php
 
 get_footer();

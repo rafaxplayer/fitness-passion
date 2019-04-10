@@ -7,16 +7,16 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
  /* Landing Page Template */
  $wp_customize->add_section( 'fitness_passion_landing_template_section' , array(
-    'title'      => esc_html__('Landing Page Template Options','fitness-passion'),
-    'panel' 	=> 'fitness_passion_panel',
+    'title'           => esc_html__('Landing Page Template Options','fitness-passion'),
+    'panel' 	      => 'fitness_passion_panel',
     'active_callback' => 'fitness_passion_is_landing_template'
 ));
 
 /*Show content of page */
 $wp_customize->add_setting( 'fitness_passion_landing_content_page_show' , array(
-    'default'   => true,
+    'default'           => true,
     'sanitize_callback' => 'fitness_passion_sanitize_checkbox',
-    'transport' => 'refresh',
+    'transport'         => 'refresh',
 ));
 
 $wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_landing_content_page_control', array(
@@ -29,9 +29,9 @@ $wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_cust
 
 /*Services section*/
 $wp_customize->add_setting( 'fitness_passion_landing_services_show' , array(
-    'default'   => false,
+    'default'           => false,
     'sanitize_callback' => 'fitness_passion_sanitize_checkbox',
-    'transport' => 'refresh',
+    'transport'         => 'refresh',
 ));
 
 $wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_landing_services_control', array(
@@ -45,21 +45,21 @@ for($i=1;$i<=3;$i++){
 
     //service ++
     $wp_customize->add_setting('fitness_passion_landing_service_'.$i,array(
-        'default' => '0',			
+        'default'           => '0',			
         'sanitize_callback' => 'fitness_passion_sanitize_dropdown_pages'
     ));
      
     $wp_customize->add_control(	'fitness_passion_landing_service_'.$i.'_control',array(
         /* translators: number of service */
-        'label'      => sprintf(esc_html__( 'Page for service nº %s', 'fitness-passion' ),$i),
-        'type' => 'dropdown-pages',			
-        'section' => 'fitness_passion_landing_template_section',
-        'settings'   => 'fitness_passion_landing_service_'.$i,
+        'label'          => sprintf(esc_html__( 'Page for service nº %s', 'fitness-passion' ),$i),
+        'type'           => 'dropdown-pages',			
+        'section'        => 'fitness_passion_landing_template_section',
+        'settings'       => 'fitness_passion_landing_service_'.$i,
         'allow_addition' => true,
     ));
 }
 
-$wp_customize->add_control( new Separator_Custom_control( $wp_customize, 'fitness_passion_separator_'.$sep++, array(
+$wp_customize->add_control( new Fitness_Passion_Separator_Control( $wp_customize, 'fitness_passion_separator_'.$sep++, array(
     'section' 		=> 'fitness_passion_landing_template_section',
     'settings'      => 'fitness_passion_landing_service_3',
 ) ) );
@@ -70,9 +70,9 @@ $wp_customize->add_control( new Separator_Custom_control( $wp_customize, 'fitnes
 for($i=1;$i<=3;$i++){
 
     $wp_customize->add_setting( 'fitness_passion_landing_action'.$i.'_show' , array(
-        'default'   => false,
+        'default'           => false,
         'sanitize_callback' => 'fitness_passion_sanitize_checkbox',
-        'transport' => 'refresh',
+        'transport'         => 'refresh',
     ));
 
     $wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_landing_action'.$i.'_show_control', array(
@@ -80,29 +80,29 @@ for($i=1;$i<=3;$i++){
         'label'      => sprintf(esc_html__( 'Show/Hide action %s section', 'fitness-passion' ),$i),
         'section'    => 'fitness_passion_landing_template_section',
         'settings'   => 'fitness_passion_landing_action'.$i.'_show',
-        'type'        => 'ios',
+        'type'       => 'ios',
     )));
 
     //page for action 
     $wp_customize->add_setting('fitness_passion_landing_page_action'.$i,array(
-        'default' => '0',			
+        'default'           => '0',			
         'sanitize_callback' => 'fitness_passion_sanitize_dropdown_pages'
     ));
      
     $wp_customize->add_control(	'fitness_passion_landing_page_action'.$i.'_control',array(
         /* translators: number of action */
-        'label'      => sprintf(esc_html__( 'Page for action nº %s', 'fitness-passion' ),$i),
-        'type' => 'dropdown-pages',			
-        'section' => 'fitness_passion_landing_template_section',
-        'settings'   => 'fitness_passion_landing_page_action'.$i,
+        'label'          => sprintf(esc_html__( 'Page for action nº %s', 'fitness-passion' ),$i),
+        'type'           => 'dropdown-pages',			
+        'section'        => 'fitness_passion_landing_template_section',
+        'settings'       => 'fitness_passion_landing_page_action'.$i,
         'allow_addition' => true,
     ));
 
     // Text Button action 
     $wp_customize->add_setting( 'fitness_passion_landing_action'.$i.'_morebtn' , array(
-        'default'   => '',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
-        'transport' => 'refresh',
+        'transport'         => 'refresh',
     ));
 
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_landing_action'.$i.'_morebtn_control', array(
@@ -112,7 +112,7 @@ for($i=1;$i<=3;$i++){
         'settings'   => 'fitness_passion_landing_action'.$i.'_morebtn',
     )));
 
-    $wp_customize->add_control( new Separator_Custom_control( $wp_customize, 'fitness_passion_separator_'.$sep++, array(
+    $wp_customize->add_control( new Fitness_Passion_Separator_Control( $wp_customize, 'fitness_passion_separator_'.$sep++, array(
         'section'    => 'fitness_passion_landing_template_section',
         'settings'   => 'fitness_passion_landing_action'.$i.'_morebtn',
     ) ) );
@@ -122,9 +122,9 @@ for($i=1;$i<=3;$i++){
 
 /*Coaches section*/
 $wp_customize->add_setting( 'fitness_passion_landing_coaches_show' , array(
-    'default'   => false,
+    'default'           => false,
     'sanitize_callback' => 'fitness_passion_sanitize_checkbox',
-    'transport' => 'refresh',
+    'transport'         => 'refresh',
 ));
 
 $wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_landing_coaches_show_control', array(
@@ -135,9 +135,9 @@ $wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_cust
 )));
 
 $wp_customize->add_setting( 'fitness_passion_landing_coaches_title' , array(
-    'default'   => esc_html__('Our Coaches','fitness-passion'),
+    'default'           => esc_html__('Our Coaches','fitness-passion'),
     'sanitize_callback' => 'sanitize_text_field',
-    'transport' => 'refresh',
+    'transport'         => 'refresh',
 ));
 
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_landing_coaches_title_control', array(
@@ -148,9 +148,9 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_pa
 
 // image background coaches section
 $wp_customize->add_setting( 'fitness_passion_landing_coaches_back_image' , array(
-    'default'   => '',
+    'default'           => '',
     'sanitize_callback' => 'fitness_passion_sanitize_image',
-    'transport' => 'refresh',
+    'transport'         => 'refresh',
 ));
 
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'fitness_passion_landing_coaches_back_image_control',array(
@@ -161,9 +161,9 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'fitne
 
 // Coaches number
 $wp_customize->add_setting( 'fitness_passion_landing_coaches_number' , array(
-    'default'   => 3,
+    'default'           => 3,
     'sanitize_callback' => 'absint',
-    'transport' => 'refresh',
+    'transport'         => 'refresh',
 ));
 
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_landing_coaches_number_control', array(
@@ -183,9 +183,9 @@ for($i = 1; $i <= $coaches_number; $i++){
 
     //coach
     $wp_customize->add_setting( 'fitness_passion_landing_coach'.$i.'_image' , array(
-        'default'   => esc_url_raw(get_stylesheet_directory_uri() .'/assets/images/coach.jpg'),
+        'default'           => esc_url_raw(get_stylesheet_directory_uri() .'/assets/images/coach.jpg'),
         'sanitize_callback' => 'fitness_passion_sanitize_image',
-        'transport' => 'refresh',
+        'transport'         => 'refresh',
     ));
 
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'fitness_passion_landing_coach'.$i.'_image_control',array(
@@ -196,23 +196,23 @@ for($i = 1; $i <= $coaches_number; $i++){
     )));
 
     $wp_customize->add_setting( 'fitness_passion_landing_coach'.$i.'_name' , array(
-        'default'   => '',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
-        'transport' => 'refresh',
+        'transport'         => 'refresh',
     ));
     
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_landing_coach'.$i.'_name_control', array(
         /* translators: numer of coach */
-        'label'      => sprintf(esc_html__( 'Name of coach nº %s', 'fitness-passion' ),$i),
-        'description'=> esc_html__('It is necessary for it to be shown','fitness-passion'),
-        'section'    => 'fitness_passion_landing_template_section',
-        'settings'   => 'fitness_passion_landing_coach'.$i.'_name',
+        'label'        => sprintf(esc_html__( 'Name of coach nº %s', 'fitness-passion' ),$i),
+        'description'  => esc_html__('It is necessary for it to be shown','fitness-passion'),
+        'section'      => 'fitness_passion_landing_template_section',
+        'settings'     => 'fitness_passion_landing_coach'.$i.'_name',
     )));
 
     $wp_customize->add_setting( 'fitness_passion_landing_coach'.$i.'_desc' , array(
-        'default'   => '',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
-        'transport' => 'refresh',
+        'transport'         => 'refresh',
     ));
     
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_landing_coach'.$i.'_desc_control', array(
@@ -222,9 +222,9 @@ for($i = 1; $i <= $coaches_number; $i++){
     )));
 
     $wp_customize->add_setting( 'fitness_passion_landing_coach'.$i.'_facebook' , array(
-        'default'   => '',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
-        'transport' => 'refresh',
+        'transport'         => 'refresh',
     ));
     
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_landing_coach'.$i.'_facebook_control', array(
@@ -234,9 +234,9 @@ for($i = 1; $i <= $coaches_number; $i++){
     )));
 
     $wp_customize->add_setting( 'fitness_passion_landing_coach'.$i.'_twitter' , array(
-        'default'   => '',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
-        'transport' => 'refresh',
+        'transport'         => 'refresh',
     ));
     
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_landing_coach'.$i.'_twitter_control', array(
@@ -247,9 +247,9 @@ for($i = 1; $i <= $coaches_number; $i++){
     )));
 
     $wp_customize->add_setting( 'fitness_passion_landing_coach'.$i.'_email' , array(
-        'default'   => '',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_email',
-        'transport' => 'refresh',
+        'transport'         => 'refresh',
     ));
     
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_landing_coach'.$i.'_email_control', array(
@@ -262,7 +262,7 @@ for($i = 1; $i <= $coaches_number; $i++){
     
 }
 
-$wp_customize->add_control( new Separator_Custom_control( $wp_customize, 'fitness_passion_separator_'.$sep++, array(
+$wp_customize->add_control( new Fitness_Passion_Separator_Control( $wp_customize, 'fitness_passion_separator_'.$sep++, array(
     'section'    => 'fitness_passion_landing_template_section',
     'settings'   => 'fitness_passion_landing_coach'.$coaches_number.'_email',
 ) ) );
@@ -271,9 +271,9 @@ $wp_customize->add_control( new Separator_Custom_control( $wp_customize, 'fitnes
 
 /* Testimonials*/
 $wp_customize->add_setting( 'fitness_passion_landing_testimonials_show' , array(
-    'default'   => false,
+    'default'           => false,
     'sanitize_callback' => 'fitness_passion_sanitize_checkbox',
-    'transport' => 'refresh',
+    'transport'         => 'refresh',
 ));
 
 $wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_landing_testimonials_show_control', array(
@@ -284,9 +284,9 @@ $wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_cust
 )));
 
 $wp_customize->add_setting( 'fitness_passion_landing_testimonials_title' , array(
-    'default'   => esc_html__('Testimonials','fitness-passion'),
+    'default'           => esc_html__('Testimonials','fitness-passion'),
     'sanitize_callback' => 'sanitize_text_field',
-    'transport' => 'refresh',
+    'transport'         => 'refresh',
 ));
 
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_landing_testimonials_title_control', array(
@@ -297,9 +297,9 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_pa
 
 // Image background testimonials section
 $wp_customize->add_setting( 'fitness_passion_landing_testimonials_back_image' , array(
-    'default'   => '',
+    'default'           => '',
     'sanitize_callback' => 'fitness_passion_sanitize_image',
-    'transport' => 'refresh',
+    'transport'         => 'refresh',
 ));
 
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'fitness_passion_landing_testimonials_back_image_control',array(
@@ -311,20 +311,20 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'fitne
 
 // Testimonials count
 $wp_customize->add_setting( 'fitness_passion_landing_testimonials_number' , array(
-    'default'   => 5,
+    'default'           => 5,
     'sanitize_callback' => 'absint',
-    'transport' => 'refresh',
+    'transport'         => 'refresh',
 ));
 
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_landing_testimonials_number_control', array(
-    'label'      => esc_html__( 'Number of testimonials to show', 'fitness-passion' ),
-    'description'=> esc_html__('It is necessary to refresh the page to show or hide the changes of testimonials', 'fitness-passion'),
-    'section'    => 'fitness_passion_landing_template_section',
-    'settings'   => 'fitness_passion_landing_testimonials_number',
-    'type'		 => 'number',
+    'label'       => esc_html__( 'Number of testimonials to show', 'fitness-passion' ),
+    'description' => esc_html__('It is necessary to refresh the page to show or hide the changes of testimonials', 'fitness-passion'),
+    'section'     => 'fitness_passion_landing_template_section',
+    'settings'    => 'fitness_passion_landing_testimonials_number',
+    'type'		  => 'number',
 )));
 
-$wp_customize->add_control( new Separator_Custom_control( $wp_customize, 'fitness_passion_separator_'.$sep++, array(
+$wp_customize->add_control( new Fitness_Passion_Separator_Control( $wp_customize, 'fitness_passion_separator_'.$sep++, array(
     'section'    => 'fitness_passion_landing_template_section',
     'settings'   => 'fitness_passion_landing_testimonials_number',
 ) ) );
@@ -335,9 +335,9 @@ $testimonials_number = get_theme_mod('fitness_passion_landing_testimonials_numbe
 for($i = 1; $i <= $testimonials_number; $i++){
 
     $wp_customize->add_setting( 'fitness_passion_landing_testimonial'.$i.'_avatar' , array(
-        'default'   => esc_url_raw(get_stylesheet_directory_uri() .'/assets/images/testimonials.jpg'),
+        'default'           => esc_url_raw(get_stylesheet_directory_uri() .'/assets/images/testimonials.jpg'),
         'sanitize_callback' => 'fitness_passion_sanitize_image',
-        'transport' => 'refresh',
+        'transport'         => 'refresh',
     ));
 
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'fitness_passion_landing_testimonial'.$i.'_avatar_control',array(
@@ -348,9 +348,9 @@ for($i = 1; $i <= $testimonials_number; $i++){
     )));
 
     $wp_customize->add_setting( 'fitness_passion_landing_testimonial'.$i.'_name' , array(
-        'default'   => '',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
-        'transport' => 'refresh',
+        'transport'         => 'refresh',
     ));
     
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_landing_testimonial'.$i.'_name_control', array(
@@ -361,9 +361,9 @@ for($i = 1; $i <= $testimonials_number; $i++){
     )));
 
     $wp_customize->add_setting( 'fitness_passion_landing_testimonial'.$i.'_desc' , array(
-        'default'   => '',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
-        'transport' => 'refresh',
+        'transport'         => 'refresh',
     ));
     
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_landing_testimonial'.$i.'_desc_control', array(
@@ -374,9 +374,9 @@ for($i = 1; $i <= $testimonials_number; $i++){
     )));
 
     $wp_customize->add_setting( 'fitness_passion_landing_testimonial'.$i.'_text' , array(
-        'default'   => '',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
-        'transport' => 'refresh',
+        'transport'         => 'refresh',
     ));
     
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_landing_testimonial'.$i.'_text_control', array(
@@ -389,18 +389,18 @@ for($i = 1; $i <= $testimonials_number; $i++){
     )));
 
 }
-$wp_customize->add_control( new Separator_Custom_control( $wp_customize, 'fitness_passion_separator_'.$sep++, array(
+$wp_customize->add_control( new Fitness_Passion_Separator_Control( $wp_customize, 'fitness_passion_separator_'.$sep++, array(
     'section'    => 'fitness_passion_landing_template_section',
-        'settings'   => 'fitness_passion_landing_testimonial'.$testimonials_number.'_text',
+    'settings'   => 'fitness_passion_landing_testimonial'.$testimonials_number.'_text',
 ) ) );
 
 /*End testimonials */
 
 /* Latest posts */
 $wp_customize->add_setting( 'fitness_passion_landing_latest_posts_show' , array(
-    'default'   => false,
+    'default'           => false,
     'sanitize_callback' => 'fitness_passion_sanitize_checkbox',
-    'transport' => 'refresh',
+    'transport'         => 'refresh',
 ));
 
 $wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_landing_latest_posts_show_control', array(
@@ -412,9 +412,9 @@ $wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_cust
 
 // Title latets posts
 $wp_customize->add_setting( 'fitness_passion_landing_latest_posts_title' , array(
-    'default'   => esc_html__('latest posts','fitness-passion'),
-    'transport' => 'refresh',
-    'sanitize_callback' => 'sanitize_text_field',
+    'default'            => esc_html__('latest posts','fitness-passion'),
+    'transport'          => 'refresh',
+    'sanitize_callback'  => 'sanitize_text_field',
 ));
 
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_landing_latest_posts_title_control', array(
@@ -425,9 +425,9 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_pa
 
 // image background latest posts section
 $wp_customize->add_setting( 'fitness_passion_landing_latest_posts_back_image' , array(
-    'default'   => '',
+    'default'           => '',
     'sanitize_callback' => 'fitness_passion_sanitize_image',
-    'transport' => 'refresh',
+    'transport'         => 'refresh',
 ));
 
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'fitness_passion_landing_latest_posts_back_image_control',array(
@@ -436,9 +436,9 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'fitne
     'settings'   => 'fitness_passion_landing_latest_posts_back_image'
 )));
 
-$wp_customize->add_control( new Separator_Custom_control( $wp_customize, 'fitness_passion_separator_'.$sep++, array(
+$wp_customize->add_control( new Fitness_Passion_Separator_Control( $wp_customize, 'fitness_passion_separator_'.$sep++, array(
     'section'    => 'fitness_passion_landing_template_section',
-        'settings'   => 'fitness_passion_landing_testimonial'.$testimonials_number.'_text',
+    'settings'   => 'fitness_passion_landing_testimonial'.$testimonials_number.'_text',
 ) ) );
 
 /* End Latests posts*/
@@ -446,9 +446,9 @@ $wp_customize->add_control( new Separator_Custom_control( $wp_customize, 'fitnes
 
 /* Contact section*/
 $wp_customize->add_setting( 'fitnes_passion_landing_contact_show' , array(
-    'default'   => false,
+    'default'           => false,
     'sanitize_callback' => 'fitness_passion_sanitize_checkbox',
-    'transport' => 'refresh',
+    'transport'         => 'refresh',
 ));
 
 $wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'fitnes_passion_landing_contact_show_control', array(
@@ -459,9 +459,9 @@ $wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_cust
 )));
 
 $wp_customize->add_setting( 'fitness_passion_landing_contact_title' , array(
-    'default'   => esc_html__('Contact Us','fitness-passion'),
+    'default'           => esc_html__('Contact Us','fitness-passion'),
     'sanitize_callback' => 'sanitize_text_field',
-    'transport' => 'refresh',
+    'transport'         => 'refresh',
 ));
 
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_landing_contact_title_control', array(
@@ -472,9 +472,9 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_pa
 
 // Image background contact section
 $wp_customize->add_setting( 'fitness_passion_landing_contact_back_image' , array(
-    'default'   => '',
+    'default'           => '',
     'sanitize_callback' => 'fitness_passion_sanitize_image',
-    'transport' => 'refresh',
+    'transport'         => 'refresh',
 ));
 
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'fitness_passion_landing_contact_back_image_control',array(
@@ -485,9 +485,9 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'fitne
 
 // Short code contact form
 $wp_customize->add_setting( 'fitness_passion_landing_contact_form_shortcode' , array(
-    'default'   => '',
+    'default'           => '',
     'sanitize_callback' => 'sanitize_text_field',
-    'transport' => 'refresh',
+    'transport'         => 'refresh',
 ));
 
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_landing_contact_form_shortcode_control', array(

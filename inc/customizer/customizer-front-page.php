@@ -8,16 +8,16 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 /* Front page section*/
 	$wp_customize->add_section( 'fitness_passion_front_page_section' , array(
-		'title'      => esc_html__('Front Page Options','fitness-passion'),
-		'panel' 	=>'fitness_passion_panel',
+		'title'           => esc_html__('Front Page Options','fitness-passion'),
+		'panel' 	      =>'fitness_passion_panel',
 		'active_callback' => 'is_front_page'
 	));
 
 	/* show slider */
 	$wp_customize->add_setting( 'fitness_passion_show_slider' , array(
-		'default'   => false,
-		'sanitize_callback' => 'fitness_passion_sanitize_checkbox',
-		'transport' => 'refresh',
+		'default'            => false,
+		'sanitize_callback'  => 'fitness_passion_sanitize_checkbox',
+		'transport'          => 'refresh',
 	));
 
 	$wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_show_slider_control', array(
@@ -34,10 +34,10 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 	));
  
 	$wp_customize->add_control(	'fitness_passion_slider_page_1_control',array(
-		'label'      => esc_html__( 'First page for slider header', 'fitness-passion' ),
-		'type' => 'dropdown-pages',			
-		'section' => 'fitness_passion_front_page_section',
-		'settings'   => 'fitness_passion_slider_page_1',
+		'label'          => esc_html__( 'First page for slider header', 'fitness-passion' ),
+		'type'           => 'dropdown-pages',			
+		'section'        => 'fitness_passion_front_page_section',
+		'settings'       => 'fitness_passion_slider_page_1',
 		'allow_addition' => true,
 	));	
 
@@ -48,10 +48,10 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 	));
  
 	$wp_customize->add_control(	'fitness_passion_slider_page_2_control',array(
-		'label'      => esc_html__( 'Second page for slider header', 'fitness-passion' ),
-		'type' => 'dropdown-pages',			
-		'section' => 'fitness_passion_front_page_section',
-		'settings'   => 'fitness_passion_slider_page_2',
+		'label'          => esc_html__( 'Second page for slider header', 'fitness-passion' ),
+		'type'           => 'dropdown-pages',			
+		'section'        => 'fitness_passion_front_page_section',
+		'settings'       => 'fitness_passion_slider_page_2',
 		'allow_addition' => true,
 	));	
 
@@ -62,32 +62,32 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 	));
  
 	$wp_customize->add_control(	'fitness_passion_slider_page_3_control',array(
-		'label'      => esc_html__( 'Third page for slider header', 'fitness-passion' ),
-		'type' => 'dropdown-pages',			
-		'section' => 'fitness_passion_front_page_section',
-		'settings'   => 'fitness_passion_slider_page_3',
+		'label'          => esc_html__( 'Third page for slider header', 'fitness-passion' ),
+		'type'           => 'dropdown-pages',			
+		'section'        => 'fitness_passion_front_page_section',
+		'settings'       => 'fitness_passion_slider_page_3',
 		'allow_addition' => true,
 	));	
 
 	// slider page 4
 	$wp_customize->add_setting('fitness_passion_slider_page_4',array(
-		'default' => '0',			
+		'default'           => '0',			
 		'sanitize_callback' => 'fitness_passion_sanitize_dropdown_pages'
 	));
  	
 	$wp_customize->add_control(	'fitness_passion_slider_page_4_control',array(
-		'label'      => esc_html__( 'Third page for slider header', 'fitness-passion' ),
-		'type' => 'dropdown-pages',			
-		'section' => 'fitness_passion_front_page_section',
-		'settings'   => 'fitness_passion_slider_page_4',
+		'label'          => esc_html__( 'Third page for slider header', 'fitness-passion' ),
+		'type'           => 'dropdown-pages',			
+		'section'        => 'fitness_passion_front_page_section',
+		'settings'       => 'fitness_passion_slider_page_4',
 		'allow_addition' => true,
 	));
 
 	// button more slider text
 	$wp_customize->add_setting( 'fitness_passion_slide_morebtn' , array(
-		'default'   => '',
+		'default'           => '',
 		'sanitize_callback' => 'sanitize_text_field',
-		'transport' => 'refresh',
+		'transport'         => 'refresh',
 	));
 	
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_slide_morebtn_control', array(
@@ -101,9 +101,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 	// Text title
 	$wp_customize->add_setting( 'fitness_passion_front_page_header_title' , array(
-		'default'   => '',
+		'default'           => '',
 		'sanitize_callback' => 'sanitize_text_field',
-		'transport' => 'refresh',
+		'transport'         => 'refresh',
 	));
 	
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_front_page_header_title_control', array(
@@ -140,9 +140,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 	//link button
 	$wp_customize->add_setting( 'fitness_passion_front_page_header_button_link' , array(
-		'default'   => '#',
+		'default'           => '#',
 		'sanitize_callback' => 'esc_url_raw',
-		'transport' => 'refresh',
+		'transport'         => 'refresh',
 	));
 
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_front_page_header_button_link_control', array(

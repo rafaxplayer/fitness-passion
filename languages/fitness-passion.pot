@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Fitness Passion\n"
-"POT-Creation-Date: 2019-04-04 11:10+0200\n"
+"POT-Creation-Date: 2019-04-08 09:07+0200\n"
 "PO-Revision-Date: 2019-03-30 01:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -61,9 +61,9 @@ msgid "Comments are closed."
 msgstr ""
 
 #. translators: 1: Theme name, 2: Theme author.
-#: footer.php:32
+#: footer.php:30
 #, php-format
-msgid "Theme: %1$s by %2$s."
+msgid "&copy; %1$s Theme: %2$s by %3$s."
 msgstr ""
 
 #: functions.php:52
@@ -74,15 +74,15 @@ msgstr ""
 msgid "Social Nav"
 msgstr ""
 
-#: functions.php:115
+#: functions.php:121
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:117
+#: functions.php:123
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:129
+#: functions.php:135
 msgid " Read More"
 msgstr ""
 
@@ -203,169 +203,187 @@ msgstr ""
 msgid "Show/Hide services section"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:53
+#. translators: number of service
+#: inc/customizer/customizer-landingpage-template.php:54
 #, php-format
 msgid "Page for service nº %s"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:78
+#. translators: number of action
+#: inc/customizer/customizer-landingpage-template.php:80
 #, php-format
 msgid "Show/Hide action %s section"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:91
+#. translators: number of action
+#: inc/customizer/customizer-landingpage-template.php:94
 #, php-format
 msgid "Page for action nº %s"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:106
+#. translators: number of action
+#: inc/customizer/customizer-landingpage-template.php:110
 #, php-format
 msgid "Text Buton more for action %s"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:127
+#: inc/customizer/customizer-landingpage-template.php:131
 msgid "Show/Hide coaches section"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:134
+#: inc/customizer/customizer-landingpage-template.php:138
 #: template-parts/landing-page-template/content-coaches.php:14
 msgid "Our Coaches"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:140
+#: inc/customizer/customizer-landingpage-template.php:144
 msgid "Coaches section title"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:153
+#: inc/customizer/customizer-landingpage-template.php:157
 msgid "Upload image for coaches background section"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:166
+#: inc/customizer/customizer-landingpage-template.php:170
 msgid "Number of coaches to show"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:167
+#: inc/customizer/customizer-landingpage-template.php:171
 msgid ""
 "It is necessary to refresh the page to show or hide the changes of couches"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:188
-#: inc/customizer/customizer-landingpage-template.php:421
+#. translators: number of coach
+#: inc/customizer/customizer-landingpage-template.php:193
 #, php-format
 msgid "Upload image for coach nº %s"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:200
+#. translators: numer of coach
+#: inc/customizer/customizer-landingpage-template.php:206
 #, php-format
 msgid "Name of coach nº %s"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:201
+#: inc/customizer/customizer-landingpage-template.php:207
 msgid "It is necessary for it to be shown"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:213
+#: inc/customizer/customizer-landingpage-template.php:219
 #, php-format
 msgid "Description for coach nº %s"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:225
+#: inc/customizer/customizer-landingpage-template.php:231
 #, php-format
 msgid "Facebook url for coach nº %s"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:237
+#. translators: numer of coach
+#: inc/customizer/customizer-landingpage-template.php:244
 #, php-format
 msgid "Twitter url for coach nº %s"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:249
+#. translators: numer of coach
+#: inc/customizer/customizer-landingpage-template.php:257
 #, php-format
 msgid "Email address for coach nº %s"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:272
+#: inc/customizer/customizer-landingpage-template.php:280
 msgid "Show/Hide testimonials section"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:279
+#: inc/customizer/customizer-landingpage-template.php:287
 #: template-parts/landing-page-template/content-testimonials.php:15
 msgid "Testimonials"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:285
+#: inc/customizer/customizer-landingpage-template.php:293
 msgid "Testimonials section title"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:298
+#: inc/customizer/customizer-landingpage-template.php:307
 msgid "Upload image for testimonials background section"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:311
+#: inc/customizer/customizer-landingpage-template.php:320
 msgid "Number of testimonials to show"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:312
+#: inc/customizer/customizer-landingpage-template.php:321
 msgid ""
 "It is necessary to refresh the page to show or hide the changes of "
 "testimonials"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:335
+#. translators: numer of testiomonial
+#: inc/customizer/customizer-landingpage-template.php:345
 #, php-format
 msgid "Upload avatar for testimonial nº %s"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:347
+#. translators: numer of testiomonial
+#: inc/customizer/customizer-landingpage-template.php:358
 #, php-format
 msgid "Author name of testimonial nº %s"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:359
+#. translators: numer of testiomonial
+#: inc/customizer/customizer-landingpage-template.php:371
 #, php-format
 msgid "Author description of testimonial nº %s"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:371
+#. translators: numer of testiomonial
+#: inc/customizer/customizer-landingpage-template.php:384
 #, php-format
 msgid "Text for textimonial nº %s"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:394
+#: inc/customizer/customizer-landingpage-template.php:385
+msgid "Maximum 35 words to see a correct design."
+msgstr ""
+
+#: inc/customizer/customizer-landingpage-template.php:407
 msgid "Show/Hide latest posts section"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:402
-#: template-landingpage.php:33
+#: inc/customizer/customizer-landingpage-template.php:415
 msgid "latest posts"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:408
+#: inc/customizer/customizer-landingpage-template.php:421
 msgid "Text for latests posts section"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:442
+#: inc/customizer/customizer-landingpage-template.php:434
+msgid "Upload image background for latest posts section"
+msgstr ""
+
+#: inc/customizer/customizer-landingpage-template.php:455
 msgid "Show/Hide contact section"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:449
+#: inc/customizer/customizer-landingpage-template.php:462
 #: template-parts/landing-page-template/content-contact.php:12
 msgid "Contact Us"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:455
+#: inc/customizer/customizer-landingpage-template.php:468
 msgid "Contact section title"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:468
+#: inc/customizer/customizer-landingpage-template.php:481
 msgid "Upload image for contact background section"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:481
+#: inc/customizer/customizer-landingpage-template.php:494
 msgid "Contact Form 7 shortcode"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:482
+#: inc/customizer/customizer-landingpage-template.php:495
 msgid ""
 "Use contact form plugin 7 for your form, you can use the short code of "
 "another plugin but you will have to adjust your own style."
@@ -403,35 +421,35 @@ msgstr ""
 msgid "Site Options"
 msgstr ""
 
-#: inc/customizer/customizer-site-info.php:25
+#: inc/customizer/customizer-site-info.php:23
 msgid "Phone info"
 msgstr ""
 
-#: inc/customizer/customizer-site-info.php:38
+#: inc/customizer/customizer-site-info.php:36
 msgid "Whatsapp info"
 msgstr ""
 
-#: inc/customizer/customizer-site-info.php:51
+#: inc/customizer/customizer-site-info.php:49
 msgid "Address info"
 msgstr ""
 
-#: inc/customizer/customizer-site-info.php:64
+#: inc/customizer/customizer-site-info.php:62
 msgid "Email info"
 msgstr ""
 
-#: inc/customizer/customizer-site-info.php:77
+#: inc/customizer/customizer-site-info.php:75
 msgid "Url for facebook icon "
 msgstr ""
 
-#: inc/customizer/customizer-site-info.php:90
+#: inc/customizer/customizer-site-info.php:88
 msgid "Url for twitter icon "
 msgstr ""
 
-#: inc/customizer/customizer-site-info.php:103
+#: inc/customizer/customizer-site-info.php:101
 msgid "Url for instagram icon"
 msgstr ""
 
-#: inc/customizer/customizer-site-info.php:116
+#: inc/customizer/customizer-site-info.php:114
 msgid "Url for youtube icon"
 msgstr ""
 
@@ -961,6 +979,10 @@ msgstr ""
 
 #: single.php:26
 msgid "Continue Reading"
+msgstr ""
+
+#: template-landingpage.php:33
+msgid "Latest posts"
 msgstr ""
 
 #: template-landingpage.php:43

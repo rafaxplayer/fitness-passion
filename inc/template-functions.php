@@ -37,7 +37,7 @@ function fitness_passion_pingback_header() {
 }
 add_action( 'wp_head', 'fitness_passion_pingback_header' );
 
-function addspanlastword($string){
+function fitness_passion_add_span_last_word($string){
 	$array = explode(" ", $string);
 	$text = "";
 	for($i=0;$i<sizeof($array);$i++){

@@ -20,7 +20,7 @@ if(! function_exists('fitness_passion_header_content')):
         $subtext ="";
         if(is_front_page() || (is_front_page() && is_home())){
 
-            $text = addspanlastword(get_theme_mod('fitness_passion_front_page_header_title', 'Fitness Passion'));
+            $text = fitness_passion_add_span_last_word(get_theme_mod('fitness_passion_front_page_header_title', 'Fitness Passion'));
             $subtext = get_theme_mod('fitness_passion_front_page_header_subtitle', 'Subtitle text');
             $buttonText = get_theme_mod('fitness_passion_front_page_header_button');
             $buttonLink = get_theme_mod('fitness_passion_front_page_header_button_link','#');
@@ -144,7 +144,6 @@ add_action('fitness_passion_social_icons','fitness_passion_social_links');
  if(!function_exists('fitness_passion_related_post')):
 
     function fitness_passion_related_post($type='related'){
-       
         
         // Get a list of the current post's categories
         global $post;
@@ -186,7 +185,11 @@ add_action('fitness_passion_social_icons','fitness_passion_social_links');
                 <a href="<?php the_permalink(); ?>"> 
                     <div class="related_post_info">
                         <?php the_title('<h3>','</h3>'); ?>
-                        <p><?php echo wp_kses_post(wp_trim_words( get_the_content(), 10 ));  ?></p>
+                        <p><?php if ( empty( get_the_excerpt() ) ) : 
+            	                    echo wp_kses_post( wp_trim_words( get_the_excerpt(), 20 ) ); 
+        	                    else : 
+            	                    echo wp_kses_post( get_the_excerpt() ); 
+         	                    endif; ?></p>
                     </div>
                 </a>
             </div>

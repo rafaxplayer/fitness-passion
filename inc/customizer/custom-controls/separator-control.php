@@ -1,6 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
-class Separator_Custom_control extends WP_Customize_Control{
+class Fitness_Passion_Separator_Control extends WP_Customize_Control{
 
     public $type = 'separator';
     

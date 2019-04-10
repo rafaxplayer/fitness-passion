@@ -34,10 +34,10 @@ $wp_customize->add_setting( 'fitness_passion_footer_show_social' , array(
 ));
 
 $wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_footer_show_social_control', array(
-    'label'      => esc_html__( 'Show/Hide Social network icons on footer', 'fitness-passion' ),
+    'label'       => esc_html__( 'Show/Hide Social network icons on footer', 'fitness-passion' ),
     'description' => esc_html__('To see the icons you must edit your link in the Social icons section','fitness-passion'),
-    'section'    => 'fitness_passion_footer_section',
-    'settings'   => 'fitness_passion_footer_show_social',
+    'section'     => 'fitness_passion_footer_section',
+    'settings'    => 'fitness_passion_footer_show_social',
     
 )));
 

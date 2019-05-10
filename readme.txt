@@ -1,11 +1,9 @@
 === fitness-passion ===
-
-Contributors: automattic
+Contributors: Rafax
 Tags: custom-header, custom-background, featured-image-header, custom-logo, full-width-template, custom-menu, featured-images, threaded-comments, translation-ready, two-columns, right-sidebar, theme-options, editor-style, sticky-post
-
 Requires at least: 4.5
 Tested up to: 5.1.1
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -13,7 +11,7 @@ A starter theme called fitness-passion.
 
 == Description ==
 
-Description
+Fitness Passion - A theme given mainly for a gym or page related to the firnes, although it can be used perfectly as a personal blog or other content.
 
 == Installation ==
 
@@ -28,6 +26,9 @@ Description
 fitness-passion includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+
+= 1.1.3 - May 11 2019 =
+* Code fixes
 
 = 1.1.2 - Apr 08 2019 =
 * Code fixes
@@ -50,11 +51,11 @@ fitness-passion includes support for Infinite Scroll in Jetpack.
 * JQuery Easing http://gsgd.co.uk/sandbox/jquery/easing/ Open source under the BSD License. 
 * Font Awesome icons  https://fontawesome.com (c) Dave GandySIL OFL 1.1, http://scripts.sil.org/OFL
 * jQuery Cycle 2, Copyright (c) 2014 M. Alsup License: MIT/GPL http://jquery.malsup.com/cycle2/
-* Images: All Images are License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en)
-  - Header Image: https://pixabay.com/photos/man-male-person-young-muscles-3563462/
-  - Services : https://pixabay.com/photos/weights-lifting-power-training-gym-817635/,https://pixabay.com/photos/great-lakes-illinois-men-women-80383/,https://pixabay.com/photos/girl-in-the-gym-training-apparatus-1391369/
-  - Coach default : https://pixabay.com/photos/workout-fitness-healthy-training-2928389/
-  - Testimonials : https://pixabay.com/photos/fitness-dumb-bells-muscle-exercise-850602/
+* Images: All Images are licensed under Creative Commons Zero (CC0) license
+  - Header Image: https://www.pexels.com/photo/person-holding-barbell-841130/
+  - Services : https://www.pexels.com/photo/women-exercising-866027/,https://www.pexels.com/photo/group-of-woman-doing-yoga-868483/,https://www.pexels.com/photo/group-of-woman-in-yoga-class-866021/
+  - Coach default : https://www.pexels.com/photo/man-holding-barbell-1431282/
+  - Testimonials : https://www.pexels.com/photo/woman-girl-sport-exercise-34669/
     
 
 

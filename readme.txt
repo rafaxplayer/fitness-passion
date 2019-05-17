@@ -3,7 +3,7 @@ Contributors: Rafax
 Tags: custom-header, custom-background, featured-image-header, custom-logo, full-width-template, custom-menu, featured-images, threaded-comments, translation-ready, two-columns, right-sidebar, theme-options, editor-style, sticky-post
 Requires at least: 4.5
 Tested up to: 5.1.1
-Stable tag: 1.1.3
+Stable tag: 1.1.5
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -26,6 +26,12 @@ Fitness Passion - A theme given mainly for a gym or page related to the firnes, 
 fitness-passion includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+
+= 1.1.5 - May 17 2019 =
+* Code fixes
+
+= 1.1.4 - May 11 2019 =
+* Code fixes
 
 = 1.1.3 - May 11 2019 =
 * Code fixes

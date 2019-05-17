@@ -132,7 +132,7 @@ add_action( 'widgets_init', 'fitness_passion_widgets_init' );
 
 function fitness_passion_excerpt_more($more) {
 	global $post;
- return '<a class="moretag" href="'. get_permalink($post->ID) . '">'.__(' Read More','fitness-passion').'</a>';
+ return '<a class="moretag" href="'. esc_url(get_permalink($post->ID)) . '">'.__(' Read More','fitness-passion').'</a>';
 }
 add_filter('excerpt_more', 'fitness_passion_excerpt_more');
 
@@ -221,11 +221,15 @@ add_action( 'enqueue_block_editor_assets', 'fitness_passion_block_editor_styles'
  */
 function fitness_passion_customizer_menu() {
 
-	add_theme_page( 'Fitness Passion Theme', 'Fitness Passion Theme', 'edit_theme_options', 'customize.php' );
+	add_theme_page( __('Fitness Passion Theme','fitness-passion'), __('Fitness Passion Theme','fitness-passion'), 'edit_theme_options', 'customize.php' );
 }
 
 add_action( 'admin_menu', 'fitness_passion_customizer_menu' );
 
+/**
+ * Functions which enhance the theme by hooking into WordPress.
+ */
+require get_template_directory() . '/inc/template-functions.php';
 
 /**
  * load template hooks
@@ -241,11 +245,6 @@ require get_template_directory() . '/inc/customizer/custom-header.php';
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
 
 /**
  * Customizer additions.

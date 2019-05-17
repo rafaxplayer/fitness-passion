@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Fitness Passion\n"
-"POT-Creation-Date: 2019-04-08 09:07+0200\n"
+"POT-Creation-Date: 2019-05-17 08:50+0200\n"
 "PO-Revision-Date: 2019-03-30 01:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -84,6 +84,10 @@ msgstr ""
 
 #: functions.php:135
 msgid " Read More"
+msgstr ""
+
+#: functions.php:224 inc/customizer/customizer.php:70
+msgid "Fitness Passion Theme"
 msgstr ""
 
 #: header.php:25
@@ -453,12 +457,12 @@ msgstr ""
 msgid "Url for youtube icon"
 msgstr ""
 
-#: inc/customizer/customizer.php:70
-msgid "Fitness Passion Theme"
-msgstr ""
-
 #: inc/customizer/customizer.php:71
 msgid "Several settings pertaining my theme"
+msgstr ""
+
+#: inc/template-hooks.php:210
+msgid "Sorry, no related articles to display."
 msgstr ""
 
 #. translators: %s: post date.
@@ -1034,7 +1038,7 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Fit Passion is a theme for wordpress designed for gyms or personal trainers "
+"Fit Passion is a theme for WordPress designed for gyms or personal trainers "
 "although it can be used in any other context, it is free and free to use, "
 "enjoy it!."
 msgstr ""

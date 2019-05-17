@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 		
 		<div class="header-top">
 			<?php
-			 if(get_theme_mod('fitness_passion_header_top_show_info', true)):
+			 if( get_theme_mod('fitness_passion_header_top_show_info', true) ):
 				$phone = get_theme_mod('fitness_passion_phone', '');
 				$whatsapp = get_theme_mod('fitness_passion_whatsapp', '');
 				$address = get_theme_mod('fitness_passion_address', '');
@@ -51,7 +51,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 				</div>
 				<?php endif;
         
-				if(get_theme_mod('fitness_passion_header_top_show_social', true)):
+				if( get_theme_mod('fitness_passion_header_top_show_social', true) ):
 					do_action('fitness_passion_social_icons');
 				endif;?>
         
@@ -96,15 +96,15 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 			
 			if ( (get_custom_header() && (is_home() && is_front_page())) ||  (get_custom_header() && is_front_page())): 
 
-				$image_header = get_header_image() ? get_header_image() : get_template_directory_uri().'/assets/images/header_default.jpg';
+				$image_header = get_header_image() ? get_header_image() : esc_url(get_template_directory_uri()).'/assets/images/header_default.jpg';
 				
 			elseif(is_Home()):
 				$blog_home_id = get_option( 'page_for_posts' );
     			
-				$image_header = get_the_post_thumbnail_url($blog_home_id, 'full') ? get_the_post_thumbnail_url($blog_home_id, 'full') : get_template_directory_uri().'/assets/images/header_default.jpg';
+				$image_header =  esc_url(get_the_post_thumbnail_url($blog_home_id, 'full')) ?  esc_url(get_the_post_thumbnail_url($blog_home_id, 'full')) :  esc_url(get_template_directory_uri()).'/assets/images/header_default.jpg';
 			else:
 
-				$image_header = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri().'/assets/images/header_default.jpg';
+				$image_header =  esc_url(get_the_post_thumbnail_url()) ?  esc_url(get_the_post_thumbnail_url()) :  esc_url(get_template_directory_uri()).'/assets/images/header_default.jpg';
 				
 			
 			endif;

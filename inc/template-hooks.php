@@ -10,11 +10,15 @@ if(! function_exists('fitness_passion_header_content')):
 
     function fitness_passion_header_content(){
 
-        if(is_woocommerce() && is_shop()){
+        if(is_woocommerce_activated()){
 
-            echo '<h1 class="fp_header_title" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">'.woocommerce_page_title(false).'</h1>';
-            return;
-        }
+            if(is_woocommerce() && is_shop()){
+    
+                echo '<h1 class="fp_header_title" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">'.woocommerce_page_title(false).'</h1>';
+                return;
+            }
+        } 
+        
 
         $text = "";
         $subtext ="";
@@ -61,12 +65,16 @@ if( !function_exists('fitness_passion_breadcrumbs')):
             
             $separator = ' / ';
             $blogname = get_option( 'page_for_posts' )==0 ? 'Blog': get_the_title(get_option( 'page_for_posts' ));
-            $bloglink = get_option( 'page_for_posts' )==0 ? home_url( '/' )  : get_permalink( get_option( 'page_for_posts' ));
+            $bloglink = get_option( 'page_for_posts' )==0 ? esc_url(home_url( '/' ))  : esc_url(get_permalink( get_option( 'page_for_posts' )));
+            
             /* si es una pagina de woocommerce*/
-            if(is_woocommerce()){
-                $blogname = woocommerce_page_title(false);
-                $bloglink = is_shop() ? wc_get_page_id('shop') : get_the_ID();
-                
+            if(is_woocommerce_activated()){
+
+                if(is_woocommerce()){
+                    $blogname = woocommerce_page_title(false);
+                    $bloglink = is_shop() ? wc_get_page_id('shop') : get_the_ID();
+                    
+                }
             }
 
             echo '<div class="fp_breadcrumbs" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">';
@@ -87,11 +95,13 @@ if( !function_exists('fitness_passion_breadcrumbs')):
                         the_title($separator,'');
                     }
                 } elseif (is_page()) {
-                    /* si es una pagina de woocommerce carrito , pago o cuenta*/
-                    if(is_cart() || is_checkout() || is_account_page()){
-                        $blogname = woocommerce_page_title(false);
-                        $bloglink = is_shop() ? wc_get_page_id('shop') : get_the_ID();
-                        printf('<a href="%1$s">%2$s</a>%3$s',esc_url($bloglink),esc_html($blogname),$separator);     
+                    if(is_woocommerce_activated()){
+                        /* si es una pagina de woocommerce carrito , pago o cuenta*/
+                        if(is_cart() || is_checkout() || is_account_page()){
+                            $blogname = woocommerce_page_title(false);
+                            $bloglink = is_shop() ? wc_get_page_id('shop') : get_the_ID();
+                            printf('<a href="%1$s">%2$s</a>%3$s',esc_url($bloglink),esc_html($blogname),$separator);     
+                        }
                     }
                     /* Es page.php , imprimimos el nombre de la pagina*/
                     the_title('</h1>','</h1>');
@@ -197,7 +207,7 @@ add_action('fitness_passion_social_icons','fitness_passion_social_links');
         
         <?php endwhile; ?>
         <?php else : ?>
-            <p>Sorry, no related articles to display.</p>
+            <p><?php _e('Sorry, no related articles to display.','fitness-passion'); ?></p>
         <?php endif;
         // Reset postdata
         wp_reset_postdata();?>

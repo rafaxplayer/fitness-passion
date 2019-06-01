@@ -8,7 +8,7 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 $wp_customize->add_section( 'fitness_passion_site_info_section' , array(
-    'title'     => esc_html__('Site Options','fitness-passion'),
+    'title'     => esc_html__('Site Info Options','fitness-passion'),
     'panel' 	=>'fitness_passion_panel',
 ));
 

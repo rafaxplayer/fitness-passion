@@ -192,6 +192,15 @@ function fitness_passion_sanitize_dropdown_pages( $page_id, $setting ) {
 	return ( 'publish' == get_post_status( $page_id ) ? $page_id : $setting->default );
 }
 
+/*
+ * {@internal Does not require validation since it is immutable.}} 
+ */
+
+function fitness_passion_no_sanitize( $input ) {
+
+	return $input;
+}
+
 /**
  * Is Blog page
  */

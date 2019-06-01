@@ -2,8 +2,8 @@
 Contributors: Rafax
 Tags: custom-header, custom-background, featured-image-header, custom-logo, full-width-template, custom-menu, featured-images, threaded-comments, translation-ready, two-columns, right-sidebar, theme-options, editor-style, sticky-post
 Requires at least: 4.5
-Tested up to: 5.1.1
-Stable tag: 1.1.5
+Tested up to: 5.2
+Stable tag: 1.1.8
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -19,13 +19,30 @@ Fitness Passion - A theme given mainly for a gym or page related to the firnes, 
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
+== Templates ==
+
+1. Page full Witch Template, For full width pages. Selection From the page editor: Template> Page Full witch
+2. Post full Witch Template, For full width posts. Selection From the post editor: Template> Post Full witch
+3. Landing page Template, To create a home page with sections of your site, select the page creator template> landing page.
+   Set this page as a home page and go to the customizer to edit the sections that make up the template.
+
 == Frequently Asked Questions ==
 
 = Does this theme support any plugins? =
 
-fitness-passion includes support for Infinite Scroll in Jetpack.
+fitness-passion includes support for Infinite Scroll in Jetpack and woocommerce plugin.
 
 == Changelog ==
+
+= 1.1.8 - May 18 2019 =
+* Code fixes
+* Added admin panel information
+
+= 1.1.7 - May 18 2019 =
+* Code fixes
+
+= 1.1.6 - May 18 2019 =
+* Code fixes
 
 = 1.1.5 - May 17 2019 =
 * Code fixes

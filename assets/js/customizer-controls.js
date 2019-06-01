@@ -255,6 +255,57 @@
 
             }
 
+            if ($section == 'plans' || $section == 'all'){
+
+                // array controls ids for landing section plans
+                var $control_ids_landing_section_plans = [
+                   'fitness_passion_landing_plans_title_control',
+                   'fitness_passion_Simple_Notice_shortcodes_control',
+                   'fitness_passion_landing_plans_back_image_control',
+                   'fitness_passion_landing_plans_shortcode1_control',
+                   'fitness_passion_landing_plans_shortcode2_control',
+                   'fitness_passion_landing_plans_shortcode3_control'
+               ];
+
+               //plans
+               if (wp.customize.instance('fitness_passion_landing_plans_show').get()) {
+
+                   $.each($control_ids_landing_section_plans, function (id, value) {
+                       $('#customize-control-' + value).fadeIn();
+                   });
+               } else {
+
+                   $.each($control_ids_landing_section_plans, function (id, value) {
+                       $('#customize-control-' + value).fadeOut();
+                   });
+               }
+
+           }
+
+            if ($section == 'contact' || $section == 'all'){
+
+                // array controls ids for landing section contact
+                var $control_ids_landing_section_contact = [
+                   'fitness_passion_landing_contact_title_control',
+                   'fitness_passion_landing_contact_back_image_control',
+                   'fitness_passion_landing_contact_form_shortcode_control',
+               ];
+
+               //contact
+               if (wp.customize.instance('fitness_passion_landing_contact_show').get()) {
+
+                   $.each($control_ids_landing_section_contact, function (id, value) {
+                       $('#customize-control-' + value).fadeIn();
+                   });
+               } else {
+
+                   $.each($control_ids_landing_section_contact, function (id, value) {
+                       $('#customize-control-' + value).fadeOut();
+                   });
+               }
+
+           }
+
         }
 
         // on change values services....
@@ -311,6 +362,24 @@
             control.setting.bind(function (value) {
                 
                 landing_sections_check('latest-posts');
+            });
+
+        });
+
+        // on change values plans section....
+        wp.customize.control('fitness_passion_landing_plans_show_control', function (control) {
+            control.setting.bind(function (value) {
+                
+                landing_sections_check('plans');
+            });
+
+        });
+
+        // on change values contact section....
+        wp.customize.control('fitness_passion_landing_contact_show_control', function (control) {
+            control.setting.bind(function (value) {
+                
+                landing_sections_check('contact');
             });
 
         });

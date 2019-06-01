@@ -21,12 +21,12 @@ get_header();
 			get_template_part( 'template-parts/content','single' );
 			
 			the_post_navigation( array(
-				'prev_text'                  => __( ' &larr; %title','fitness-passion' ),
+				'prev_text'                  => __( ' %title','fitness-passion' ),
 				'next_text'                  => __( ' %title &rarr;','fitness-passion' ),
 				'screen_reader_text' => __( 'Continue Reading','fitness-passion' ),
 			) );
 			
-			if(get_theme_mod('fitnes_passion_related_post',true)){?>
+			if( get_theme_mod('fitness_passion_related_post',true)){?>
 				<h2><?php echo esc_html('Related Posts','fitness-passion');?></h2>
 				<?php do_action('fitness_passion_show_related_post');
 			}

@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 		
 		<div class="header-top">
 			<?php
-			 if( get_theme_mod('fitness_passion_header_top_show_info', true) ):
+			 if( get_theme_mod('fitness_passion_header_top_show_info', false) ):
 				$phone = get_theme_mod('fitness_passion_phone', '');
 				$whatsapp = get_theme_mod('fitness_passion_whatsapp', '');
 				$address = get_theme_mod('fitness_passion_address', '');
@@ -51,7 +51,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 				</div>
 				<?php endif;
         
-				if( get_theme_mod('fitness_passion_header_top_show_social', true) ):
+				if( get_theme_mod('fitness_passion_header_top_show_social', false) ):
 					do_action('fitness_passion_social_icons');
 				endif;?>
         
@@ -94,7 +94,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 		
 			$image_header = get_template_directory_uri().'/assets/images/header_default.jpg';
 			
-			if ( (get_custom_header() && (is_home() && is_front_page())) ||  (get_custom_header() && is_front_page())): 
+			if ( ( get_custom_header() && (is_home() && is_front_page())) ||  (get_custom_header() && is_front_page()) || is_archive() || is_search()): 
 
 				$image_header = get_header_image() ? get_header_image() : esc_url(get_template_directory_uri()).'/assets/images/header_default.jpg';
 				

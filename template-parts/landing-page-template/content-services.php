@@ -2,14 +2,14 @@
 /**
  * Template part for displaying services section on landing template
  *
-*
+ *
  * @package fitness-passion
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 if( !get_theme_mod('fitness_passion_landing_services_show', false) ){ return; }
 
-$services_arr=array();
+$services_arr = array();
 	for($i=1; $i<=3; $i++) {
        
 	  if( get_theme_mod('fitness_passion_landing_service_'.$i, false) != 0) {
@@ -18,7 +18,7 @@ $services_arr=array();
 	  }
     }
    ?>
-<section class="fit-landing-services">
+<section class="fp-landing-services">
 
     <?php 
      if(empty($services_arr)){

@@ -42,7 +42,7 @@ if ( ! function_exists( 'fitness_passion_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-
+		add_post_type_support( 'page', 'excerpt' );
 		add_image_size( 'custom-size', 500, 370, true );
 		add_image_size( 'widget-posts', 80, 80 );
 
@@ -138,7 +138,7 @@ add_filter('excerpt_more', 'fitness_passion_excerpt_more');
 
 
 function fitness_passion_excerpt_length ($length) {
-	return get_theme_mod('fitness_passion_blog_excerpt', 55);
+	return 20;
 }
 add_filter ('excerpt_length', 'fitness_passion_excerpt_length', 999);
 
@@ -147,7 +147,7 @@ add_filter ('excerpt_length', 'fitness_passion_excerpt_length', 999);
  * Enqueue scripts and styles.
  */
 function fitness_passion_scripts() {
-
+	
 	wp_enqueue_style( 'bootsrap-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css' ,array(),'3.3.7');
 		
 	wp_enqueue_style( 'font-awesome-css', get_template_directory_uri() . '/assets/fonts/font-awesome.min.css' ,array(),'4.7.0');
@@ -186,6 +186,16 @@ function fitness_passion_scripts() {
 add_action( 'wp_enqueue_scripts', 'fitness_passion_scripts' );
 
 /**
+ * admin scripts
+ */
+function fitness_passion_admin_scripts( $hook )
+{
+	wp_enqueue_style( 'fitness-passion-admin-css', get_template_directory_uri() . '/assets/css/admin.css' );
+    
+}
+add_action( 'admin_enqueue_scripts', 'fitness_passion_admin_scripts' );
+
+/**
  * Enqueue editor scripts for Customizer
  */
 function fitness_passion_customize_controls_js(){
@@ -215,16 +225,46 @@ function fitness_passion_block_editor_styles() {
 
 add_action( 'enqueue_block_editor_assets', 'fitness_passion_block_editor_styles' );
 
+/**
+ * Filter navigation post links.
+ *
+ * split titles
+ */
+
+function fitness_passion_next_post_link( $output, $format, $link, $post ) {
+	if ( ! $post ) {
+	return '';
+  }
+
+  return sprintf(
+	  '<div class="nav-next"><a href="%1$s" title="%2$s">%3$s &rarr;</a></div>',
+		esc_url(get_permalink( $post )),
+		$post->post_title,
+		wp_trim_words($post->post_title,3,'...')
+  );
+}
+add_filter( 'next_post_link','fitness_passion_next_post_link' , 10, 4 );
+
+function fitness_passion_previous_post_link( $output, $format, $link, $post ) {
+	if ( ! $post ) {
+	return '';
+  }
+
+  return sprintf(
+	  '<div class="nav-previous"><a href="%1$s" title="%2$s">&larr; %3$s</a></div>',
+		esc_url(get_permalink( $post )),
+		$post->post_title,
+		wp_trim_words($post->post_title,3,'...')
+  );
+}
+add_filter( 'previous_post_link', 'fitness_passion_previous_post_link', 10, 4 );
+
+
 
 /**
- * Add customizer link on admin panel
+ * Admin panel.
  */
-function fitness_passion_customizer_menu() {
-
-	add_theme_page( __('Fitness Passion Theme','fitness-passion'), __('Fitness Passion Theme','fitness-passion'), 'edit_theme_options', 'customize.php' );
-}
-
-add_action( 'admin_menu', 'fitness_passion_customizer_menu' );
+require get_template_directory() . '/inc/theme-panel.php';
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
@@ -265,6 +305,11 @@ require get_template_directory() . '/inc/tgm/plugins-recomended.php';
  * widgets.
  */
 require get_template_directory() . '/inc/widgets/recent-posts.php';
+
+/**
+ * short codes.
+ */
+require get_template_directory() . '/inc/short-codes/short-codes.php';
 
 /**
  * Load Jetpack compatibility file.

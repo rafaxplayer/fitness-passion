@@ -55,7 +55,7 @@ Class Fitness_passion_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
                         else:?>
                         <img src="<?php echo esc_url(get_template_directory_uri().'/assets/images/widget-placeholder.png'); ?>" alt="Widget placeholder" >
                     <?php endif; ?>
-                    <div class="noa-widget-info">
+                    <div class="fp-widget-info">
                         <a href="<?php the_permalink(); ?>"><?php get_the_title() ? the_title() : the_ID(); ?></a>
                         <?php if ( $show_date ) : ?>
                             <span class="post-date"><?php echo get_the_date(); ?></span>

@@ -24,7 +24,7 @@ if(! function_exists('fitness_passion_header_content')):
         $subtext ="";
         if(is_front_page() || (is_front_page() && is_home())){
 
-            $text = fitness_passion_add_span_last_word(get_theme_mod('fitness_passion_front_page_header_title', 'Fitness Passion'));
+            $text = fitness_passion_add_span_last_word(get_theme_mod('fitness_passion_front_page_header_title', 'fitness Passion'));
             $subtext = get_theme_mod('fitness_passion_front_page_header_subtitle', 'Subtitle text');
             $buttonText = get_theme_mod('fitness_passion_front_page_header_button');
             $buttonLink = get_theme_mod('fitness_passion_front_page_header_button_link','#');
@@ -82,7 +82,8 @@ if( !function_exists('fitness_passion_breadcrumbs')):
             if (!is_home()){
                                 
                 /* no es el blog index.php*/
-                if (is_category() || is_single()) {
+                if (is_category() || is_single() ) {
+
                     /* Es category.php o es single.php por lo tanto estan dentro del blog */
                     $categories = get_the_category('');
                     
@@ -191,14 +192,14 @@ add_action('fitness_passion_social_icons','fitness_passion_social_links');
         if ( $custom_query->have_posts() ) : ?>
         <?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
                        
-            <div class="fp_related_post col-md-4" style="background-image:url(<?php the_post_thumbnail_url( 'medium' ); ?>);" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">
+            <div class="fp_related_post col-md-4 col-sm-6 col-12" style="background-image:url(<?php the_post_thumbnail_url( 'medium' ); ?>);" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">
                 <a href="<?php the_permalink(); ?>"> 
                     <div class="related_post_info">
                         <?php the_title('<h3>','</h3>'); ?>
-                        <p><?php if ( empty( get_the_excerpt() ) ) : 
-            	                    echo wp_kses_post( wp_trim_words( get_the_excerpt(), 20 ) ); 
+                        <p><?php if ( empty( get_the_excerpt())) : 
+            	                    echo wp_kses_post( wp_trim_words( get_the_content(), 20 )); 
         	                    else : 
-            	                    echo wp_kses_post( get_the_excerpt() ); 
+            	                    echo wp_kses_post( wp_trim_words(get_the_excerpt(),20) ); 
          	                    endif; ?></p>
                     </div>
                 </a>

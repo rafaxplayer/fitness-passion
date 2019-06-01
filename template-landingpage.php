@@ -32,7 +32,7 @@ get_header();
 
 					$titleLasPosts = get_theme_mod('fitness_passion_landing_latest_posts_title',__('Latest posts','fitness-passion'));
 					?>
-					<section class="fit-landing-last-posts" style="background-image:url(<?php echo esc_url(get_theme_mod('fitnes_passion_landing_latest_posts_back_image')); ?>);">
+					<section class="fp-landing-last-posts" style="background-image:url(<?php echo esc_url(get_theme_mod('fitness_passion_landing_latest_posts_back_image')); ?>);">
 						<div class="lastes-posts-wrap">
 
 							<?php if(!empty($titleLasPosts)){ printf('<h2 class="section-title">%s</h2>',esc_html($titleLasPosts)); } ?>
@@ -47,6 +47,7 @@ get_header();
 						
 					</section>
 				<?php }
+				get_template_part('template-parts/landing-page-template/content-plans');
 				get_template_part('template-parts/landing-page-template/content-contact');
 			?>
 

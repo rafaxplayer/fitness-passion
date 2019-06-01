@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
+
 /* Blog section*/
 	$wp_customize->add_section( 'fitness_passion_blog_page_section' , array(
 		'title'      	  => esc_html__('Blog Page Options','fitness-passion'),

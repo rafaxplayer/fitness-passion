@@ -109,6 +109,12 @@ if ( ! function_exists( 'fitness_passion_entry_footer' ) ) :
 			'   <i class="fa fa-edit"></i><span class="edit-link">',
 			'</span>'
 		);
+		/*If is sticky , show icon clip*/
+		if(is_sticky($post_id)){?>
+		
+			<i class="fa fa-thumb-tack" aria-hidden="true"></i>
+		<?php
+		}
 	}
 endif;
 
@@ -145,3 +151,5 @@ if ( ! function_exists( 'fitness_passion_post_thumbnail' ) ) :
 		endif; // End is_singular().
 	}
 endif;
+
+

@@ -1,9 +1,11 @@
 === fitness-passion ===
+
 Contributors: Rafax
 Tags: custom-header, custom-background, featured-image-header, custom-logo, full-width-template, custom-menu, featured-images, threaded-comments, translation-ready, two-columns, right-sidebar, theme-options, editor-style, sticky-post
 Requires at least: 4.5
 Tested up to: 5.2
 Stable tag: 1.1.8
+Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DFZBWTFKLCWYQ&source=url
 License: GNU General Public License v2 or later
 License URI: LICENSE
 

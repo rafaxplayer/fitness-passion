@@ -57,34 +57,7 @@ function fitness_passion_button_shortcode( $atts, $content = null ) {
 }
 add_shortcode( 'fp-button', 'fitness_passion_button_shortcode' );
 
-function fitness_passion_drop_caps_shortcode( $atts, $content = null ) {
-	
-	// Extract shortcode attributes
-	extract( shortcode_atts( array(
-		'shadow' => 'false',
-		'color'  => 'blue',
-	), $atts ) );
 
-	if(!$content){
-		_e('Opps! Enter your text please','fitness-passion');
-		return;
-	}
-	
-	$shadow = wp_validate_boolean($shadow) ? 'fp-shadow' : '';
-	$class= 'class="fp-drop-caps fp-color-'. esc_attr( $color).' '.$shadow.'"';
-
-	$content= '<p>' .ucfirst($content). '</p>';
-
-	$content = preg_replace( '~(?<=^<p>)(\W*)(\w)(?=[\s\S]*</p>$)~i',
-                       '$1<span '. $class.'>$2</span>',
-                       $content );
-	
-	return $content;
-
-	
-
-}
-add_shortcode( 'fp-drop-caps', 'fitness_passion_drop_caps_shortcode' );
 
 function fitness_passion_text_boxes_shorcode($atts, $content = ""){
 

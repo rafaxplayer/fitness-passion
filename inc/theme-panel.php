@@ -27,12 +27,14 @@ $theme_info = wp_get_theme();?>
         <?php echo esc_html__( 'Thank you for using Fitness Passion !!!, Fitness Passion is a theme designed for gym or fitness site.', 'fitness-passion' ); ?>
 
     </div>
+    <div class="fp-theme-image">
+        <img src="<?php echo get_template_directory_uri().'/screenshot.png'; ?>" alt="">
+    </div>    
     <div>
         <h2>
         <span class="dashicons dashicons-admin-generic"></span>
         <?php echo esc_html__('Features','fitness-passion'); ?>
         </h2>
-
     </div>
 
     <div class="card">
@@ -48,14 +50,14 @@ $theme_info = wp_get_theme();?>
         <?php printf( __( 'Use the template "landing page" to create a home page, configure your sections from the <a href="%s">customizer</a>', 'fitness-passion' ),esc_url( admin_url( 'customize.php' ) )); ?>
         </p>
 
-        <b><?php echo esc_html__( '- Page Full-width template', 'fitness-passion' ); ?></b>
+        <b><?php echo esc_html__( '- Page Full width template', 'fitness-passion' ); ?></b>
         <p>
-        <?php echo esc_html__( 'Use the template "Page Full-width" to create pages with full-width', 'fitness-passion' ); ?>
+        <?php echo esc_html__( 'Use the template "Page Full-width" to create pages with full width', 'fitness-passion' ); ?>
         </p>
 
         <b><?php echo esc_html__( '- Post Full-width template', 'fitness-passion' ); ?></b>
         <p>
-        <?php echo esc_html__( 'Use the template "Post Full-width" to create pots with full-width', 'fitness-passion' ); ?>
+        <?php echo esc_html__( 'Use the template "Post Full-width" to create pots with full width', 'fitness-passion' ); ?>
         </p>
 
     </div>
@@ -80,9 +82,7 @@ $theme_info = wp_get_theme();?>
         <p class="fp-code">
             <b>[fp-button url="yoururl" color="blue"]Button text[/fp-button]</b><br>
         </p>
-        <p>
-            <?php echo esc_html__( 'The buttons have parameters for text, url and color of the button, examples :', 'fitness-passion' ); ?>
-        </p>
+        <
         <p>
             <?php echo esc_html__( 'Available colours : red, blue, orange, black, white', 'fitness-passion' ); ?>
         </p><br>
@@ -102,50 +102,11 @@ $theme_info = wp_get_theme();?>
         <?php echo do_shortcode('[fp-button url="yoururl" color="white" text="Button text"]'); ?>
         </p><br>
         </p>
-        <h4><?php echo esc_html__( '- Drop Caps', 'fitness-passion' ); ?></h4>
-        <p>
-            <?php echo esc_html__( 'Use drop caps in your paragraphs', 'fitness-passion' ); ?>
-        </p>
-        <b><?php echo esc_html__( '- Set colors (Blue, Orange,Black, White, Red), examples:', 'fitness-passion' ); ?></b>  
-        <br>   
-        <p class="fp-code">
-            <b>[fp-drop-caps color="orange" ] Your text [/fp-drop-caps]</b><br>
-        </p><br>
-        <div class="fp_content">
-        <?php echo do_shortcode('[fp-drop-caps color="orange" ]dolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quo corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quo [/fp-drop-caps]'); ?>
-        </div>
-        <br>
-
-        <p class="fp-code">
-            <b>[fp-drop-caps color="black" ] Your text [/fp-drop-caps]</b><br>
-        </p><br>
-        <div class="fp_content">
-        <?php echo do_shortcode('[fp-drop-caps color="black" ]dolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quo corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quo [/fp-drop-caps]'); ?>
-        </div>
-        <br>
-
-        <p class="fp-code">
-            <b>[fp-drop-caps color="red" ] Your text [/fp-drop-caps]</b><br>
-        </p><br>
-
-        <div class="fp_content">
-        <?php echo do_shortcode('[fp-drop-caps color="red" ]dolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quo corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quo [/fp-drop-caps]'); ?>
-        </div>
-        <br>
-
-        <b><?php echo esc_html__( '- Set shadow (true or false)', 'fitness-passion' ); ?></b>
-        <br>
-        <p class="fp-code " >
-            <b>[fp-drop-caps color="red" shadow="true"] Your text [/fp-drop-caps]</b><br>
-        </p><br>
-
-        <div class="fp_content" style="background-color:#2b2c5f;; color:white">
-        <?php echo do_shortcode('[fp-drop-caps color="red" shadow="true"]dolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quo corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quodolor corporis sint con sequuntur sed. Quasi quo [/fp-drop-caps]'); ?>
-        </div>
+        
         <br>
         <h4 id="plans"><?php echo esc_html__( '- Price Plans boxes', 'fitness-passion' ); ?></h4>
         <p>
-            <?php echo esc_html__( 'Use it to create boxes of training plans or recurring payments, example :', 'fitness-passion' ); ?>
+            <?php echo esc_html__( 'Use it to create boxes of training plans or recurring payments', 'fitness-passion' ); ?>
         </p>
         <p>
             <?php echo esc_html__( 'The plannings boxes parameters: title, price, currency, outstanding, button_text, button_link,You can use html to give content to the content. examples :', 'fitness-passion' ); ?>
@@ -198,11 +159,7 @@ $theme_info = wp_get_theme();?>
         <?php echo do_shortcode('[fp-text-box type="warning"]Aprovecha nuestra instalación de WordPress en 1 clic y nuestro potente y exclusivo WordPress Starter para crear un sitio real y funcional en minutos.[/fp-text-box]');?>
         </div>
         <br>
-        <h4 id="plans"><?php echo esc_html__( '- All short codes available', 'fitness-passion' ); ?></h4>
-    <?php global $shortcode_tags;
-        echo '<pre style="font-size:1.5em">';
-        print_r($shortcode_tags); 
-        echo '</pre>';?>
+        
     </div>
 	
 </div><!--/.wrap.about-wrap-->

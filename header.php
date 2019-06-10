@@ -58,9 +58,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 		</div>
 		<div class="header-wrap">
 		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() || is_home() ) :
+			<?php the_custom_logo(); ?>
+			<div class="wrap-batnding-tetxs">
+			<?php if ( is_front_page() || is_home() ) :
 				?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php
@@ -74,6 +74,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 				?>
 				<p class="site-description"><?php echo esc_html($fitness_passion_description); /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
+			</div>
 		</div><!-- .site-branding -->
 		
 		<i id="button-toogle" class="menu-toggle fa fa-bars" aria-controls="primary-menu" aria-expanded="false"></i>

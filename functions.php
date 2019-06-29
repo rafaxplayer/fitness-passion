@@ -43,8 +43,8 @@ if ( ! function_exists( 'fitness_passion_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 		add_post_type_support( 'page', 'excerpt' );
-		add_image_size( 'custom-size', 500, 370, true );
-		add_image_size( 'widget-posts', 80, 80 );
+		add_image_size( 'fitness_passion_custom_size', 500, 370, true );
+		add_image_size( 'fitness_passion_widget_posts', 80, 80 );
 
 
 		// This theme uses wp_nav_menu() in one location.
@@ -138,7 +138,7 @@ add_filter('excerpt_more', 'fitness_passion_excerpt_more');
 
 
 function fitness_passion_excerpt_length ($length) {
-	return 20;
+	return esc_html(20);
 }
 add_filter ('excerpt_length', 'fitness_passion_excerpt_length', 999);
 
@@ -158,7 +158,7 @@ function fitness_passion_scripts() {
 	
 	wp_enqueue_style('fitness-passion-google-fonts-Teko', '//fonts.googleapis.com/css?family=Teko:400,500,700,900');
 	
-	wp_enqueue_style( 'fitness-passion-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'fitness-passion-style', get_stylesheet_uri());
 	
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), '3.3.7', true );
 		
@@ -260,11 +260,19 @@ function fitness_passion_previous_post_link( $output, $format, $link, $post ) {
 add_filter( 'previous_post_link', 'fitness_passion_previous_post_link', 10, 4 );
 
 
-
 /**
- * Admin panel.
+ * Remove testimonials category for the loop
  */
-require get_template_directory() . '/inc/theme-panel.php';
+function fitness_passion_testimonials_cat( $wp_query ) {  
+	$testimonials_slug = get_theme_mod('fitness_passion_landing_testimonial_category', 'testimonials');
+	$excluded = '-'.get_category_by_slug($testimonials_slug)->term_id;
+    if( !is_admin() && is_main_query() && is_home() ) {
+		$wp_query->set( 'cat', $excluded );
+		
+    }
+}
+add_action( 'pre_get_posts', 'fitness_passion_testimonials_cat' );
+
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
@@ -307,16 +315,25 @@ require get_template_directory() . '/inc/tgm/plugins-recomended.php';
 require get_template_directory() . '/inc/widgets/recent-posts.php';
 
 /**
- * short codes.
- */
-require get_template_directory() . '/inc/short-codes/short-codes.php';
-
-/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/***   PRO VERSION   ***/
+
+/**
+ * short codes.
+ */
+require get_template_directory() . '/inc/short-codes/short-codes.php';
+
+/**
+ * Admin panel.
+ */
+require get_template_directory() . '/inc/theme-panel.php';
+
+
 
 
 

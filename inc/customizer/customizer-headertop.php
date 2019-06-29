@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 		'transport'         => 'refresh',
 	));
 
-	$wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_header_top_show_info_control', array(
+	$wp_customize->add_control( new Fitness_Passion_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_header_top_show_info_control', array(
 		'label'       => esc_html__( 'Show/Hide info site on header top', 'fitness-passion' ),
 		'description' => esc_html__('To see edit your info in the Site Info section','fitness-passion'),
 		'section'     => 'fitness_passion_top_header_section',
@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 		'transport'         => 'refresh',
 	));
 
-	$wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_header_top_show_social_control', array(
+	$wp_customize->add_control( new Fitness_Passion_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_header_top_show_social_control', array(
 		'label'       => esc_html__( 'Show/Hide Social network icons on header top', 'fitness-passion' ),
 		'description' => esc_html__('To see the icons you must edit your link in the Site Info section','fitness-passion'),
 		'section'     => 'fitness_passion_top_header_section',

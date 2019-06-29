@@ -21,7 +21,7 @@ $wp_customize->add_setting( 'fitness_passion_breadcrumbs' , array(
     'transport'         => 'refresh',
 ));
 
-$wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_breadcrumbs_control', array(
+$wp_customize->add_control( new Fitness_Passion_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_breadcrumbs_control', array(
     'label'      => esc_html__( 'Show/Hide Breadcrumbs on header', 'fitness-passion' ),
     'section'    => 'fitness_passion_layout_section',
     'settings'   => 'fitness_passion_breadcrumbs',
@@ -35,7 +35,7 @@ $wp_customize->add_setting( 'fitness_passion_breadcrumbs_content' , array(
     'transport'         => 'refresh',
 ));
 
-$wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_breadcrumbs_content_control', array(
+$wp_customize->add_control( new Fitness_Passion_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_breadcrumbs_content_control', array(
     'label'      => esc_html__( 'Show/Hide Breadcrumbs on content pages', 'fitness-passion' ),
     'section'    => 'fitness_passion_layout_section',
     'settings'   => 'fitness_passion_breadcrumbs_content',
@@ -49,7 +49,7 @@ $wp_customize->add_setting( 'fitness_passion_sidebar' , array(
     'transport'         => 'refresh',
 ));
 
-$wp_customize->add_control( new Skyrocket_Image_Radio_Button_Custom_Control( $wp_customize, 'fitness_passion_sidebar_control', array(
+$wp_customize->add_control( new Fitness_Passion_Image_Radio_Button_Custom_Control( $wp_customize, 'fitness_passion_sidebar_control', array(
     'label'      => esc_html__( 'Show/Hide sidebar', 'fitness-passion' ),
     'section'    => 'fitness_passion_layout_section',
     'settings'   => 'fitness_passion_sidebar',
@@ -74,7 +74,7 @@ $wp_customize->add_setting( 'fitness_passion_show_animations' , array(
     'transport'         => 'refresh',
 ));
 
-$wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_show_animations_control', array(
+$wp_customize->add_control( new Fitness_Passion_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_show_animations_control', array(
     'label'      => esc_html__( 'Show animations', 'fitness-passion' ),
     'section'    => 'fitness_passion_layout_section',
     'settings'   => 'fitness_passion_show_animations',

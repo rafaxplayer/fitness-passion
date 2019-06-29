@@ -19,11 +19,11 @@ $action_id = absint( get_theme_mod('fitness_passion_landing_page_action'.$i));
 
     <?php if($action_id === 0){
 
-        prinf( __('Select Page for Action Section %s','fitness-passion'),$i); 
+        printf( __('Select Page for Action Section %s','fitness-passion'),$i); 
        
     }else{
         $page = get_post($action_id);
-        $image = wp_get_attachment_image_url( get_post_thumbnail_id($action_id),'custom-size' ); 
+        $image = wp_get_attachment_image_url( get_post_thumbnail_id($action_id),'fitness_passion_custom_size' ); 
         $thumbnail_id = get_post_thumbnail_id( $action_id );
         $permalink = esc_url(get_permalink($action_id));
         $alt = esc_attr(get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true)); 

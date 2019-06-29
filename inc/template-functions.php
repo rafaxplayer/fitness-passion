@@ -53,9 +53,9 @@ function fitness_passion_add_span_last_word($string){
 /**
  * Check if WooCommerce is activated
  */
-if ( ! function_exists( 'is_woocommerce_activated' ) ) {
+if ( ! function_exists( 'fitness_passion_is_woocommerce_activated' ) ) {
 	
-	function is_woocommerce_activated() {
+	function fitness_passion_is_woocommerce_activated() {
 
 		if ( class_exists( 'woocommerce' ) ) { return true; } else { return false; }
 

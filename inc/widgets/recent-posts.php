@@ -33,11 +33,14 @@ Class Fitness_passion_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
              *
              * @param array $args An array of arguments used to retrieve the recent posts.
              */
+
+           
             $r = new WP_Query( apply_filters( 'widget_posts_args', array(
                 'posts_per_page'      => $number,
                 'no_found_rows'       => true,
                 'post_status'         => 'publish',
-                'ignore_sticky_posts' => true
+                'ignore_sticky_posts' => true,
+                
             ) ) );
 
             if ($r->have_posts()) :
@@ -51,12 +54,10 @@ Class Fitness_passion_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
                 <li>
 
                     <?php if(has_post_thumbnail()):
-                            the_post_thumbnail('widget-posts'); 
-                        else:?>
-                        <img src="<?php echo esc_url(get_template_directory_uri().'/assets/images/widget-placeholder.png'); ?>" alt="Widget placeholder" >
-                    <?php endif; ?>
+                            the_post_thumbnail('fitness_passion_widget_posts'); 
+                    endif; ?>
                     <div class="fp-widget-info">
-                        <a href="<?php the_permalink(); ?>"><?php get_the_title() ? the_title() : the_ID(); ?></a>
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                         <?php if ( $show_date ) : ?>
                             <span class="post-date"><?php echo get_the_date(); ?></span>
                         <?php endif; ?>

@@ -172,9 +172,7 @@
                 for(var i =1;i<= theme_options.couches_number;i++){
 
                     $control_ids_landing_section_coaches.push(
-                        'fitness_passion_landing_coach'+i+'_image_control',
-                        'fitness_passion_landing_coach'+i+'_name_control',
-                        'fitness_passion_landing_coach'+i+'_desc_control',
+                        'fitness_passion_landing_coach'+i+'_page_control',
                         'fitness_passion_landing_coach'+i+'_facebook_control',
                         'fitness_passion_landing_coach'+i+'_twitter_control',
                         'fitness_passion_landing_coach'+i+'_email_control');

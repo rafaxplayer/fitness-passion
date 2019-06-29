@@ -141,9 +141,7 @@ if ( ! function_exists( 'fitness_passion_post_thumbnail' ) ) :
 
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<div class="wrap-thumbnail">
-			<?php
-			the_post_thumbnail();
-			?>
+			<?php the_post_thumbnail(); ?>
 			</div>
 		</a>
 

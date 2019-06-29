@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 		'transport' => 'refresh',
 	));
 
-	$wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_related_post_control', array(
+	$wp_customize->add_control( new Fitness_Passion_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_related_post_control', array(
 		'label'      => esc_html__( 'Show/Hide Related post on single post page', 'fitness-passion' ),
 		'section'    => 'fitness_passion_blog_page_section',
 		'settings'   => 'fitness_passion_related_post',

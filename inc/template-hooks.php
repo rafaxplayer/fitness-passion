@@ -10,7 +10,7 @@ if(! function_exists('fitness_passion_header_content')):
 
     function fitness_passion_header_content(){
 
-        if(is_woocommerce_activated()){
+        if(fitness_passion_is_woocommerce_activated()){
 
             if(is_woocommerce() && is_shop()){
     
@@ -24,8 +24,8 @@ if(! function_exists('fitness_passion_header_content')):
         $subtext ="";
         if(is_front_page() || (is_front_page() && is_home())){
 
-            $text = fitness_passion_add_span_last_word(get_theme_mod('fitness_passion_front_page_header_title', 'fitness Passion'));
-            $subtext = get_theme_mod('fitness_passion_front_page_header_subtitle', 'Subtitle text');
+            $text = fitness_passion_add_span_last_word(get_theme_mod('fitness_passion_front_page_header_title', ''));
+            $subtext = get_theme_mod('fitness_passion_front_page_header_subtitle', '');
             $buttonText = get_theme_mod('fitness_passion_front_page_header_button');
             $buttonLink = get_theme_mod('fitness_passion_front_page_header_button_link','#');
         
@@ -68,7 +68,7 @@ if( !function_exists('fitness_passion_breadcrumbs')):
             $bloglink = get_option( 'page_for_posts' )==0 ? esc_url(home_url( '/' ))  : esc_url(get_permalink( get_option( 'page_for_posts' )));
             
             /* si es una pagina de woocommerce*/
-            if(is_woocommerce_activated()){
+            if(fitness_passion_is_woocommerce_activated()){
 
                 if(is_woocommerce()){
                     $blogname = woocommerce_page_title(false);
@@ -96,7 +96,7 @@ if( !function_exists('fitness_passion_breadcrumbs')):
                         the_title($separator,'');
                     }
                 } elseif (is_page()) {
-                    if(is_woocommerce_activated()){
+                    if(fitness_passion_is_woocommerce_activated()){
                         /* si es una pagina de woocommerce carrito , pago o cuenta*/
                         if(is_cart() || is_checkout() || is_account_page()){
                             $blogname = woocommerce_page_title(false);

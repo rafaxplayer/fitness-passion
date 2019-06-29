@@ -102,9 +102,5 @@ function fitness_passion_planning_shortcode( $atts, $content = "" ) {
 					<a class="fp_planning_button" href="'.esc_url($button_link).'">'.esc_html($button_text).'</a>
 				</div>';
 
-	
-
-	
-
 }
 add_shortcode( 'fp-planning', 'fitness_passion_planning_shortcode' );

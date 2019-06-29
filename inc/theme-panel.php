@@ -47,7 +47,7 @@ $theme_info = wp_get_theme();?>
         
         <b><?php echo esc_html__( '- Landing Page template', 'fitness-passion' ); ?></b>
         <p>
-        <?php printf( __( 'Use the template "landing page" to create a home page, configure your sections from the <a href="%s">customizer</a>', 'fitness-passion' ),esc_url( admin_url( 'customize.php' ) )); ?>
+        <?php esc_html__( 'Use the template "landing page" to create a home page, configure your sections from the customizer', 'fitness-passion'); ?>
         </p>
 
         <b><?php echo esc_html__( '- Page Full width template', 'fitness-passion' ); ?></b>
@@ -141,22 +141,22 @@ $theme_info = wp_get_theme();?>
             <?php echo esc_html__( 'Text boxes parameters: type ( info, warning, danger, success), examples :', 'fitness-passion' ); ?>
         </p><br>
         <p class="fp-code fp_content" >
-            <b>[fp-text-box type="info"]Aprovecha nuestra instalación de WordPress en 1 clic y nuestro potente y exclusivo WordPress Starter para crear un sitio real y funcional en minutos.[/fp-text-box]</b><br>
+            <b>[fp-text-box type="info"]Lorem ipsum dolor sit amet consectetur adipiscing elit purus cursus, ut fames natoque hendrerit in fermentum condimentum dignissim massa felis, dis aliquam risus ligula vivamus eleifend suscipit torquent. Rutrum faucibus lacinia volutpat himenaeos netus sapien etiam consequat leo, nibh tempor ut vehicula fames torquent ultrices dui. Cras fermentum posuere eu torquent ut rhoncus primis facilisis, [/fp-text-box]</b><br>
         </p><br>
         <div class="fp_content">
-        <?php echo do_shortcode('[fp-text-box type="info"]Aprovecha nuestra instalación de WordPress en 1 clic y nuestro potente y exclusivo WordPress Starter para crear un sitio real y funcional en minutos.[/fp-text-box]');?>
+        <?php echo do_shortcode('[fp-text-box type="info"]Lorem ipsum dolor sit amet consectetur adipiscing elit purus cursus, ut fames natoque hendrerit in fermentum condimentum dignissim massa felis, dis aliquam risus ligula vivamus eleifend suscipit torquent. Rutrum faucibus lacinia volutpat himenaeos netus sapien etiam consequat leo, nibh tempor ut vehicula fames torquent ultrices dui. Cras fermentum posuere eu torquent ut rhoncus primis facilisis, [/fp-text-box]');?>
         </div>
         <br>
         <div class="fp_content">
-        <?php echo do_shortcode('[fp-text-box type="success"]Aprovecha nuestra instalación de WordPress en 1 clic y nuestro potente y exclusivo WordPress Starter para crear un sitio real y funcional en minutos.[/fp-text-box]');?>
+        <?php echo do_shortcode('[fp-text-box type="success"]Lorem ipsum dolor sit amet consectetur adipiscing elit purus cursus, ut fames natoque hendrerit in fermentum condimentum dignissim massa felis, dis aliquam risus ligula vivamus eleifend suscipit torquent. Rutrum faucibus lacinia volutpat himenaeos netus sapien etiam consequat leo, nibh tempor ut vehicula fames torquent ultrices dui. Cras fermentum posuere eu torquent ut rhoncus primis facilisis, [/fp-text-box]');?>
         </div>
         <br>
         <div class="fp_content">
-        <?php echo do_shortcode('[fp-text-box type="danger"]Aprovecha nuestra instalación de WordPress en 1 clic y nuestro potente y exclusivo WordPress Starter para crear un sitio real y funcional en minutos.[/fp-text-box]');?>
+        <?php echo do_shortcode('[fp-text-box type="danger"]Lorem ipsum dolor sit amet consectetur adipiscing elit purus cursus, ut fames natoque hendrerit in fermentum condimentum dignissim massa felis, dis aliquam risus ligula vivamus eleifend suscipit torquent. Rutrum faucibus lacinia volutpat himenaeos netus sapien etiam consequat leo, nibh tempor ut vehicula fames torquent ultrices dui. Cras fermentum posuere eu torquent ut rhoncus primis facilisis, [/fp-text-box]');?>
         </div>
         <br>
         <div class="fp_content">
-        <?php echo do_shortcode('[fp-text-box type="warning"]Aprovecha nuestra instalación de WordPress en 1 clic y nuestro potente y exclusivo WordPress Starter para crear un sitio real y funcional en minutos.[/fp-text-box]');?>
+        <?php echo do_shortcode('[fp-text-box type="warning"]Lorem ipsum dolor sit amet consectetur adipiscing elit purus cursus, ut fames natoque hendrerit in fermentum condimentum dignissim massa felis, dis aliquam risus ligula vivamus eleifend suscipit torquent. Rutrum faucibus lacinia volutpat himenaeos netus sapien etiam consequat leo, nibh tempor ut vehicula fames torquent ultrices dui. Cras fermentum posuere eu torquent ut rhoncus primis facilisis, [/fp-text-box]');?>
         </div>
         <br>
         

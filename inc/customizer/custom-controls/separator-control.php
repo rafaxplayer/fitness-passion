@@ -6,7 +6,7 @@ class Fitness_Passion_Separator_Control extends WP_Customize_Control{
     
     public function render_content(){
         ?>
-        <p><hr></p>
+        <p><hr class="fitness_passion_separator"></p>
         <?php
     }
 }

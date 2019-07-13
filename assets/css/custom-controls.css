@@ -142,6 +142,7 @@ input[type="number"]:focus {
 	display: block;
 	width: 200%;
 	margin-left: -100%;
+	-webkit-transition: margin 0.3s ease-in 0s;
 	transition: margin 0.3s ease-in 0s;
 }
 
@@ -157,7 +158,8 @@ input[type="number"]:focus {
 	color: white;
 	font-family: Trebuchet, Arial, sans-serif;
 	font-weight: bold;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 .toggle-switch-inner:before {
@@ -186,6 +188,7 @@ input[type="number"]:focus {
 	right: 38px;
 	border: 2px solid #ddd;
 	border-radius: 20px;
+	-webkit-transition: all 0.3s ease-in 0s;
 	transition: all 0.3s ease-in 0s;
 }
 
@@ -196,5 +199,17 @@ input[type="number"]:focus {
 .toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-switch {
 	right: 0px;
 }
+
+
+/*=============================================
+ separator control            
+=============================================*/
+.fitness_passion_separator{
+	border: 0;
+    border-top: 4px solid #9ea2a5;
+    border-bottom: 1px solid #fafafa;
+}
+
+
 
 

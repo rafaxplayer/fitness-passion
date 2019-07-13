@@ -20,6 +20,7 @@
 
 #slider .slide {
 	height: 100%;
+	width: 100%;
 	text-align: right;
 	color: #fff;
 	background-position: center;
@@ -47,6 +48,11 @@
 	padding-left: 2rem;
 	padding-right: 2rem;
 	text-align: left;
+	margin-right: auto;
+}
+#slider .slide .slide-wrap .slide-content p{
+	max-width: 1000px;
+	font-weight: 500;
 }
 #slider .slide .slide-wrap .slide-content .button {
 	display: inline-block;

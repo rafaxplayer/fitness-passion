@@ -42,15 +42,16 @@ if ( ! function_exists( 'fitness_passion_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		
 		add_post_type_support( 'page', 'excerpt' );
+
 		add_image_size( 'fitness_passion_custom_size', 500, 370, true );
 		add_image_size( 'fitness_passion_widget_posts', 80, 80 );
 
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'fitness-passion' ),
-			'social-nav' => __( 'Social Nav', 'fitness-passion' ),
+			'menu-1' => esc_html__( 'Primary', 'fitness-passion' )
 		) );
 
 		/*
@@ -190,7 +191,7 @@ add_action( 'wp_enqueue_scripts', 'fitness_passion_scripts' );
  */
 function fitness_passion_admin_scripts( $hook )
 {
-	wp_enqueue_style( 'fitness-passion-admin-css', get_template_directory_uri() . '/assets/css/admin.css' );
+	wp_enqueue_style( 'fitness-passion-admin-css', get_template_directory_uri() . '/assets/css/admin.min.css' );
     
 }
 add_action( 'admin_enqueue_scripts', 'fitness_passion_admin_scripts' );
@@ -264,12 +265,18 @@ add_filter( 'previous_post_link', 'fitness_passion_previous_post_link', 10, 4 );
  * Remove testimonials category for the loop
  */
 function fitness_passion_testimonials_cat( $wp_query ) {  
-	$testimonials_slug = get_theme_mod('fitness_passion_landing_testimonial_category', 'testimonials');
-	$excluded = '-'.get_category_by_slug($testimonials_slug)->term_id;
-    if( !is_admin() && is_main_query() && is_home() ) {
-		$wp_query->set( 'cat', $excluded );
+	if(get_theme_mod('fitness_passion_landing_testimonials_exclude',true)){
+		$testimonials_slug = get_theme_mod('fitness_passion_landing_testimonial_category', 'testimonials');
+		if(get_category_by_slug($testimonials_slug)){
+			$excluded = '-'.get_category_by_slug($testimonials_slug)->term_id;
+			if( !is_admin() && $wp_query->is_main_query() && (is_home() || is_archive() || is_search())) {
+				$wp_query->set( 'cat', $excluded );
+				
+			}
+		}
+
 		
-    }
+	}
 }
 add_action( 'pre_get_posts', 'fitness_passion_testimonials_cat' );
 

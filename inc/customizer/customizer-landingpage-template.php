@@ -301,6 +301,20 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'fitne
 )));
 
 
+$wp_customize->add_setting( 'fitness_passion_landing_testimonials_jetpack' , array(
+    'default'           => false,
+    'sanitize_callback' => 'fitness_passion_sanitize_checkbox',
+    'transport'         => 'refresh',
+));
+
+$wp_customize->add_control( new Fitness_Passion_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_landing_testimonials_jetpack_control', array(
+    'label'      => esc_html__( 'Use testimonials from jetpack', 'fitness-passion' ),
+    'section'    => 'fitness_passion_landing_template_section',
+    'settings'   => 'fitness_passion_landing_testimonials_jetpack',
+    
+)));
+
+
 $wp_customize->add_setting( 'fitness_passion_landing_testimonial_category' , array(
     'default'           => 'testimonials',
     'sanitize_callback' => 'sanitize_text_field',
@@ -309,18 +323,30 @@ $wp_customize->add_setting( 'fitness_passion_landing_testimonial_category' , arr
 
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_landing_testimonial_category_control', array(
     /* translators: numer of testiomonial */
-    'label'      => esc_html__( 'Category for testimonials posts, default testimonials', 'fitness-passion' ),
+    'label'      => esc_html__( 'Custom category for testimonials posts, default "testimonials"', 'fitness-passion' ),
     'section'    => 'fitness_passion_landing_template_section',
     'settings'   => 'fitness_passion_landing_testimonial_category',
 )));
+
+$wp_customize->add_setting( 'fitness_passion_landing_testimonials_exclude' , array(
+    'default'           => true,
+    'sanitize_callback' => 'fitness_passion_sanitize_checkbox',
+    'transport'         => 'refresh',
+));
+
+$wp_customize->add_control( new Fitness_Passion_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_landing_testimonials_exclude_control', array(
+    'label'      => esc_html__( 'Show/Hide testimonials category for lists entries', 'fitness-passion' ),
+    'section'    => 'fitness_passion_landing_template_section',
+    'settings'   => 'fitness_passion_landing_testimonials_exclude',
+    
+)));
+
+
 
 $wp_customize->add_control( new Fitness_Passion_Separator_Control( $wp_customize, 'fitness_passion_separator_'.$sep++, array(
     'section'    => 'fitness_passion_landing_template_section',
     'settings'   => 'fitness_passion_landing_testimonial_category',
 ) ) );
-
-
-
 
 /*End testimonials */
 
@@ -366,7 +392,7 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'fitne
 
 $wp_customize->add_control( new Fitness_Passion_Separator_Control( $wp_customize, 'fitness_passion_separator_'.$sep++, array(
     'section'    => 'fitness_passion_landing_template_section',
-    'settings'   => 'fitness_passion_landing_testimonial'.$testimonials_number.'_text',
+    'settings'   => 'fitness_passion_landing_latest_posts_back_image',
 ) ) );
 
 /* End Latests posts*/

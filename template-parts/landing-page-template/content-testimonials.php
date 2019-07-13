@@ -30,13 +30,22 @@ if( ! get_theme_mod('fitness_passion_landing_testimonials_show', false) ){ retur
             <div class = "cycle-next"></div>
         
         <?php 
+            $r = new WP_Query( apply_filters( 'testimonials_posts_args', array(
+                'no_found_rows'       => true,
+                'post_status'         => 'publish',
+                'category_name' => get_theme_mod('fitness_passion_landing_testimonial_category', 'testimonials')
+            ) ) );
 
-        $r = new WP_Query( apply_filters( 'testimonials_posts_args', array(
-            'no_found_rows'       => true,
-            'post_status'         => 'publish',
-            'category_name' => get_theme_mod('fitness_passion_landing_testimonial_category', 'testimonials')
-        ) ) );
+        if(get_theme_mod('fitness_passion_landing_testimonials_jetpack',false)):
 
+            $r = new WP_Query( apply_filters( 'testimonials_posts_args', array(
+                'no_found_rows'       => true,
+                'post_status'         => 'publish',
+                'post_type' => 'jetpack-testimonial'
+            ) ) ); 
+       
+        endif; 
+       
         while ( $r->have_posts() ) : $r->the_post(); 
 
                 $image = has_post_thumbnail() ? get_the_post_thumbnail_url(): get_stylesheet_directory_uri() .'/assets/images/testimonials.jpg';

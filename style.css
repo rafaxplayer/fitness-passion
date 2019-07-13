@@ -4,7 +4,7 @@ Theme URI:
 Author: J Rafael Simarro
 Author URI: https://juanarafaelsimarro.com
 Description: fit Passion is a theme for WordPress designed for gyms or personal trainers although it can be used in any other context, it is free and free to use, enjoy it!.
-Version: 1.1.9
+Version: 1.1.10
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: fitness-passion
@@ -69,6 +69,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 html {
 	line-height: 1.15; /* 1 */
 	-webkit-text-size-adjust: 100%; /* 2 */
+	word-break: break-all;
 }
 
 /* Sections
@@ -673,6 +674,7 @@ a:hover,
 a:focus,
 a:active {
 	color: rgb(143, 137, 137);
+	text-decoration: none;
 }
 
 a:focus {
@@ -1432,6 +1434,10 @@ a:active {
 --------------------------------------------------------------*/
 .comments-area {
 	padding: 1rem;
+}
+
+.comments-area ol{
+	list-style: none;
 }
 
 .comments-title,
@@ -2233,7 +2239,7 @@ object {
 	font-size: 3rem;
 }
 .landing-coach-info p {
-	font-weight: 600;
+	font-weight: 500;
 }
 .landing-coach-social {
 	display: -webkit-box;
@@ -2491,8 +2497,8 @@ object {
 
 	/* coaches */
 	.landing-coach {
-		-ms-flex-preferred-size: 22%;
-		flex-basis: 22%;
+		flex-basis: 30%;
+    	margin: 20px calc(10%/6);
 	}
 
 	.landing-coach:after {

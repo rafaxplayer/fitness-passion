@@ -5,7 +5,7 @@ Tags: custom-header, custom-background, featured-image-header, custom-logo, full
 Requires at least: 4.5
 Requires PHP: 5.2.4
 Tested up to: 5.2
-Stable tag: 1.1.9
+Stable tag: 1.1.11
 Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DFZBWTFKLCWYQ&source=url
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -36,6 +36,12 @@ Fitness Passion - A theme given mainly for a gym or page related to the firnes, 
 fitness-passion includes support for Infinite Scroll in Jetpack and woocommerce plugin.
 
 == Changelog ==
+
+= 1.1.11 - jUL 12 2019 =
+* Code fixes
+
+= 1.1.10 - jUL 05 2019 =
+* Code fixes
 
 = 1.1.9 - jUN 20 2019 =
 * Code fixes

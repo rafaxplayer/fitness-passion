@@ -76,7 +76,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 	));
  	
 	$wp_customize->add_control(	'fitness_passion_slider_page_4_control',array(
-		'label'          => esc_html__( 'Third page for slider header', 'fitness-passion' ),
+		'label'          => esc_html__( 'Fourth page for slider header', 'fitness-passion' ),
 		'type'           => 'dropdown-pages',			
 		'section'        => 'fitness_passion_front_page_section',
 		'settings'       => 'fitness_passion_slider_page_4',

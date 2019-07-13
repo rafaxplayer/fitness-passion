@@ -42,10 +42,12 @@ get_header();
 				get_template_part( 'template-parts/content');
 
 			endwhile;
-
-			the_posts_pagination(array(
-				'mid_size'  => 5
-			));
+			// Check if infinite scroll of jetpack is activated
+			if( !class_exists( 'Jetpack' ) || (class_exists( 'Jetpack' ) && !Jetpack::is_module_active( 'infinite-scroll' )) ) :
+				the_posts_pagination(array(
+					'mid_size'  => 5
+				));
+			endif;
 
 		else :
 

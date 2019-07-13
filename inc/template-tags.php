@@ -110,7 +110,7 @@ if ( ! function_exists( 'fitness_passion_entry_footer' ) ) :
 			'</span>'
 		);
 		/*If is sticky , show icon clip*/
-		if(is_sticky($post_id)){?>
+		if(is_sticky()){?>
 		
 			<i class="fa fa-thumb-tack" aria-hidden="true"></i>
 		<?php

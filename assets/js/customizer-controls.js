@@ -199,19 +199,11 @@
                 var $control_ids_landing_section_testimonials = [
                     'fitness_passion_landing_testimonials_title_control',
                     'fitness_passion_landing_testimonials_back_image_control',
-                    'fitness_passion_landing_testimonials_number_control',
+                    'fitness_passion_landing_testimonials_jetpack_control',
+                    'fitness_passion_landing_testimonial_category_control',
+                    'fitness_passion_landing_testimonials_exclude_control',
                 ];
-                
-
-                for(var i =1;i<= theme_options.testimonials_number;i++){
-
-                    $control_ids_landing_section_testimonials.push(
-                        'fitness_passion_landing_testimonial'+i+'_avatar_control',
-                        'fitness_passion_landing_testimonial'+i+'_desc_control',
-                        'fitness_passion_landing_testimonial'+i+'_name_control',
-                        'fitness_passion_landing_testimonial'+i+'_text_control');
-                        
-                }
+                               
                 
 
                 //testimonials
@@ -226,6 +218,8 @@
                         $('#customize-control-' + value).fadeOut();
                     });
                 }
+
+
 
             }
 
@@ -354,6 +348,25 @@
             });
 
         })
+        // on change values testimonials jetpack....
+        wp.customize.control('fitness_passion_landing_testimonials_jetpack_control', function (control) {
+            control.setting.bind(function (value) {
+               //if use jectpack testimonials post type show/hide custom post testimonials controls
+               if (wp.customize.instance('fitness_passion_landing_testimonials_jetpack').get()) {
+                
+                    $('#customize-control-fitness_passion_landing_testimonial_category_control').fadeOut();
+                    $('#customize-control-fitness_passion_landing_testimonials_exclude_control').fadeOut();
+
+                } else {
+                    
+                    $('#customize-control-fitness_passion_landing_testimonial_category_control').fadeIn();
+                    $('#customize-control-fitness_passion_landing_testimonials_exclude_control').fadeIn();
+                    
+                }
+            });
+
+        })
+
 
         // on change values latest posts....
         wp.customize.control('fitness_passion_landing_latest_posts_show_control', function (control) {

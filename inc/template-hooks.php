@@ -160,8 +160,18 @@ add_action('fitness_passion_social_icons','fitness_passion_social_links');
         global $post;
         $categories = get_the_category( $post->ID );
         $catidlist = '';
+        $excluded = '';
         foreach( $categories as $category) {
             $catidlist .= $category->cat_ID . ",";
+        }
+
+        if(get_theme_mod('fitness_passion_landing_testimonials_exclude',true)){
+            $testimonials_slug = get_theme_mod('fitness_passion_landing_testimonial_category', 'testimonials');
+            if(get_category_by_slug($testimonials_slug)){
+                $excluded = '-'.get_category_by_slug($testimonials_slug)->term_id;
+                $catidlist .= $excluded;
+            }
+            
         }
 
         // Build our category based custom query arguments
@@ -175,8 +185,9 @@ add_action('fitness_passion_social_icons','fitness_passion_social_links');
         if($type == 'latest'){
              // Build our category based custom query arguments
             $custom_query_args = array( 
-                'posts_per_page' => 6, // Number of related posts to display
+                'posts_per_page' => 5, // Number of related posts to display
                 'post_type' => 'post',
+                'cat'=> $excluded,
                 
             );
         }
@@ -185,7 +196,7 @@ add_action('fitness_passion_social_icons','fitness_passion_social_links');
         $custom_query = new WP_Query( $custom_query_args );
 
         ?>
-        <div class="fp_related_posts row">
+        <div class="fp_related_posts row" >
            
         <?php
         // Run the loop and output data for the results

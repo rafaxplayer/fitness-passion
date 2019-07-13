@@ -70,6 +70,11 @@ function fitness_passion_register_required_plugins() {
 			'slug'      => 'woocommerce',
 			'required'  => false,
 		),
+		array(
+			'name'      => 'Jetpack By WordPress',
+			'slug'      => 'jetpack',
+			'required'  => false,
+		),
 
 	);
 

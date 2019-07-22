@@ -25,6 +25,8 @@ get_header();
 				</h1>
 			</header><!-- .page-header -->
 
+			<section class="posts-content">
+			
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -37,9 +39,17 @@ get_header();
 				 */
 				get_template_part( 'template-parts/content' );
 
-			endwhile;
+			endwhile;?>
 
-			the_posts_pagination();
+			</section>
+
+			<?php
+
+			if( !class_exists( 'Jetpack' ) || (class_exists( 'Jetpack' ) && !Jetpack::is_module_active( 'infinite-scroll' )) ) :
+				the_posts_pagination(array(
+					'mid_size'  => 5
+				));
+			endif;
 
 		else :
 

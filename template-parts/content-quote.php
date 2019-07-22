@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts single
+ * Template part for displaying posts
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -9,16 +9,26 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('row'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
 
 	<div class="post-wrap">
+
+		<div class="entry-quote">
+		
+			<?php
+			fitness_passion_post_thumbnail();
+			the_content();
+			
+			?>
+		</div><!-- .entry-quote -->
+
+			
 		<header class="entry-header">
 			
 			<?php
 			
-			the_title( '<h1 class="entry-title">', '</h1>' );
+			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			
-
 			if ( 'post' === get_post_type() ) :
 				?>
 				<div class="entry-meta">
@@ -29,21 +39,10 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 				</div><!-- .entry-meta -->
 			<?php endif; ?>
 		</header><!-- .entry-header -->
-
-		<div class="entry-content">
-			<?php
-			the_content();
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'fitness-passion' ),
-				'after'  => '</div>',
-			) );
-			?>
-		</div><!-- .entry-content -->
+		
 
 		<footer class="entry-footer">
 			<?php fitness_passion_entry_footer(); ?>
-			
 		</footer><!-- .entry-footer -->
 	</div>
 </article><!-- #post-<?php the_ID(); ?> -->

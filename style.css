@@ -4,7 +4,7 @@ Theme URI:
 Author: J Rafael Simarro
 Author URI: https://juanarafaelsimarro.com
 Description: fit Passion is a theme for WordPress designed for gyms or personal trainers although it can be used in any other context, it is free and free to use, enjoy it!.
-Version: 1.1.10
+Version: 1.1.12
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: fitness-passion
@@ -46,11 +46,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Footer
 # Landing Page Template
 # Woocommerce
-# Short Codes
-	## Buttons
-	## Drop Caps
-	## Plannings
-
 
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -90,7 +85,7 @@ body {
 
 h1 {
 	font-size: 2em;
-	margin: 0.67em 0;
+	
 }
 
 /* Grouping content
@@ -420,7 +415,7 @@ textarea {
 }
 body {
 	color: #c2bcbc;
-	font-family: Assistant, sans-serif;
+	font-family: 'Assistant', sans-serif;
 }
 
 h1,
@@ -438,7 +433,7 @@ p {
 	margin-bottom: 1.5rem;
 	line-height: 2.5rem;
 	letter-spacing: 1px;
-	font-weight: 100;
+	
 }
 
 dfn,
@@ -1185,6 +1180,8 @@ a:active {
 
 .sticky {
 	display: block;
+	flex: 0 0 100% !important;
+	max-width: 100% !important;
 }
 .post {
 	max-width: 1024px;
@@ -1193,6 +1190,9 @@ a:active {
 .post,
 .type-page {
 	margin: 0 auto 1.5em;
+	
+}
+.post-wrap{
 	background-color: #0c1723;
 	-webkit-box-shadow: 3px 2px 8px #0a0a0ad4;
 	box-shadow: 3px 2px 8px #0a0a0ad4;
@@ -1222,6 +1222,44 @@ a:active {
 .entry-footer i {
 	margin-left: .5rem;
 }
+
+.entry-video iframe,
+.entry-audio,
+.entry-quote{
+	width: 100%;
+	overflow:hidden
+}
+
+.entry-quote{
+    color: #dbddde;
+    font-family: serif;
+	font-style: italic;
+	font-size: 1.2em;
+	position: relative;
+}
+.entry-quote blockquote{
+	font-size: 2rem;
+    border: none;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+	background-color: #d8590e61;
+	display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.entry-quote blockquote p{
+	padding: 0 1rem;
+}
+
+.entry-quote blockquote p:before{
+	content:'\f10d';
+	font-family: FontAwesome;
+}
+
 .entry-title a {
 	color: white;
 	font-weight: 100;
@@ -1247,8 +1285,8 @@ a:active {
 }
 
 .post .post-thumbnail img:hover {
-	-webkit-transform: scale(1.2) translatex(-30px) translatey(-30px);
-	transform: scale(1.2) translatex(-30px) translatey(-30px);
+	-webkit-transform: scale(1.1) translatex(-10px) translatey(-10px);
+	transform: scale(1.1) translatex(-10px) translatey(-10px);
 }
 .post .entry-meta:after {
 	display: block;
@@ -1516,7 +1554,8 @@ a:active {
 /* Make sure embeds and iframes fp their containers. */
 embed,
 iframe,
-object {
+object,
+video {
 	max-width: 100%;
 }
 
@@ -2635,224 +2674,3 @@ object {
 	background-color: #04737b;
 }
 
-/*--------------------------------------------------------------
-# Short codes
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Buttons
---------------------------------------------------------------*/
-.fp-button {
-	border: none;
-	color: white;
-	padding: 10px 25px;
-	-webkit-transition: all .4s;
-	transition: all .4s;
-	font-weight: 600;
-	text-decoration: none;
-	border-radius: 4px;
-	-webkit-box-shadow: 1px 1px 1px #333;
-	box-shadow: 1px 1px 1px #333;
-}
-.fp-button.fp-color-blue {
-	background-color: #04737b !important;
-}
-.fp-button.fp-color-blue:hover {
-	background-color: #04737bb0 !important;
-}
-
-.fp-button.fp-color-orange {
-	background-color: #d8590e !important;
-}
-.fp-button.fp-color-orange:hover {
-	background-color: #d8590eb0 !important;
-}
-
-.fp-button.fp-color-black {
-	background-color: #000000 !important;
-}
-.fp-button.fp-color-black:hover {
-	background-color: #333 !important;
-}
-.fp-button.fp-color-red {
-	background-color: #ac0000 !important;
-}
-.fp-button.fp-color-red:hover {
-	background-color: #ac0000b0 !important;
-}
-.fp-button.fp-color-white {
-	background-color: #ffffff !important;
-	color: #333;
-}
-.fp-button.fp-color-white:hover {
-	background-color: #333 !important;
-}
-.fp-button:hover {
-	color: white;
-	text-decoration: none !important;
-}
-/*--------------------------------------------------------------
-## Drop caps
---------------------------------------------------------------*/
-.fp-drop-caps {
-	float: left;
-	font-size: 80px;
-	line-height: 57px;
-	padding-top: 10px;
-	padding-right: 5px;
-	padding-left: 4px;
-	font-family: 'Tangerine', serif;
-	text-transform: uppercase;
-}
-.fp-drop-caps.fp-shadow {
-	text-shadow: 1px 1px 1px #aaa;
-}
-
-.fp-drop-caps.fp-color-black {
-	color: #000000;
-}
-.fp-drop-caps.fp-color-blue {
-	color: #04737b;
-}
-.fp-drop-caps.fp-color-orange {
-	color: #d8590e;
-}
-.fp-drop-caps.fp-color-white {
-	color: #ffffff;
-}
-.fp-drop-caps.fp-color-red {
-	color: #ac0000;
-}
-/*--------------------------------------------------------------
-## Plannings
---------------------------------------------------------------*/
-.fp_planning {
-	text-align: center;
-	position: relative;
-	max-width: 300PX;
-	min-width: 280px;
-	background-color: #04737b;
-	border-radius: 10PX;
-	margin: 2rem auto;
-	color: #ffffff;
-}
-
-.fp_planning_title {
-	padding: 3rem 1rem 0;
-	font-size: 3em;
-}
-.fp_plannig_price {
-	padding: 2rem;
-	font-size: 5em;
-	font-weight: 700;
-	background-color: #e6f0f1;
-	position: relative;
-	margin-right: -9px;
-	margin-left: -9px;
-	margin-bottom: 2rem;
-	border-radius: 3px;
-	font-family: Arial, Helvetica, sans-serif !important;
-	color: #cc0c0c;
-}
-.fp_plannig_price::before {
-	content: "";
-	position: absolute;
-	bottom: -9px;
-	right: -1px;
-	width: 0;
-	height: 0;
-	border-right: 10px solid transparent;
-	border-top: 10px solid #c7cbccc2;
-}
-
-.fp_plannig_price::after {
-	content: "";
-	position: absolute;
-	bottom: -9px;
-	left: -1px;
-	width: 0;
-	height: 0;
-	border-left: 10px solid transparent;
-	border-top: 10px solid #c7cbccc2;
-}
-.fp_planning_currency {
-	font-size: .4em;
-	vertical-align: top;
-	font-weight: 400;
-	color: #ac0000;
-}
-.fp_planning_recurrent {
-	font-size: .4em;
-	color: #ac0000;
-	font-weight: 400;
-}
-.fp_planning_recurrent:before {
-	content: "/";
-}
-
-.fp_planning .fp_plannig_desc {
-	font-size: 1.2em;
-	font-weight: 400;
-	padding: 1rem 3rem;
-}
-
-.fp_planning_button {
-	text-decoration: none !important;
-	padding: .7rem 3rem;
-	background-color: #ac0000;
-	color: #ffffff;
-	font-weight: 500;
-	display: inline-block;
-	margin: 2rem 1rem;
-	font-size: 1.5em;
-	border-radius: 5px;
-	-webkit-transition: background-color .4s;
-	transition: background-color .4s;
-	cursor: pointer;
-}
-
-.fp_planning_button:hover {
-	text-decoration: none;
-	color: #ffffff;
-	background-color: #000000;
-}
-
-.fp_planning.fp_outstanding {
-	background-color: black;
-	color: white;
-}
-
-.fp_planning.fp_outstanding .fp_planning_button:hover {
-	background-color: #04737b;
-}
-
-/*--------------------------------------------------------------
-## Text Boxes
---------------------------------------------------------------*/
-.fp-alert {
-	font-family: Helvetica, sans-serif;
-	font-size: 1.3em;
-	padding: 15px;
-	border: 3px solid transparent;
-	border-radius: 4px;
-	margin: 1rem;
-}
-.fp-alert-danger {
-	color: #721c24;
-	background-color: #f8d7da;
-	border-color: #b75d67;
-}
-.fp-alert-success {
-	color: #155724;
-	background-color: #d4edda;
-	border-color: #5ca06c;
-}
-.fp-alert-warning {
-	color: #856404;
-	background-color: #fff3cd;
-	border-color: #e4c35e;
-}
-.fp-alert-info {
-	color: #0c5460;
-	background-color: #71c7ce;
-	border-color: #34b2c5;
-}

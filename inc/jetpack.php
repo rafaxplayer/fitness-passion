@@ -47,13 +47,18 @@ add_action( 'after_setup_theme', 'fitness_passion_jetpack_setup' );
 /**
  * Custom render function for Infinite Scroll.
  */
-function fitness_passion_infinite_scroll_render() {
-	while ( have_posts() ) {
+function fitness_passion_infinite_scroll_render() {?>
+
+	<section class="posts-content">
+
+	<?php while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :
 			get_template_part( 'template-parts/content', 'search' );
 		else :
 			get_template_part( 'template-parts/content');
 		endif;
-	}
+	}?>
+	</section>
+<?php
 }

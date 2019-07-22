@@ -50,7 +50,8 @@ $wp_customize->add_setting( 'fitness_passion_sidebar' , array(
 ));
 
 $wp_customize->add_control( new Fitness_Passion_Image_Radio_Button_Custom_Control( $wp_customize, 'fitness_passion_sidebar_control', array(
-    'label'      => esc_html__( 'Show/Hide sidebar', 'fitness-passion' ),
+    'label'      => esc_html__( 'Sidebar', 'fitness-passion' ),
+    'description'=> esc_html__( 'Show or hide right sidebar of widgets', 'fitness-passion'),
     'section'    => 'fitness_passion_layout_section',
     'settings'   => 'fitness_passion_sidebar',
     'type'		 => 'select',
@@ -67,7 +68,7 @@ $wp_customize->add_control( new Fitness_Passion_Image_Radio_Button_Custom_Contro
 )));
 
 
-/* show slider */
+/* show animations */
 $wp_customize->add_setting( 'fitness_passion_show_animations' , array(
     'default'           => true,
     'sanitize_callback' => 'fitness_passion_sanitize_checkbox',
@@ -75,7 +76,8 @@ $wp_customize->add_setting( 'fitness_passion_show_animations' , array(
 ));
 
 $wp_customize->add_control( new Fitness_Passion_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_show_animations_control', array(
-    'label'      => esc_html__( 'Show animations', 'fitness-passion' ),
+    'label'      => esc_html__( 'Animations', 'fitness-passion' ),
+    'descriptions'=> esc_html__('Activate animations, if you deactivate them, it will help the fastest load of your site.','fitness-passion'),
     'section'    => 'fitness_passion_layout_section',
     'settings'   => 'fitness_passion_show_animations',
    

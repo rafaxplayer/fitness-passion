@@ -15,7 +15,7 @@ if( ! get_theme_mod('fitness_passion_landing_testimonials_show', false) ){ retur
         $title = get_theme_mod('fitness_passion_landing_testimonials_title',__('Testimonials','fitness-passion'));
         
         if(!empty($title)){
-            printf('<h2 class="section-title">%s</h2>',$title);
+            printf('<h2 class="section-title">%s</h2>',esc_html($title));
         }?>
 
         <div id="slider-test" class="cycle-slideshow"
@@ -69,7 +69,7 @@ if( ! get_theme_mod('fitness_passion_landing_testimonials_show', false) ){ retur
                             </a>
                         </div>
                         
-                        <p><?php echo sanitize_text_field($text); ?></p>
+                        <p><?php echo wp_strip_all_tags($text); ?></p>
                     
                     </div>
                 </div> 

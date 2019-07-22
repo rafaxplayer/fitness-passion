@@ -14,7 +14,7 @@ if(! function_exists('fitness_passion_header_content')):
 
             if(is_woocommerce() && is_shop()){
     
-                echo '<h1 class="fp_header_title" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">'.woocommerce_page_title(false).'</h1>';
+                echo '<h1 class="fp_header_title" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">'.esc_html(woocommerce_page_title(false)).'</h1>';
                 return;
             }
         } 
@@ -44,7 +44,7 @@ if(! function_exists('fitness_passion_header_content')):
         <p class="fp_header_subtitle" data-aos="fade-up" data-aos-duration="600" data-aos-once="true"><?php echo esc_html($subtext); ?></p>
         <?php  
 
-            if($buttonText || !empty($buttonText)){ ?>
+            if(!empty($buttonText)){ ?>
 
                 <a href="<?php echo esc_url($buttonLink); ?>" class="fp_header_button" data-aos="fade-up" data-aos-duration="800" data-aos-once="true"><?php echo esc_html($buttonText); ?></a>
         
@@ -207,7 +207,9 @@ add_action('fitness_passion_social_icons','fitness_passion_social_links');
                 <a href="<?php the_permalink(); ?>"> 
                     <div class="related_post_info">
                         <?php the_title('<h3>','</h3>'); ?>
-                        <p><?php if ( empty( get_the_excerpt())) : 
+                        <p><?php 
+                            $excerpt = get_the_excerpt();
+                            if ( empty( $excerpt )) : 
             	                    echo wp_kses_post( wp_trim_words( get_the_content(), 20 )); 
         	                    else : 
             	                    echo wp_kses_post( wp_trim_words(get_the_excerpt(),20) ); 

@@ -219,6 +219,7 @@ for($i = 1; $i <= $coaches_number; $i++){
     ));
     
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fitness_passion_landing_coach'.$i.'_facebook_control', array(
+        /* translators: %s: Number of coach , translation not required */
         'label'      => sprintf(esc_html__( 'Facebook url for coach number %s', 'fitness-passion' ),$i),
         'section'    => 'fitness_passion_landing_template_section',
         'settings'   => 'fitness_passion_landing_coach'.$i.'_facebook',
@@ -432,6 +433,7 @@ $wp_customize->add_setting( 'fitness_passion_Simple_Notice_shortcodes' , array(
 
 $wp_customize->add_control( new Fitness_Passion_Simple_Notice_Custom_Control( $wp_customize, 'fitness_passion_Simple_Notice_shortcodes_control', array(
     'label'      => esc_html__( 'Price Plans short codes', 'fitness-passion' ),
+    /* translators: %s: Url of admin panel info , translation not required */
     'description'=> sprintf(__( 'Use the short codes available in the subject for pricing plan, more info: <a href="%s">About Fitness Passion</a> ', 'fitness-passion' ),esc_url(site_url('wp-admin/themes.php?page=fitness_passion_theme#plans'))),
     'section'    => 'fitness_passion_landing_template_section',
     'settings'   => 'fitness_passion_Simple_Notice_shortcodes',

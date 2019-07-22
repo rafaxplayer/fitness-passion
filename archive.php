@@ -22,14 +22,14 @@ get_header();
 				?>
 			</header><!-- .page-header -->
 
+			<section class="posts-content">
+
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
 					the_post();
 				
 				
-				
-
 				/*
 				 * Include the Post-Type-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
@@ -37,9 +37,17 @@ get_header();
 				 */
 				get_template_part( 'template-parts/content' );
 
-			endwhile;
+			endwhile;?>
 
-			the_posts_pagination();
+			</section>
+
+			<?php
+
+			if( !class_exists( 'Jetpack' ) || (class_exists( 'Jetpack' ) && !Jetpack::is_module_active( 'infinite-scroll' )) ) :
+				the_posts_pagination(array(
+					'mid_size'  => 5
+				));
+			endif;
 
 		else :
 

@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
         <section class="fp-landing-contact" style="background-image:url(<?php echo esc_url(get_theme_mod('fitness_passion_landing_contact_back_image'));?>);">
             <div class="contact-wrap">
 
-                <?php if(!empty($title)){ printf('<h2 class="section-title">%s</h2>',$title); }?>
+                <?php if(!empty($title)){ printf('<h2 class="section-title">%s</h2>',esc_html($title)); }?>
 
                 <div class="contact-info">
 

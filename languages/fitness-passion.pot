@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Fitness Passion\n"
-"POT-Creation-Date: 2019-06-20 07:55+0200\n"
+"POT-Creation-Date: 2019-07-14 01:32+0200\n"
 "PO-Revision-Date: 2019-03-30 01:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -66,23 +66,19 @@ msgstr ""
 msgid "&copy; %1$s Theme: %2$s by %3$s."
 msgstr ""
 
-#: functions.php:52
+#: functions.php:54
 msgid "Primary"
 msgstr ""
 
-#: functions.php:53
-msgid "Social Nav"
-msgstr ""
-
-#: functions.php:121
+#: functions.php:138
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:123
+#: functions.php:140
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:135
+#: functions.php:152
 msgid " Read More"
 msgstr ""
 
@@ -147,8 +143,11 @@ msgid "Second page for slider header"
 msgstr ""
 
 #: inc/customizer/customizer-front-page.php:65
-#: inc/customizer/customizer-front-page.php:79
 msgid "Third page for slider header"
+msgstr ""
+
+#: inc/customizer/customizer-front-page.php:79
+msgid "Fourth page for slider header"
 msgstr ""
 
 #: inc/customizer/customizer-front-page.php:94
@@ -302,96 +301,104 @@ msgstr ""
 msgid "Upload image for testimonials background section"
 msgstr ""
 
-#. translators: numer of testiomonial
-#: inc/customizer/customizer-landingpage-template.php:312
-msgid "Category for testimonials posts, default testimonials"
+#: inc/customizer/customizer-landingpage-template.php:311
+msgid "Use testimonials from jetpack"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:335
+#. translators: numer of testiomonial
+#: inc/customizer/customizer-landingpage-template.php:326
+msgid "Custom category for testimonials posts, default \"testimonials\""
+msgstr ""
+
+#: inc/customizer/customizer-landingpage-template.php:338
+msgid "Show/Hide testimonials category for lists entries"
+msgstr ""
+
+#: inc/customizer/customizer-landingpage-template.php:361
 msgid "Show/Hide latest posts section"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:343
+#: inc/customizer/customizer-landingpage-template.php:369
 msgid "latest posts"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:349
+#: inc/customizer/customizer-landingpage-template.php:375
 msgid "Text for latests posts section"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:362
+#: inc/customizer/customizer-landingpage-template.php:388
 msgid "Upload image background for latest posts section"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:382
+#: inc/customizer/customizer-landingpage-template.php:408
 msgid "Show/Hide pricing plans section"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:389
+#: inc/customizer/customizer-landingpage-template.php:415
 msgid "Pricing Plans"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:395
+#: inc/customizer/customizer-landingpage-template.php:421
 msgid "Plans section title"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:408
+#: inc/customizer/customizer-landingpage-template.php:434
 msgid "Price Plans short codes"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:409
+#: inc/customizer/customizer-landingpage-template.php:435
 #, php-format
 msgid ""
 "Use the short codes available in the subject for pricing plan, more info: <a "
 "href=\"%s\">About Fitness Passion</a> "
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:423
+#: inc/customizer/customizer-landingpage-template.php:449
 msgid "Plan shortcode 1"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:424
+#: inc/customizer/customizer-landingpage-template.php:450
 msgid "Shor code for Price plan 1"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:438
+#: inc/customizer/customizer-landingpage-template.php:464
 msgid "Plan shortcode 2"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:439
+#: inc/customizer/customizer-landingpage-template.php:465
 msgid "Shor code for Price plan 2"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:453
+#: inc/customizer/customizer-landingpage-template.php:479
 msgid "Plan shortcode 3"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:454
+#: inc/customizer/customizer-landingpage-template.php:480
 msgid "Shor code for Price plan 3"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:476
+#: inc/customizer/customizer-landingpage-template.php:502
 msgid "Show/Hide contact section"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:483
+#: inc/customizer/customizer-landingpage-template.php:509
 #: template-parts/landing-page-template/content-contact.php:12
 msgid "Contact Us"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:489
+#: inc/customizer/customizer-landingpage-template.php:515
 msgid "Contact section title"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:502
+#: inc/customizer/customizer-landingpage-template.php:528
 msgid "Upload image for contact background section"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:515
+#: inc/customizer/customizer-landingpage-template.php:541
 msgid "Contact Form 7 shortcode"
 msgstr ""
 
-#: inc/customizer/customizer-landingpage-template.php:516
+#: inc/customizer/customizer-landingpage-template.php:542
 msgid ""
 "Use contact form plugin 7 for your form, you can use the short code of "
 "another plugin but you will have to adjust your own style."
@@ -473,7 +480,7 @@ msgstr ""
 msgid "Sin Contenido"
 msgstr ""
 
-#: inc/template-hooks.php:211
+#: inc/template-hooks.php:224
 msgid "Sorry, no related articles to display."
 msgstr ""
 
@@ -1128,7 +1135,6 @@ msgid ""
 msgstr ""
 
 #: template-parts/content-page.php:22 template-parts/content-single.php:37
-#: template-parts/content.php:43
 msgid "Pages:"
 msgstr ""
 

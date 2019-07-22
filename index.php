@@ -27,8 +27,12 @@ get_header();
         <header>
             <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
         </header>
-        <?php
-			endif;
+
+        <?php endif; ?>
+
+			<section class="posts-content">
+			
+			<?php
 
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -39,9 +43,11 @@ get_header();
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content');
+				get_template_part( 'template-parts/content',get_post_format());
 
-			endwhile;
+			endwhile;?>
+			</section>
+			<?php
 			// Check if infinite scroll of jetpack is activated
 			if( !class_exists( 'Jetpack' ) || (class_exists( 'Jetpack' ) && !Jetpack::is_module_active( 'infinite-scroll' )) ) :
 				the_posts_pagination(array(

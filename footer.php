@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 				if(empty($info_footer)){
 					 
 					/* translators: 1: Theme name, 2: Theme author. */
-					printf( esc_html__( '&copy; %1$s Theme: %2$s by %3$s.', 'fitness-passion' ),date('Y'), 'Fitness Passion', '<a href="https://juanrafaelsimarro.com/">J.Rafael Simarro</a>' );
+					printf( esc_html__( '&copy; %1$s Theme: %2$s by %3$s.', 'fitness-passion' ),esc_html(date('Y')), 'Fitness Passion', '<a href="https://juanrafaelsimarro.com/">J.Rafael Simarro</a>' );
 				}else{
 					echo wp_kses_post($info_footer);
 				}

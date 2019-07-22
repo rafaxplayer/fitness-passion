@@ -42,7 +42,7 @@ if ( ! function_exists( 'fitness_passion_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-		
+
 		add_post_type_support( 'page', 'excerpt' );
 
 		add_image_size( 'fitness_passion_custom_size', 500, 370, true );
@@ -65,6 +65,22 @@ if ( ! function_exists( 'fitness_passion_setup' ) ) :
 			'gallery',
 			'caption',
 		) );
+
+		/*
+		* Enable support for Post Formats.
+		*
+		* See: https://codex.wordpress.org/Post_Formats
+		*/
+		add_theme_support(
+			'post-formats',
+			array(
+				'video',
+				'quote',
+				'link',
+				'gallery',
+				'audio',
+			)
+		);
 
 		// Set up the WordPress core custom background feature.
 		add_theme_support( 'custom-background', apply_filters( 'fitness_passion_custom_background_args', array(
@@ -131,19 +147,6 @@ function fitness_passion_widgets_init() {
 add_action( 'widgets_init', 'fitness_passion_widgets_init' );
 
 
-function fitness_passion_excerpt_more($more) {
-	global $post;
- return '<a class="moretag" href="'. esc_url(get_permalink($post->ID)) . '">'.__(' Read More','fitness-passion').'</a>';
-}
-add_filter('excerpt_more', 'fitness_passion_excerpt_more');
-
-
-function fitness_passion_excerpt_length ($length) {
-	return esc_html(20);
-}
-add_filter ('excerpt_length', 'fitness_passion_excerpt_length', 999);
-
- 
 /**
  * Enqueue scripts and styles.
  */
@@ -155,7 +158,7 @@ function fitness_passion_scripts() {
 	
 	wp_enqueue_style( 'fitness-passion_main_menu', get_template_directory_uri() . '/assets/css/main-menu.css' );
 		
-	wp_enqueue_style('fitness-passion-google-fonts-Assistant', '//fonts.googleapis.com/css?family=Assistant:200,300,400,700,800');
+	wp_enqueue_style('fitness-passion-google-fonts-open-sans', '//fonts.googleapis.com/css?family=Assistant:200,300,400,600,700,800&display=swap');
 	
 	wp_enqueue_style('fitness-passion-google-fonts-Teko', '//fonts.googleapis.com/css?family=Teko:400,500,700,900');
 	
@@ -280,6 +283,50 @@ function fitness_passion_testimonials_cat( $wp_query ) {
 }
 add_action( 'pre_get_posts', 'fitness_passion_testimonials_cat' );
 
+/**
+ * A get_post_gallery() polyfill for Gutenberg
+ *
+ * @param string $gallery The current gallery html that may have already been found (through shortcodes).
+ * @param int $post The post id.
+ * @return string The gallery html.
+ */
+function fitness_passion_get_post_gallery( $gallery, $post ) {
+	// Already found a gallery so lets quit.
+	if ( $gallery ) {
+		return $gallery;
+	}
+	// Check the post exists.
+	$post = get_post( $post );
+	if ( ! $post ) {
+		return $gallery;
+	}
+	// Not using Gutenberg so let's quit.
+	if ( ! function_exists( 'has_blocks' ) ) {
+		return $gallery;
+	}
+	// Not using blocks so let's quit.
+	if ( ! has_blocks( $post->post_content ) ) {
+		return $gallery;
+	}
+	/**
+	 * Search for gallery blocks and then, if found, return the html from the
+	 * first gallery block.
+	 *
+	 * Thanks to Gabor for help with the regex:
+	 * https://twitter.com/javorszky/status/1043785500564381696.
+	 */
+	$pattern = "/<!--\ wp:gallery.*-->([\s\S]*?)<!--\ \/wp:gallery -->/i";
+	preg_match_all( $pattern, $post->post_content, $the_galleries );
+	// Check a gallery was found and if so change the gallery html.
+	if ( ! empty( $the_galleries[1] ) ) {
+	
+		$gallery = reset( $the_galleries[1] );
+		
+	}
+	return $gallery;
+}
+add_filter( 'get_post_gallery', 'fitness_passion_get_post_gallery', 10, 2 );
+
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
@@ -327,13 +374,6 @@ require get_template_directory() . '/inc/widgets/recent-posts.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
-/***   PRO VERSION   ***/
-
-/**
- * short codes.
- */
-require get_template_directory() . '/inc/short-codes/short-codes.php';
 
 /**
  * Admin panel.

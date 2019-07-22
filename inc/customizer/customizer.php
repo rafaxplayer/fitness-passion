@@ -205,7 +205,7 @@ function fitness_passion_no_sanitize( $input ) {
  * Is Blog page
  */
 function fitness_passion_is_blogpage(){
-	return !is_front_page() && is_home();
+	return !is_front_page() && (is_home() || is_search() || is_archive());
 }
 
 /**

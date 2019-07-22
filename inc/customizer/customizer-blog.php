@@ -25,6 +25,32 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 		'section'    => 'fitness_passion_blog_page_section',
 		'settings'   => 'fitness_passion_blog_page_header_title',
 	)));
+
+	// blog layout
+	$wp_customize->add_setting( 'fitness_passion_blog_layout' , array(
+		'default'           => 'one-column',
+		'sanitize_callback' => 'sanitize_text_field',
+		'transport'         => 'refresh',
+	));
+
+	$wp_customize->add_control( new Fitness_Passion_Image_Radio_Button_Custom_Control( $wp_customize, 'fitness_passion_blog_layout_control', array(
+		'label'      => esc_html__( 'Distribution of blog entries.', 'fitness-passion' ),
+		'description'=> esc_html__( 'How to distribute blog entries, archive, attachments, searches, a column or two columns.', 'fitness-passion'),
+		'section'    => 'fitness_passion_blog_page_section',
+		'settings'   => 'fitness_passion_blog_layout',
+		'type'		 => 'select',
+		'choices'	 => array(
+			'one-column' => array(
+				'image' => trailingslashit( get_template_directory_uri() ) . 'assets/images/one-column.png',
+				'name'  => esc_html__('One Column (Default)','fitness-passion')
+			),
+			'two-columns' => array(
+				'image' => trailingslashit( get_template_directory_uri() ) . 'assets/images/two-columns.png',
+				'name'  => esc_html__('Two Columns','fitness-passion')
+			)
+		)
+	)));
+
 	
 	
 	// Related post
@@ -41,5 +67,4 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 		
 	)));
 	
-
 	/* END Blog section*/

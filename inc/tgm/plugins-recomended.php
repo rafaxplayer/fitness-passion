@@ -58,22 +58,22 @@ function fitness_passion_register_required_plugins() {
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
 	$plugins = array(
-			
-							
+										
 		array(
 			'name'      => 'Contact Form 7',
 			'slug'      => 'contact-form-7',
 			'required'  => false,
 		),
 		array(
-			'name'      => 'WooCommerce',
-			'slug'      => 'woocommerce',
-			'required'  => false,
-		),
-		array(
 			'name'      => 'Jetpack By WordPress',
 			'slug'      => 'jetpack',
 			'required'  => false,
+		),
+		array(
+			'name'      => 'Fitness Passion Short Codes',
+			'slug'      => 'fp-shortcodes',
+			'required'  => false,
+			'source'	=> get_template_directory().'/plugins/fitness-passion-shortcodes.zip'
 		),
 
 	);

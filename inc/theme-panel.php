@@ -28,7 +28,7 @@ $theme_info = wp_get_theme();?>
 
     </div>
     <div class="fp-theme-image">
-        <img src="<?php echo get_template_directory_uri().'/screenshot.png'; ?>" alt="">
+        <img src="<?php echo esc_url(get_template_directory_uri()).'/screenshot.png'; ?>" alt="">
     </div>    
     <div>
         <h2>
@@ -47,8 +47,12 @@ $theme_info = wp_get_theme();?>
         
         <b><?php echo esc_html__( '- Landing Page template', 'fitness-passion' ); ?></b>
         <p>
-        <?php esc_html__( 'Use the template "landing page" to create a home page, configure your sections from the customizer', 'fitness-passion'); ?>
+        <?php echo esc_html__( 'Use the template "landing page" to create a home page, configure your sections from the customizer', 'fitness-passion'); ?>
         </p>
+
+        <div class="fp-theme-image">
+            <img src="<?php echo esc_url(get_template_directory_uri()).'/assets/images/landing-page.jpg'; ?>" alt="">
+        </div> 
 
         <b><?php echo esc_html__( '- Page Full width template', 'fitness-passion' ); ?></b>
         <p>
@@ -69,7 +73,7 @@ $theme_info = wp_get_theme();?>
         </h3>
         <hr>
         <p> 
-            <?php echo esc_html__( 'Short codes included', 'fitness-passion' ); ?>
+            <?php echo esc_html__( 'Short codes included (Require install "Fitness Passion Short codes" plugin)', 'fitness-passion' ); ?>
         </p>
         <h4><?php echo esc_html__( '- Buttons', 'fitness-passion' ); ?></h4>
         <p>

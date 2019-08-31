@@ -75,7 +75,7 @@ if ( ! function_exists( 'fitness_passion_entry_footer' ) ) :
 		}
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '   <i class="fa fa-comment"></i> <span class="comments-link">';
+			echo '   <i class="comments-link fa fa-comment"></i> <span class="comments-link">';
 			comments_popup_link(
 				sprintf(
 					wp_kses(

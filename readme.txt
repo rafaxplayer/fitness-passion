@@ -37,6 +37,9 @@ fitness-passion includes support for Infinite Scroll in Jetpack and woocommerce 
 
 == Changelog ==
 
+= 1.1.12 - jUL 26 2019 =
+* css fixes
+
 = 1.1.11 - jUL 12 2019 =
 * Code fixes
 

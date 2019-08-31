@@ -17,7 +17,7 @@ function fitness_passion_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-	
+	$wp_customize->get_setting( 'background_color' )->default   = '#19232f';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 
@@ -33,12 +33,12 @@ function fitness_passion_customize_register( $wp_customize ) {
 
 		// header options
 		$wp_customize->selective_refresh->add_partial( 'fitness_passion_front_page_header_title', array(
-			'selector'        => '.fp_header_title',
-			
+			'selector'        => '.home .fp_header_title',
+						
 		) );
 
 		$wp_customize->selective_refresh->add_partial( 'fitness_passion_front_page_header_subtitle', array(
-			'selector'        => '.fp_header_subtitle',
+			'selector'        => '.home .fp_header_subtitle',
 			
 		) );
 
@@ -46,8 +46,14 @@ function fitness_passion_customize_register( $wp_customize ) {
 			'selector'        => '.fp_header_button',
 			
 		) );
-	
-		
+
+		// header options
+		$wp_customize->selective_refresh->add_partial( 'fitness_passion_blog_page_header_title', array(
+			'selector'        => '.blog .fp_header_title',
+						
+		) );
+
+				
 	}
 
 	if ( class_exists( 'WP_Customize_Control' ) ) {
@@ -70,6 +76,29 @@ function fitness_passion_customize_register( $wp_customize ) {
         'title'          => __('Fitness Passion Theme', 'fitness-passion'),
         'description'    => __('Several settings pertaining my theme', 'fitness-passion'),
 	));
+
+
+	//Show cart icon of woocommerce plugin
+	$wp_customize->add_section( 'fitness_passion_woocommerce_menu' , array(
+		'title'     => __('Menu', 'fitness-passion'),
+		'panel' 	=> 'woocommerce',
+		
+	));
+	
+	$wp_customize->add_setting( 'fitness_passion_cart_icon_show' , array(
+		'default'           => true,
+		'sanitize_callback' => 'fitness_passion_sanitize_checkbox',
+		'transport'         => 'refresh',
+	));
+
+	$wp_customize->add_control( new Fitness_Passion_Toggle_Switch_Custom_control( $wp_customize, 'fitness_passion_cart_icon_show_control', array(
+		'label'       => __( 'Show/Hide cart icon on main menu', 'fitness-passion' ),
+		'description' => __('If you use woocommerce plugin, having access to the cart in your main menu is a good idea.','fitness-passion'),
+		'section'     => 'fitness_passion_woocommerce_menu',
+		'settings'    => 'fitness_passion_cart_icon_show',
+	)));
+
+	//end woocomerce additional optios
 
 	/**
 	 * Include site info options
@@ -108,8 +137,7 @@ function fitness_passion_customize_register( $wp_customize ) {
 	 */
 	require get_parent_theme_file_path( 'inc/customizer/customizer-footer.php' );
 
-	
-	
+		
 
 }
 add_action( 'customize_register', 'fitness_passion_customize_register' );
@@ -202,6 +230,13 @@ function fitness_passion_no_sanitize( $input ) {
 }
 
 /**
+ * Is Front page
+ */
+function fitness_passion_is_frontpage(){
+	return is_front_page();
+}
+
+/**
  * Is Blog page
  */
 function fitness_passion_is_blogpage(){
@@ -220,7 +255,7 @@ function fitness_passion_is_landing_template(){
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function fitness_passion_customize_preview_js() {
-	wp_enqueue_script( 'fitness-passion-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'fitness-passion-customizer', get_template_directory_uri() . '/inc/customizer/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'fitness_passion_customize_preview_js' );
 

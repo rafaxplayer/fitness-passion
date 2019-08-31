@@ -29,7 +29,8 @@ $theme_info = wp_get_theme();?>
     </div>
     <div class="fp-theme-image">
         <img src="<?php echo esc_url(get_template_directory_uri()).'/screenshot.png'; ?>" alt="">
-    </div>    
+    </div> 
+      
     <div>
         <h2>
         <span class="dashicons dashicons-admin-generic"></span>
@@ -53,7 +54,9 @@ $theme_info = wp_get_theme();?>
         <div class="fp-theme-image">
             <img src="<?php echo esc_url(get_template_directory_uri()).'/assets/images/landing-page.jpg'; ?>" alt="">
         </div> 
-
+        <p>
+            <?php echo __('You don`t like the content of this template? You can use one of the many page builders for wordpres. We recommend <b>Nimble Builder.</b> Look at the plug-in <a href="https://docs.presscustomizr.com/article/337-getting-started-with-the-nimble-builder-plugin?utm_source=usersite&utm_medium=link&utm_campaign=nimble-welcome-notice"> documentation </a>for use.','fitness-passion');?>
+        </p> 
         <b><?php echo esc_html__( '- Page Full width template', 'fitness-passion' ); ?></b>
         <p>
         <?php echo esc_html__( 'Use the template "Page Full-width" to create pages with full width', 'fitness-passion' ); ?>
@@ -86,26 +89,14 @@ $theme_info = wp_get_theme();?>
         <p class="fp-code">
             <b>[fp-button url="yoururl" color="blue"]Button text[/fp-button]</b><br>
         </p>
-        <
+        
         <p>
             <?php echo esc_html__( 'Available colours : red, blue, orange, black, white', 'fitness-passion' ); ?>
-        </p><br>
-        <p>
-        <?php echo do_shortcode('[fp-button url="your-url" color="blue" text="Button text"]'); ?>
-        </p><br>
-        <p>
-        <?php echo do_shortcode('[fp-button url="yoururl" color="orange" text="Button text"]'); ?>
-        </p><br>
-        <p>
-        <?php echo do_shortcode('[fp-button url="yoururl" color="red" text="Button text"]'); ?>
-        </p><br>
-        <p>
-        <?php echo do_shortcode('[fp-button url="yoururl" color="black" text="Button text"]'); ?>
-        </p><br>
-        <p>
-        <?php echo do_shortcode('[fp-button url="yoururl" color="white" text="Button text"]'); ?>
-        </p><br>
         </p>
+
+        <div class="fp-theme-image">
+            <img src="<?php echo esc_url(get_template_directory_uri()).'/assets/images/buttons-short-codes.png'; ?>" alt="">
+        </div> 
         
         <br>
         <h4 id="plans"><?php echo esc_html__( '- Price Plans boxes', 'fitness-passion' ); ?></h4>

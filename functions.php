@@ -45,7 +45,7 @@ if ( ! function_exists( 'fitness_passion_setup' ) ) :
 
 		add_post_type_support( 'page', 'excerpt' );
 
-		add_image_size( 'fitness_passion_custom_size', 500, 370, true );
+		add_image_size( 'fitness_passion_custom_size', 686, 370, true );
 		add_image_size( 'fitness_passion_widget_posts', 80, 80 );
 
 
@@ -156,16 +156,17 @@ function fitness_passion_scripts() {
 		
 	wp_enqueue_style( 'font-awesome-css', get_template_directory_uri() . '/assets/fonts/font-awesome.min.css' ,array(),'4.7.0');
 	
-	wp_enqueue_style( 'fitness-passion_main_menu', get_template_directory_uri() . '/assets/css/main-menu.css' );
+	wp_enqueue_style( 'fitness-passion_main_menu', get_template_directory_uri() . '/assets/css/main-menu.min.css' );
 		
 	wp_enqueue_style('fitness-passion-google-fonts-open-sans', '//fonts.googleapis.com/css?family=Assistant:200,300,400,600,700,800&display=swap');
 	
 	wp_enqueue_style('fitness-passion-google-fonts-Teko', '//fonts.googleapis.com/css?family=Teko:400,500,700,900');
 	
 	wp_enqueue_style( 'fitness-passion-style', get_stylesheet_uri());
+	wp_style_add_data( 'fitness-passion-style', 'rtl', 'replace' );
 	
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), '3.3.7', true );
-		
+	
 	wp_enqueue_script( 'fitness-passion-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'fitness-passion-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -177,15 +178,22 @@ function fitness_passion_scripts() {
 	}
 
 	if(get_theme_mod('fitness_passion_show_slider') || get_theme_mod('fitness_passion_landing_testimonials_show')){
-			wp_enqueue_style( 'jquery-cycle2-css', get_template_directory_uri() . '/assets/css/jquery.cycle2.css' ,array(),'');
-			wp_enqueue_script( 'jquery-cycle2-js', get_template_directory_uri() . '/assets/js/jquery.cycle2.js', array('jquery'), '2.1.6', true );
+			wp_enqueue_style( 'jquery-cycle2-css', get_template_directory_uri() . '/assets/css/jquery.cycle2.min.css' ,array(),'');
+			wp_enqueue_script( 'jquery-cycle2-js', get_template_directory_uri() . '/assets/js/jquery.cycle2.min.js', array('jquery'), '2.1.6', true );
 	}
 
 	if(get_theme_mod('fitness_passion_show_animations',true)){
-			wp_enqueue_style( 'aos-css', get_template_directory_uri() .'/assets/css/aos.css' );
+			wp_enqueue_style( 'aos-css', get_template_directory_uri() .'/assets/css/aos.min.css' );
 			wp_enqueue_script( 'aos-js', get_template_directory_uri() . '/assets/js/aos.min.js', array('jquery'), '2.0.0', true );
 		
 	}
+
+	$arrayOptions = array(
+		'animations' => get_theme_mod('fitness_passion_show_animations',true),
+	);
+	
+	wp_localize_script('fitness-passion-init', 'theme_options', $arrayOptions);
+
 }
 add_action( 'wp_enqueue_scripts', 'fitness_passion_scripts' );
 
@@ -204,7 +212,7 @@ add_action( 'admin_enqueue_scripts', 'fitness_passion_admin_scripts' );
  */
 function fitness_passion_customize_controls_js(){
 
-	wp_enqueue_script( 'fit-passion-customizer-controls', get_template_directory_uri() . '/assets/js/customizer-controls.js', array( 'jquery' ), '20151215', true );
+	wp_enqueue_script( 'fit-passion-customizer-controls', get_template_directory_uri() . '/inc/customizer/js/customizer-controls.js', array( 'jquery' ), '20151215', true );
 	
 	$arrayOptions = array(
 		'couches_number' => get_theme_mod('fitness_passion_landing_coaches_number'),
@@ -326,6 +334,77 @@ function fitness_passion_get_post_gallery( $gallery, $post ) {
 	return $gallery;
 }
 add_filter( 'get_post_gallery', 'fitness_passion_get_post_gallery', 10, 2 );
+
+
+/**
+ *
+ * Append cart item (and cart count) to end of main menu.
+ *
+ */
+
+function fitness_passion_append_cart_icon( $items, $args ) {
+
+	if( get_theme_mod('fitness_passion_cart_icon_show', true) && fitness_passion_is_woocommerce_activated()){
+
+		$cart_item_count = WC()->cart->get_cart_contents_count();
+		$cart_count_span = '';
+		if ( $cart_item_count ) {
+			$cart_count_span = '<span class="count">'.$cart_item_count.'</span>';
+		} 
+		$cart_link = '<li class="cart menu-item menu-item-type-post_type menu-item-object-page"><a href="' . get_permalink( wc_get_page_id( 'cart' ) ) . '"><i class="fa fa-shopping-cart">'.$cart_count_span.'</i></a></li>';
+		// Add the cart link to the end of the menu.
+		$items = $items . $cart_link;
+		
+	}
+	return $items;
+}
+add_filter( 'wp_nav_menu_items', 'fitness_passion_append_cart_icon', 10, 2 );
+
+/**
+ * Modify comments form fields
+ */
+
+add_filter( 'comment_form_defaults', 'fitness_passion_modify_fields_form' );
+
+function fitness_passion_modify_fields_form( $args ){
+
+	$commenter = wp_get_current_commenter();
+	$req = get_option( 'require_name_email' );
+	$aria_req = ( $req ? " aria-required='true'" : '' );
+
+	$author = '<input placeholder="'.__( 'Name','fitness-passion' ) . ( $req ? ' *' : '' ).'" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .'" size="30"' . $aria_req . ' />';
+	$email = '<div class="fields-wrap"><input placeholder="'.__( 'Email','fitness-passion'  ) . ( $req ? ' *' : '' ).'" id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) .'" size="30"' . $aria_req . ' />';
+	$url = '<input placeholder="'.__( 'Website','fitness-passion'  ).'" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .'" size="30" /></div>';
+	$comment = '<textarea placeholder="'. __( 'Comment', 'fitness-passion' ).'" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>';
+	
+	
+	$args['fields']['author'] = $author;
+	$args['fields']['email'] = $email;
+	$args['fields']['url'] = $url;
+	$args['comment_field'] = $comment;
+
+	return $args;
+
+}
+
+/**
+ * Modify comments form fields order
+ */
+
+add_filter( 'comment_form_fields', 'fitness_passion_modify_order_fields' );
+
+function fitness_passion_modify_order_fields( $fields ){
+	//var_dump($fields);
+	$val = $fields['comment'];
+	$val2 = $fields['cookies'];
+	unset($fields['comment']);
+	unset($fields['cookies']);
+
+	$fields += array('comment' => $val );
+	$fields += array('cookies' => $val2 );
+
+	return $fields;
+}
 
 
 /**

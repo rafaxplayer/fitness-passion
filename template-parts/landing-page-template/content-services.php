@@ -2,50 +2,40 @@
 /**
  * Template part for displaying services section on landing template
  *
- *
  * @package fitness-passion
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-if( !get_theme_mod('fitness_passion_landing_services_show', false) ){ return; }
+if( get_theme_mod('fitness_passion_landing_services_show', false) === false){ return; } ?>
 
-$services_arr = array();
-	for($i=1; $i<=3; $i++) {
-       
-	  if( get_theme_mod('fitness_passion_landing_service_'.$i, false) != 0) {
-
-	    $services_arr[] = absint( get_theme_mod('fitness_passion_landing_service_'.$i, true));
-	  }
-    }
-   ?>
 <section class="fp-landing-services">
 
     <?php 
-     if(empty($services_arr)){
-         
-        return;
-    }
     $d=5;
-        $servicesquery = new WP_Query( array( 'post_type' => 'page', 'post__in' => $services_arr, 'orderby' => 'post__in' ) );
-        while( $servicesquery->have_posts() ) : $servicesquery->the_post();
-            $image = wp_get_attachment_image_url( get_post_thumbnail_id($post->ID),'large'); 
-            $thumbnail_id = get_post_thumbnail_id( $post->ID );
-            $permalink = get_permalink($post->ID);
-            $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true); 
-                       
-            ?>
-            <div class="landing-service" data-aos="zoom-in" data-aos-duration="1000" data-aos-once="true" data-aos-delay="<?php echo absint($d) ?>00">
+    for($i=1; $i<=3; $i++) {?>
+        <div class="landing-service" data-aos="zoom-in" data-aos-duration="1000" data-aos-once="true" data-aos-delay="<?php echo absint($d) ?>00">
+            <?php
+            $service_id = absint( get_theme_mod('fitness_passion_landing_page_service_'.$i));
+
+            if($service_id === 0):
+
+                fitness_passion_box_message( sprintf(esc_html__('Select Page For Service %1$s ','fitness-passion'), $i));
+                
+            else:
+
+                $image = wp_get_attachment_image_url( get_post_thumbnail_id($service_id),'fitness_passion_custom_size'); 
+                $thumbnail_id = get_post_thumbnail_id( $service_id );
+                $permalink = get_permalink($service_id);
+                $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true); ?>
                 
                 <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($alt); ?>">
                 
                 <div class="landing-service-content">
                     <div class="overlap"></div>
-                    <a href="<?php echo esc_url($permalink); ?>"><h3><?php the_title(); ?></h3></a>
+                    <a href="<?php echo esc_url($permalink); ?>"><h3><?php echo esc_html(get_the_title($service_id)); ?></h3></a>
                 </div>
-            </div>
-            <?php $d=$d+4;
-        endwhile;
-        wp_reset_postdata(); ?>
-    
-
+            <?php endif;?>
+        </div>
+        <?php $d= $d + 4;
+    } ?>
 </section>

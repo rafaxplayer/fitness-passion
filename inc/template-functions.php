@@ -65,15 +65,30 @@ if ( ! function_exists( 'fitness_passion_is_woocommerce_activated' ) ) {
 /**
  * limit the excerpt length function.
  */
-function fitness_passion_excerpt($limit) {
-	$excerpt = explode(' ', get_the_excerpt(), $limit);
-	if (count($excerpt)>=$limit) {
-	  array_pop($excerpt);
-	  $excerpt = implode(" ",$excerpt).'...';
-	} else {
-	  $excerpt = implode(" ",$excerpt);
-	}	
-	$excerpt = preg_replace('`[[^]]*]`','',$excerpt);
-	return '<p>'.$excerpt.'</p>';
-  }
- 
+if ( !function_exists( 'fitness_passion_excerpt' ) ) {
+	function fitness_passion_excerpt($limit) {
+		$excerpt = explode(' ', get_the_excerpt(), $limit);
+		if (count($excerpt)>=$limit) {
+		array_pop($excerpt);
+		$excerpt = implode(" ",$excerpt).'...';
+		} else {
+		$excerpt = implode(" ",$excerpt);
+		}	
+		$excerpt = preg_replace('`[[^]]*]`','',$excerpt);
+		return '<p>'.$excerpt.'</p>';
+	}
+}
+
+  /**
+ * Box message.
+ */
+if ( !function_exists( 'fitness_passion_box_message' ) ) {
+	function fitness_passion_box_message($message) {
+		if(current_user_can( 'administrator')){
+			printf('<div class="fp-message-box">%1$s %2$s<i class="close fa fa-close"></i></div>', $message,esc_html__('( This message is only visible for admin user. )','fitness-passion'));
+		}
+		
+	}
+}
+
+

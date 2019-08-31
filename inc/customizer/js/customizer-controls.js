@@ -64,14 +64,28 @@
 
         function landing_sections_check($section) {
 
+            if ($section == 'page_content' || $section == 'all') {
+
+                //page content
+                if (wp.customize.instance('fitness_passion_landing_content_page_show').get()) {
+                    
+                    $('#customize-control-fitness_passion_landing_content_page_title_control').fadeIn();
+
+                } else {
+                    
+                    $('#customize-control-fitness_passion_landing_content_page_title_control').fadeOut();
+                    
+                }
+            }
+
             if ($section == 'services' || $section == 'all') {
 
                 // array controls ids for landing section services
                 var $control_ids_landing_section_services = [
 
-                    'fitness_passion_landing_service_1_control',
-                    'fitness_passion_landing_service_2_control',
-                    'fitness_passion_landing_service_3_control',
+                    'fitness_passion_landing_page_service_1_control',
+                    'fitness_passion_landing_page_service_2_control',
+                    'fitness_passion_landing_page_service_3_control',
 
                 ];
                 //services
@@ -204,8 +218,7 @@
                     'fitness_passion_landing_testimonials_exclude_control',
                 ];
                                
-                
-
+        
                 //testimonials
                 if (wp.customize.instance('fitness_passion_landing_testimonials_show').get()) {
 
@@ -218,8 +231,6 @@
                         $('#customize-control-' + value).fadeOut();
                     });
                 }
-
-
 
             }
 
@@ -299,6 +310,14 @@
            }
 
         }
+        // on change values home page content....
+        wp.customize.control('fitness_passion_landing_content_page_control', function (control) {
+            control.setting.bind(function (value) {
+                // check state
+                landing_sections_check('page_content');
+            });
+
+        });
 
         // on change values services....
         wp.customize.control('fitness_passion_landing_services_control', function (control) {

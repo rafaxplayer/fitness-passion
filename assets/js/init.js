@@ -47,5 +47,12 @@
             });
         }
 
-        AOS.init();
+        jQuery('.fp-message-box .close').on('click', function() {
+            jQuery(this).parent().fadeOut();
+        });
+        
+        if(theme_options.animations){
+
+            AOS.init();
+        }
     }); 

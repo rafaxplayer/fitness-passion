@@ -14,10 +14,10 @@ Class Fitness_passion_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
                 $args['widget_id'] = $this->id;
             }
 
-            $title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Recent Posts' ,'fitness-passion');
+            $widget_title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Recent Posts' ,'fitness-passion');
 
             /** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
-            $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
+            $widget_title = apply_filters( 'widget_title', $widget_title, $instance, $this->id_base );
 
             $number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 5;
             if ( ! $number )
@@ -46,8 +46,8 @@ Class Fitness_passion_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
             if ($r->have_posts()) :
             ?>
             <?php echo $args['before_widget']; ?>
-            <?php if ( $title ) {
-                echo $args['before_title'] . esc_html($title) . $args['after_title'];
+            <?php if ( $widget_title ) {
+                echo $args['before_title'] . esc_html($widget_title) . $args['after_title'];
             } ?>
             <ul>
             <?php while ( $r->have_posts() ) : $r->the_post(); ?>

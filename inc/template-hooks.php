@@ -6,6 +6,9 @@
  */
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
+
+add_action('fitness_passion_header', 'fitness_passion_header_content');
+
 if(! function_exists('fitness_passion_header_content')):
 
     function fitness_passion_header_content(){
@@ -18,14 +21,20 @@ if(! function_exists('fitness_passion_header_content')):
                 return;
             }
         } 
+
+        if(is_404()){
+            echo '<h1 class="fp_header_title" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">'.esc_html__( 'Error 404.', 'fitness-passion' ).'</h1>';
+            return;
+        }
         
 
         $text = "";
         $subtext ="";
+        
         if(is_front_page() || (is_front_page() && is_home())){
 
-            $text = fitness_passion_add_span_last_word(get_theme_mod('fitness_passion_front_page_header_title', ''));
-            $subtext = get_theme_mod('fitness_passion_front_page_header_subtitle', '');
+            $text = fitness_passion_add_span_last_word(get_theme_mod('fitness_passion_front_page_header_title', 'header title'));
+            $subtext = get_theme_mod('fitness_passion_front_page_header_subtitle', 'header subtitle');
             $buttonText = get_theme_mod('fitness_passion_front_page_header_button');
             $buttonLink = get_theme_mod('fitness_passion_front_page_header_button_link','#');
         
@@ -54,9 +63,9 @@ if(! function_exists('fitness_passion_header_content')):
 
 endif;
 
-add_action('fitness_passion_header', 'fitness_passion_header_content');
 
 
+add_action('fitness_passion_show_breadcrumbs', 'fitness_passion_breadcrumbs');
 if( !function_exists('fitness_passion_breadcrumbs')):
 
     function fitness_passion_breadcrumbs($show){
@@ -78,7 +87,8 @@ if( !function_exists('fitness_passion_breadcrumbs')):
             }
 
             echo '<div class="fp_breadcrumbs" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">';
-            printf('<a href="%1$s" >%2$s</a>%3$s',esc_url(home_url()), esc_html(get_bloginfo('name')), $separator);
+            printf('<a href="%1$s" >%2$s</a>%3$s',esc_url(home_url()), esc_html(get_bloginfo('name')), esc_html($separator));
+            
             if (!is_home()){
                                 
                 /* no es el blog index.php*/
@@ -87,13 +97,13 @@ if( !function_exists('fitness_passion_breadcrumbs')):
                     /* Es category.php o es single.php por lo tanto estan dentro del blog */
                     $categories = get_the_category('');
                     
-                    printf('<a href="%1$s">%2$s</a>%3$s',esc_url($bloglink),esc_html($blogname),$separator);
+                    printf('<a href="%1$s">%2$s</a>%3$s',esc_url($bloglink),esc_html($blogname),esc_html($separator));
                     printf('<a href="%1$s" >%2$s</a>',esc_url(get_category_link($categories[0]->term_id)),esc_html($categories[0]->cat_name));
                     
                     if (is_single()) {
                         
                         /* Es solo single.php , imprimimos el titulo del post y el separador*/
-                        the_title($separator,'');
+                        the_title(esc_html($separator),'');
                     }
                 } elseif (is_page()) {
                     if(fitness_passion_is_woocommerce_activated()){
@@ -101,7 +111,7 @@ if( !function_exists('fitness_passion_breadcrumbs')):
                         if(is_cart() || is_checkout() || is_account_page()){
                             $blogname = woocommerce_page_title(false);
                             $bloglink = is_shop() ? wc_get_page_id('shop') : get_the_ID();
-                            printf('<a href="%1$s">%2$s</a>%3$s',esc_url($bloglink),esc_html($blogname),$separator);     
+                            printf('<a href="%1$s">%2$s</a>%3$s',esc_url($bloglink),esc_html($blogname),esc_html($separator));     
                         }
                     }
                     /* Es page.php , imprimimos el nombre de la pagina*/
@@ -118,7 +128,7 @@ if( !function_exists('fitness_passion_breadcrumbs')):
 endif;
 
  
-add_action('fitness_passion_show_breadcrumbs', 'fitness_passion_breadcrumbs');
+
 
 if(!function_exists('fitness_passion_social_links')):
 
@@ -130,6 +140,8 @@ if(!function_exists('fitness_passion_social_links')):
                 $twitter = get_theme_mod('fitness_passion_twitter');
                 $instagram = get_theme_mod('fitness_passion_instagram');
                 $youtube = get_theme_mod('fitness_passion_youtube');
+                $linkedin = get_theme_mod('fitness_passion_linkedin');
+                $pinterest = get_theme_mod('fitness_passion_pinterest');
                 if(!empty($facebook)):?>
                     <a href="<?php echo esc_url($facebook); ?>"><i class="fa fa-facebook"></i></a>
                 <?php endif;
@@ -141,7 +153,14 @@ if(!function_exists('fitness_passion_social_links')):
                 <?php endif;
                 if(!empty($youtube)):?>
                     <a href="<?php echo esc_url($youtube); ?>"><i class="fa fa-youtube"></i></a>
+                <?php endif;
+                if(!empty($linkedin)):?>
+                    <a href="<?php echo esc_url($linkedin); ?>"><i class="fa fa-linkedin"></i></a>
+                <?php endif;
+                if(!empty($pinterest)):?>
+                <a href="<?php echo esc_url($pinterest); ?>"><i class="fa fa-pinterest-p"></i></a>
                 <?php endif;?>
+
             </div>
         <?php
 

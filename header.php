@@ -57,41 +57,42 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
         
 		</div>
 		<div class="header-wrap">
-		<div class="site-branding">
-			<?php the_custom_logo(); ?>
-			<div class="wrap-batnding-tetxs">
-			<?php if ( is_front_page() || is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$fitness_passion_description = get_bloginfo( 'description', 'display' );
-			if ( $fitness_passion_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo esc_html($fitness_passion_description); /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-			</div>
-		</div><!-- .site-branding -->
+			<div class="site-branding">
+				<?php the_custom_logo(); ?>
+				<div class="wrap-batnding-tetxs">
+				<?php if ( is_front_page() || is_home() ) :
+					?>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php
+				else :
+					?>
+					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php
+				endif;
+				$fitness_passion_description = get_bloginfo( 'description', 'display' );
+				if ( $fitness_passion_description || is_customize_preview() ) :
+					?>
+					<p class="site-description"><?php echo esc_html($fitness_passion_description); /* WPCS: xss ok. */ ?></p>
+				<?php endif; ?>
+				</div>
+			</div><!-- .site-branding -->
 		
-		<i id="button-toogle" class="menu-toggle fa fa-bars" aria-controls="primary-menu" aria-expanded="false"></i>
+			<i id="button-toogle" class="menu-toggle fa fa-bars" aria-controls="primary-menu" aria-expanded="false"></i>
 		
-		<nav id="site-navigation" class="main-navigation">
-			
-			<?php
-
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
+			<nav id="site-navigation" class="main-navigation">
 				
-			) );
-			?>
-		</nav><!-- #site-navigation -->
-		<a href="#" class="search-btn" data-toggle="modal" data-target="#searchmodal"><i class="fa fa-search"></i><span></a>
-		<?php 
+				<?php
+
+				wp_nav_menu( array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+					
+				) );
+				?>
+			</nav><!-- #site-navigation -->
+			<a href="#" class="search-btn" data-toggle="modal" data-target="#searchmodal"><i class="fa fa-search"></i><span></a>
+		</div>
+			<?php 
 		
 			$image_header = get_template_directory_uri().'/assets/images/header_default.jpg';
 			
@@ -123,31 +124,30 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 				<?php 
 					do_action('fitness_passion_header'); 
 					do_action('fitness_passion_show_breadcrumbs',get_theme_mod('fitness_passion_breadcrumbs',true));
-					
 				?>
 		
 			</div>	
 			<?php endif; ?>
 
-		<!-- Modal Search form -->
-		<div class="modal fade" id="searchmodal" role="dialog">
-			<div class="modal-dialog">
-			
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-				<h4 class="modal-title"><?php esc_html_e('Search For','fitness-passion'); ?></h4>
+			<!-- Modal Search form -->
+			<div class="modal fade" id="searchmodal" role="dialog">
+				<div class="modal-dialog">
+				
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+					<h4 class="modal-title"><?php esc_html_e('Search For','fitness-passion'); ?></h4>
+					</div>
+					<div class="modal-body">
+					<?php echo get_search_form(); ?>
+					</div>
+					<div class="modal-footer">
+					<button type="button" class="btn" data-dismiss="modal"><?php esc_html_e('Close','fitness-passion'); ?></button>
+					</div>
 				</div>
-				<div class="modal-body">
-				<?php echo get_search_form(); ?>
-				</div>
-				<div class="modal-footer">
-				<button type="button" class="btn" data-dismiss="modal"><?php esc_html_e('Close','fitness-passion'); ?></button>
+				
 				</div>
 			</div>
-			
-			</div>
-      	</div>
 		
 	</header><!-- #masthead -->
 

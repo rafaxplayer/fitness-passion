@@ -33,11 +33,11 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 		<div class="entry-content">
 			<?php
-			
+			$count_words = absint(get_theme_mod('fitness_passion_blog_excerpt_length',30));
 			if ( empty( $post->post_excerpt ) ) : 
-            	echo '<p>'.wp_kses_post( wp_trim_words( $post->post_content, 30 ) ).'<p>'; 
+            	echo '<p>'.wp_kses_post( wp_trim_words( $post->post_content, $count_words ) ).'<p>'; 
         	else : 
-            	echo fitness_passion_excerpt(30);
+            	echo fitness_passion_excerpt($count_words);
          	endif; 
 
 			wp_link_pages();

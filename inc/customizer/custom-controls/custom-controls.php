@@ -23,7 +23,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
  		public function enqueue() {
-			wp_enqueue_style( 'custom-controls-css', get_stylesheet_directory_uri( ) . '/assets/css/custom-controls/custom-controls.css', array(), '1.0', 'all' );
+			wp_enqueue_style( 'custom-controls-css', get_stylesheet_directory_uri( ) . '/inc/customizer/custom-controls/css/custom-controls.css', array(), '1.0', 'all' );
  		}
 		/**
 		 * Render the control in the customizer
@@ -91,7 +91,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<?php } ?>
 				<?php if( !empty( $this->description ) ) { ?>
-					<span class="customize-control-description"><?php echo wp_kses( $this->description, $allowed_html ); ?></span>
+					<span class="customize-control-description"><?php echo $this->description; ?></span>
 				<?php } ?>
 			</div>
 		<?php
@@ -115,7 +115,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue(){
-			wp_enqueue_style( 'skyrocket-custom-controls-css', get_stylesheet_directory_uri() . '/assets/css/custom-controls.css', array(), '1.0', 'all' );
+			wp_enqueue_style( 'skyrocket-custom-controls-css', get_stylesheet_directory_uri() . '/inc/customizer/custom-controls/css/custom-controls.css', array(), '1.0', 'all' );
 		}
 		/**
 		 * Render the control in the customizer

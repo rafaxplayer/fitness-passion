@@ -112,7 +112,7 @@ input[type="number"]:focus {
    ========================================================================== */
 .toggle-switch-control .customize-control-title {
 	
-	font-size:1.3em;
+	font-size:15px;
 }
 
 .toggle-switch {
@@ -206,7 +206,7 @@ input[type="number"]:focus {
 =============================================*/
 .fitness_passion_separator{
 	border: 0;
-    border-top: 4px solid #9ea2a5;
+    border-top: 1px solid #9ea2a5;
     border-bottom: 1px solid #fafafa;
 }
 

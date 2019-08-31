@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
     if( get_theme_mod('fitness_passion_landing_contact_show', false) ): 
 
-        $title = get_theme_mod('fitness_passion_landing_contact_title',__('Contact Us','fitness-passion'));
+        $section_title = get_theme_mod('fitness_passion_landing_contact_title',__('Contact Us','fitness-passion'));
         $phone = get_theme_mod('fitness_passion_phone', '');
 		$whatsapp = get_theme_mod('fitness_passion_whatsapp', '');
 		$address = get_theme_mod('fitness_passion_address', '');
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
         <section class="fp-landing-contact" style="background-image:url(<?php echo esc_url(get_theme_mod('fitness_passion_landing_contact_back_image'));?>);">
             <div class="contact-wrap">
 
-                <?php if(!empty($title)){ printf('<h2 class="section-title">%s</h2>',esc_html($title)); }?>
+                <?php if(!empty($section_title)){ printf('<h2 class="section-title">%s</h2>',esc_html($section_title)); }?>
 
                 <div class="contact-info">
 

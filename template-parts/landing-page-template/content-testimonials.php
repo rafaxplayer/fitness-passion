@@ -12,10 +12,10 @@ if( ! get_theme_mod('fitness_passion_landing_testimonials_show', false) ){ retur
 <section class="fp-landing-testimonials" style="background-image:url(<?php echo esc_url(get_theme_mod('fitness_passion_landing_testimonials_back_image')); ?>);">
     <div class="testimonials-wrap">
         <?php 
-        $title = get_theme_mod('fitness_passion_landing_testimonials_title',__('Testimonials','fitness-passion'));
+        $section_title = get_theme_mod('fitness_passion_landing_testimonials_title',__('Testimonials','fitness-passion'));
         
-        if(!empty($title)){
-            printf('<h2 class="section-title">%s</h2>',esc_html($title));
+        if(!empty($section_title)){
+            printf('<h2 class="section-title">%s</h2>',esc_html($section_title));
         }?>
 
         <div id="slider-test" class="cycle-slideshow"

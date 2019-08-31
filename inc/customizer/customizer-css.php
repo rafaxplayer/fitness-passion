@@ -41,6 +41,12 @@ if(!function_exists('fitness_passion_custom_css')){
                             padding-left: 10px;
                             padding-right: 10px;
                         }
+                        .site-main .fp_breadcrumbs{
+                            max-width:100%;
+                            margin-left: 10px;
+                            margin-right: 10px;
+                        }
+
                     }";
             }
         }

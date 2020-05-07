@@ -61,4 +61,4 @@ if(!function_exists('fitness_passion_custom_css')){
     <?php
     }
 }
-add_action( 'wp_head', 'fitness_passion_custom_css');
+
